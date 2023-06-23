@@ -1,0 +1,223 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@600&family=Manrope:wght@400;600&family=Open+Sans&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* * {
+    transition: background 300ms ease, opacity 300ms ease;
+  } */
+  .open-sans {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+  }
+  .jost {
+    font-family: "Jost", sans-serif;
+    font-weight: 400;
+  }
+  .manrope-4 {
+    font-family: "Manrope", sans-serif;
+    font-weight: 400;
+  }
+  .manrope-6 {
+    font-family: "Manrope", sans-serif;
+    font-weight: 600;
+  }
+  .poppins-4 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+  }
+  .poppins-5 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+  }
+  .poppins-6 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+  }
+  .poppins-7 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+  }
+  .gradient-text {
+    background: linear-gradient(to bottom, #80b24f, #6fbf21);
+    background-clip: text;
+    color: transparent;
+  }
+  .gold-gradient-text {
+    background: linear-gradient(0deg, #eb8a00 -0.01%, #ebb327 100.29%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .btn-gradient {
+    background: linear-gradient(268.16deg, #80b24f 1.16%, #6fbf21 95.72%);
+  }
+  .glassmorphism {
+    background: rgba(255, 255, 255, 0.25);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(15px);
+    border-radius: 30px;
+    box-shadow: 0 8px 32px 0 rgba(5, 6, 21, 0.2),
+      1px 1px rgba(42, 49, 49, 0.199), -1px -1px rgba(97, 114, 114, 0.2);
+  }
+  .glassmorphism-sec {
+    background: linear-gradient(
+      104.38deg,
+      rgba(42, 49, 49, 0.3) 9.2%,
+      rgba(42, 49, 49, 0.1) 97.09%
+    );
+    backdrop-filter: blur(15px);
+    border-radius: 30px;
+    box-shadow: inset 1px -1px #2a3131, inset -1px 1px rgba(97, 114, 114, 0.5);
+  }
+  .glassmorphism-sec-link {
+    background: linear-gradient(
+      104.38deg,
+      rgba(42, 49, 49, 0.3) 9.2%,
+      rgba(42, 49, 49, 0.1) 97.09%
+    );
+    backdrop-filter: blur(15px);
+    border-radius: 5px;
+    box-shadow: inset 1px -1px #2a3131, inset -1px 1px rgba(97, 114, 114, 0.5);
+  }
+  .glassmorphism-sec-light {
+    background: linear-gradient(
+      113.79deg,
+      rgba(42, 49, 49, 0.2) 2.78%,
+      rgba(42, 49, 49, 0.05) 98.77%
+    );
+    backdrop-filter: blur(15px);
+    border-radius: 30px;
+    box-shadow: inset 1px -1px #2a313135, inset -1px 1px rgba(97, 114, 114, 0.5);
+  }
+  .glassmorphism-dark {
+    background: #050b18;
+    backdrop-filter: blur(15px);
+    border-radius: 30px;
+    box-shadow: inset 1px -1px #2a3131, inset -1px 1px rgba(97, 114, 114, 0.5);
+  }
+  .glassmorphism-dark_input {
+    background: #050b18;
+    backdrop-filter: blur(15px);
+    border-radius: 4px;
+    box-shadow: inset 1px -1px #2a3131, inset -1px 1px rgba(97, 114, 114, 0.5);
+  }
+  .glassmorphism-light {
+    background: #f1f1f1;
+    backdrop-filter: blur(15px);
+    border-radius: 30px;
+    box-shadow: 0 8px 32px 0 rgba(5, 6, 21, 0.2),
+      1px 1px rgba(42, 49, 49, 0.199), -1px -1px rgba(97, 114, 114, 0.2);
+  }
+  .card-glassmorphism-dark {
+    background: linear-gradient(
+      104.38deg,
+      rgba(42, 49, 49, 0.3) 9.2%,
+      rgba(42, 49, 49, 0.1) 97.09%
+    );
+    backdrop-filter: blur(15px);
+    border-radius: 30px;
+    box-shadow: inset 1px -1px #2a3131, inset -1px 1px rgba(97, 114, 114, 0.5);
+  }
+  .card-glassmorphism {
+    background: linear-gradient(
+      104.38deg,
+      rgba(183, 183, 183, 0.3) 9.2%,
+      rgba(255, 255, 255, 0.1) 97.09%
+    );
+    backdrop-filter: blur(15px);
+    border-radius: 30px;
+    box-shadow: 0 8px 32px 0 rgba(5, 6, 20, 0.2), inset 1px -1px #2a313132,
+      inset -1px 1px rgba(97, 114, 114, 0.103);
+  }
+  .icon-gradient-bg {
+    background: linear-gradient(268.16deg, #80b24f 1.16%, #6fbf21 95.72%);
+  }
+  .grid-lg {
+    grid-template-areas:
+      "v v t"
+      "b i s";
+    gap: 30px;
+  }
+  .grid-area-v {
+    grid-area: v;
+  }
+  .grid-area-t {
+    grid-area: t;
+  }
+  .grid-area-b {
+    grid-area: b;
+  }
+  .grid-area-i {
+    grid-area: i;
+  }
+  .grid-area-s {
+    grid-area: s;
+  }
+  .gold-gradient-bg {
+    background: linear-gradient(to bottom, #ebb226, #eb8b01);
+  }
+  .light-gradient-bg {
+    background: linear-gradient(to bottom, #ffffff, #ffffff5f);
+  }
+  .inner-gold-gradient-bg {
+    background: linear-gradient(to left, #f3d079, #e4a753);
+  }
+  .inner-gradient-bg {
+    background: linear-gradient(to left, #f9f9f9, #ffffff45);
+  }
+  .switch-btn-gradient-bg {
+    background: linear-gradient(0deg, #eb8a00 -0.01%, #ebb327 100.29%);
+  }
+  .light-switch-btn-gradient-bg {
+    background: linear-gradient(0deg, #060c18 -0.01%, #060c18 100.29%);
+  }
+  .phone-grid-lg {
+    grid-template-areas: "d s";
+    gap: 30px;
+  }
+  .grid-area-d {
+    grid-area: d;
+  }
+  .grid-area-s {
+    grid-area: s;
+  }
+  .image-grid {
+    grid-template-areas:
+      "i ii"
+      "iii iii";
+  }
+  .grid-area-i {
+    grid-area: i;
+  }
+  .grid-area-ii {
+    grid-area: ii;
+  }
+  .grid-area-iii {
+    grid-area: iii;
+  }
+  .transparent-gradient-dark {
+    background: linear-gradient(to bottom, transparent, #060c18 90%);
+    opacity: 1;
+    transition-delay: 300ms;
+  }
+  .scrollbar-hidden::-webkit-scrollbar {
+    appearance: none;
+    display: none;
+  }
+  .scrollbar-hidden::-webkit-scrollbar-corner {
+    appearance: none;
+  }
+  .scrollbar-hidden::-webkit-scrollbar-track,
+  .scrollbar-hidden::-webkit-scrollbar-track-piece,
+  .scrollbar-hidden::-webkit-scrollbar-button,
+  .scrollbar-hidden::-webkit-scrollbar-thumb,
+  .scrollbar-hidden::-webkit-scrollbar- {
+    appearance: none;
+  }
+}

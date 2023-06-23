@@ -1,0 +1,45 @@
+"use client";
+import { useContext, useEffect } from "react";
+import Header from "../../components/home/Header";
+import "./globals.css";
+import AppContext, { AppProvider } from "@/contexts/AppContext";
+import Footer from "@/components/home/Footer";
+
+export const metadata = {
+  title: "Oaks Intelligence",
+  description: "Tech Company",
+};
+
+const Wrapper = ({ children }) => {
+  const { theme, setTheme } = useContext(AppContext);
+
+  useEffect(() => {
+    theme === "dark"
+      ? document.documentElement.classList.add("dark")
+      : document.documentElement.classList.remove("dark");
+
+    setTheme((prev) => prev);
+  }, [theme]);
+  return (
+    <>
+      <Header theme={theme} setTheme={setTheme} />
+      {children}
+      <Footer />
+    </>
+  );
+};
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en">
+      <head>
+        <link rel="icon" type="image/png" href="/oaks-icon.png" />
+      </head>
+      <body>
+        <AppProvider>
+          <Wrapper>{children}</Wrapper>
+        </AppProvider>
+      </body>
+    </html>
+  );
+}
