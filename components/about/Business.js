@@ -1,5 +1,6 @@
 import AppContext from "@/contexts/AppContext";
 import React, { useContext } from "react";
+import { motion } from "framer-motion";
 import validation from "../../assets/business/validation.svg";
 import validationDark from "../../assets/business/validation-dark.svg";
 import trustworthy from "../../assets/business/trustworthy-fore.svg";
@@ -12,21 +13,91 @@ import swift from "../../assets/business/swift-fore.svg";
 import swiftHind from "../../assets/business/swift-hind.svg";
 import Image from "next/image";
 
+const containerReveal = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      duration: 1,
+      staggerChildren: 0.5,
+    },
+  },
+};
+
+const itemReveal = {
+  hidden: { opacity: 0, y: 100 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1,
+      type: "spring",
+    },
+  },
+};
+
+const cardItemsReveal = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      duration: 1,
+      type: "spring",
+      delay: 1,
+      staggerChildren: 0.3,
+      delayChildren: 0.9,
+    },
+  },
+};
+const cardReveal = {
+  hidden: { opacity: 0, scale: 1.2 },
+  show: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 1,
+      type: "spring",
+      bounce: 0.4,
+    },
+  },
+};
+
 const Business = () => {
   const { theme } = useContext(AppContext);
 
   return (
-    <div className="w-full">
+    <div className="w-full" id="business">
       <div className="flex relative flex-col mx-auto justify-between max-w-[1440px] py-5 px-[5%] sm:px-[10%] items-center overflow-visible">
-        <div className="hidden sm:block w-full min-h-[100px] pt-[7%] pb-[5%]">
-          <p className="text-[2.3rem] text-main-light dark:text-main">
+        <motion.div
+          initial={{ opacity: 0, x: -200 }}
+          whileInView={{
+            opacity: 1,
+            x: 0,
+            transition: { duration: 1.5, type: "spring", bounce: 0.4 },
+          }}
+          className="hidden md:block w-full min-h-[100px] pt-[7%] pb-[5%]"
+        >
+          <motion.p
+            variants={itemReveal}
+            initial="hidden"
+            whileInView="show"
+            className="text-[2.3rem] text-main-light dark:text-main"
+          >
             <p className="text-center poppins-4">
               <span>Why you should </span>
               <span className="poppins-6">do business with us</span>
             </p>
-          </p>
-          <div className="w-full mt-10 grid xl:grid-lg">
-            <div className="flex grid-area-v justify-center items-center py-10 px-10 gap-[5%] glassmorphism bg-[#F1F1F9] shadow-none dark:glassmorphism-sec rounded-[25px]">
+          </motion.p>
+          <motion.div
+            variants={cardItemsReveal}
+            initial="hidden"
+            whileInView="show"
+            className="w-full mt-10 grid md:grid-lg"
+          >
+            <motion.div
+              variants={cardReveal}
+              className="flex grid-area-v justify-center items-center py-10 px-10 gap-[5%] glassmorphism bg-[#F1F1F9] shadow-none dark:glassmorphism-sec rounded-[25px]"
+            >
               <div className="flex flex-col gap-2">
                 <p className="poppins-6 text-main-light dark:text-main text-[22px]">
                   Random spot validation for quality control
@@ -41,8 +112,11 @@ const Business = () => {
                 src={theme === "light" ? validation : validationDark}
                 className="w-[40%]"
               />
-            </div>
-            <div className="flex grid-area-t flex-col px-6 py-8 gap-2 glassmorphism bg-[#F1F1F9] shadow-none dark:glassmorphism-sec">
+            </motion.div>
+            <motion.div
+              variants={cardReveal}
+              className="flex grid-area-t flex-col px-6 py-8 gap-2 glassmorphism bg-[#F1F1F9] shadow-none dark:glassmorphism-sec"
+            >
               <div className="relative flex items-center h-[120px] bg-[#4cc1ff] px-3 py-2 rounded-xl">
                 <Image alt="trustworthy" src={trustworthy} />
                 <Image
@@ -60,8 +134,11 @@ const Business = () => {
                   quality assurance processes
                 </p>
               </div>
-            </div>
-            <div className="flex w-full grid-area-b flex-col px-6 py-8 gap-2 glassmorphism bg-[#F1F1F9] shadow-none dark:glassmorphism-sec">
+            </motion.div>
+            <motion.div
+              variants={cardReveal}
+              className="flex w-full grid-area-b flex-col px-6 py-8 gap-2 glassmorphism bg-[#F1F1F9] shadow-none dark:glassmorphism-sec"
+            >
               <div className="relative flex items-center h-[120px] gold-gradient-bg px-3 py-2 rounded-xl">
                 <Image alt="benchmarks" src={benchmark} />
                 <Image
@@ -79,8 +156,11 @@ const Business = () => {
                   continuous improvement
                 </p>
               </div>
-            </div>
-            <div className="flex grid-area-i flex-col px-6 py-8 gap-2 glassmorphism bg-[#F1F1F9] shadow-none dark:glassmorphism-sec">
+            </motion.div>
+            <motion.div
+              variants={cardReveal}
+              className="flex grid-area-i flex-col px-6 py-8 gap-2 glassmorphism bg-[#F1F1F9] shadow-none dark:glassmorphism-sec"
+            >
               <div className="relative flex items-center h-[120px] bg-[#77b935] px-3 py-2 rounded-xl">
                 <Image alt="interoperability" src={interoperability} />
                 <Image
@@ -98,8 +178,11 @@ const Business = () => {
                   interoperability.
                 </p>
               </div>
-            </div>
-            <div className="flex grid-area-s flex-col px-6 py-8 gap-2 glassmorphism bg-[#F1F1F9] shadow-none dark:glassmorphism-sec">
+            </motion.div>
+            <motion.div
+              variants={cardReveal}
+              className="flex grid-area-s flex-col px-6 py-8 gap-2 glassmorphism bg-[#F1F1F9] shadow-none dark:glassmorphism-sec"
+            >
               <div className="relative flex items-center h-[120px] bg-[#b65fff] px-3 py-2 rounded-xl">
                 <Image alt="swift" src={swift} />
                 <Image
@@ -117,10 +200,10 @@ const Business = () => {
                   on investment
                 </p>
               </div>
-            </div>
-          </div>
-        </div>
-        <div className="block sm:hidden w-full min-h-[100px] pt-[7%] pb-[5%]">
+            </motion.div>
+          </motion.div>
+        </motion.div>
+        <div className="block md:hidden w-full min-h-[100px] pt-[7%] pb-[5%]">
           <p className="text-[2rem] sm:text-[2.3rem] text-main-light dark:text-main">
             <p className="text-center poppins-4">
               <span>Why you should </span>
@@ -150,7 +233,7 @@ const Business = () => {
                 <Image
                   alt="trustworthy-hind"
                   src={trustworthyHind}
-                  className="absolute top-0 right-0 rounded-xl w-[50%]"
+                  className="absolute top-0 right-0 rounded-xl w-[50%] max-w-[120px]"
                 />
               </div>
               <div className="flex flex-col gap-2 pt-4">
@@ -169,7 +252,7 @@ const Business = () => {
                 <Image
                   alt="benchmarks-hind"
                   src={benchmarkHind}
-                  className="absolute top-0 right-0 rounded-xl w-[60%]"
+                  className="absolute top-0 right-0 rounded-xl w-[60%]  max-w-[120px]"
                 />
               </div>
               <div className="flex flex-col gap-2 pt-4">
@@ -188,7 +271,7 @@ const Business = () => {
                 <Image
                   alt="interoperability-hind"
                   src={interoperabilityHind}
-                  className="absolute top-0 right-0 rounded-xl h-[100%]"
+                  className="absolute top-0 right-0 rounded-xl h-[100%] max-w-[120px]"
                 />
               </div>
               <div className="flex flex-col gap-2 pt-4">
@@ -207,7 +290,7 @@ const Business = () => {
                 <Image
                   alt="swift-hind"
                   src={swiftHind}
-                  className="absolute top-0 right-0 rounded-xl w-[35%]"
+                  className="absolute top-0 right-0 rounded-xl w-[35%] max-w-[120px]"
                 />
               </div>
               <div className="flex flex-col gap-2 pt-4">

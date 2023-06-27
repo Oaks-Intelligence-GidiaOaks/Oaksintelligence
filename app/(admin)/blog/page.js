@@ -47,7 +47,7 @@ const About = async ({ searchParams }) => {
 
   const posts = await client.fetch(query, { pageIndex });
   return (
-    <main className="min-h-screen bg-white dark:bg-main overflow-hidden">
+    <main className="min-h-screen bg-white dark:bg-main transition-all duration-300 ease-in-out overflow-hidden">
       <NewsletterBanner />
       {/* Search bar */}
       <div className="w-full">
@@ -62,7 +62,7 @@ const About = async ({ searchParams }) => {
             {/* Prev button */}
             {currentPage > 1 ? (
               <Link
-                className="gold-gradient-bg flex items-center justify-center px-3 py-1 rounded-md text-white w-20 hover:scale-110 hover:shadow-lg hover:hue-rotate-60 transition-all duration-300"
+                className="poppins-4 gold-gradient-bg flex items-center justify-center px-3 py-1 rounded-md text-white w-20 hover:scale-110 hover:shadow-lg hover:hue-rotate-60 transition-all duration-300"
                 href={`/blog?page=${currentPage - 1}`}
               >
                 <span>Previous</span>
@@ -70,14 +70,14 @@ const About = async ({ searchParams }) => {
             ) : (
               <button
                 disabled
-                className="block gold-gradient-bg px-3 py-1 rounded-md grayscale opacity-50 w-20"
+                className="flex justify-center items-center poppins-4 gold-gradient-bg px-3 py-1 rounded-md grayscale opacity-50 w-20"
               >
                 Previous
               </button>
             )}
 
             {/* Current page */}
-            <p className="font-bold text-main-light dark:text-main">
+            <p className="font-bold poppins-6 text-main-light dark:text-main">
               Page {currentPage}
             </p>
 
@@ -87,12 +87,12 @@ const About = async ({ searchParams }) => {
                 className="gold-gradient-bg flex items-center justify-center px-3 py-1 rounded-md text-white hover:scale-110 hover:shadow-lg hover:hue-rotate-60 transition-all duration-300"
                 href={`/blog?page=${currentPage + 1}`}
               >
-                <span>Next</span>
+                <span className="poppins-4">Next</span>
               </Link>
             ) : (
               <button
                 disabled
-                className="block gold-gradient-bg px-3 py-1 rounded-md grayscale opacity-50 w-20"
+                className="flex justify-center items-center poppins-4 gold-gradient-bg px-3 py-1 rounded-md grayscale opacity-50 w-20"
               >
                 Next
               </button>

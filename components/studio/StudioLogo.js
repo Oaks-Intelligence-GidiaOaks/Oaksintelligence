@@ -1,15 +1,15 @@
 import Image from "next/image";
-import oaksLogo from "../../assets/oaks-logo.svg";
+import oaksLogo from "../../assets/oaks-thumbnail.svg";
 
 function StudioLogo(props) {
   return (
-    <div className="flex gap-2">
+    <div className="flex items-center gap-2 ">
       <Image
         alt="logo"
         src={oaksLogo}
-        width={50}
-        height={50}
-        className="object-cover rounded-full"
+        width={30}
+        height={30}
+        className="object-cover rounded-full translate-x-3"
       />
       <>{props.renderDefault(props)}</>
     </div>

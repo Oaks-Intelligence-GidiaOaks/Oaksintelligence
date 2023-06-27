@@ -24,8 +24,8 @@ const BlogList = ({ posts }) => {
                   />
                   <div className="absolute bottom-0 w-full bg-opacity-20 bg-black backdrop-blur-lg rounded drop-shadow-lg text-white p-5 flex justify-between">
                     <div>
-                      <p className="font-bold">{post.title}</p>
-                      <p>
+                      <p className="font-bold poppins-6">{post.title}</p>
+                      <p className="poppins-4">
                         {new Date(post._createdAt).toLocaleDateString("en-US", {
                           day: "numeric",
                           month: "long",
@@ -39,21 +39,21 @@ const BlogList = ({ posts }) => {
                           key={i}
                           className="bg-[#f7ab0a] text-center text-black px-3 pv-1 rounded-full text-sm font-semibold"
                         >
-                          <p>{category.title}</p>
+                          <p className="jost">{category.title}</p>
                         </div>
                       ))}
                     </div>
                   </div>
                 </div>
                 <div className="mt-5 flex-1 px-5">
-                  <p className="underline text-lg font-bold text-main-light dark:text-main">
+                  <p className="underline poppins-6 text-lg font-bold text-main-light dark:text-main">
                     {post.title}
                   </p>
-                  <p className="line-clamp-2 text-gray-500">
+                  <p className="line-clamp-2 poppins-4 text-gray-500">
                     {post.description}
                   </p>
                 </div>
-                <p className="my-5 px-5 font-bold flex items-center group-hover:underline text-main-light dark:text-main">
+                <p className="my-5 px-5 font-bold poppins-6 flex items-center group-hover:underline text-main-light dark:text-main">
                   Read Post
                   <BsArrowUpRight className="ml-2 h-4 w-4" />
                 </p>

@@ -4,6 +4,11 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  --scroll-behavior: smooth !important;
+  scroll-behavior: smooth !important;
+}
+
 @layer components {
   /* * {
     transition: background 300ms ease, opacity 300ms ease;
@@ -39,6 +44,9 @@
   .poppins-7 {
     font-family: "Poppins", sans-serif;
     font-weight: 700;
+  }
+  .subscribe-btn {
+    background: linear-gradient(to bottom, #399944, #1f5526);
   }
   .gradient-text {
     background: linear-gradient(to bottom, #80b24f, #6fbf21);

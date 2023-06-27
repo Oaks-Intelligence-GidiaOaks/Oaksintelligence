@@ -73,13 +73,13 @@ export const services = [
   {
     title: "Software Development",
     description:
-      "We offer end-to-end software development services that covers everything from conceptualization to design, development, testing, and deployment...",
+      "We offer end-to-end software development services that covers everything from conceptualization to design, development, testing, and deployment.",
     icon: softwareService,
   },
   {
     title: "Addressing Global Priorities",
     description:
-      "Our experienced consultants work closely with clients to understand their unique business needs and provide guidance on the best software solutions ...",
+      "Our experienced consultants work closely with clients to understand their unique business needs and provide guidance on the best software solutions.",
     icon: consultation,
   },
   // {

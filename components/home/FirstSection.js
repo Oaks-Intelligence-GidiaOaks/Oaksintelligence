@@ -1,11 +1,22 @@
 import Image from "next/image";
 import ladyUsingPhone from "../../assets/firstSection/lady-on-phone.svg";
+import { motion } from "framer-motion";
 
 const FirstSection = () => {
   return (
     <div className="w-full">
       <div className="flex flex-col sm:flex-row mx-auto sm:justify-between max-w-[1440px] py-5 px-[5%] sm:px-[10%] sm:items-center">
-        <div className="w-full flex-col sm:flex-row p-5 min-h-[100px] glassmorphism bg-[#F1F1F9] shadow-none dark:glassmorphism-sec sm:flex px-[8%] sm:pt-[3%] pb-[5%]">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+          variants={{
+            visible: { opacity: 1, y: 0 },
+            hidden: { opacity: 0, y: 200 },
+          }}
+          className="w-full flex-col sm:flex-row p-5 min-h-[100px] glassmorphism bg-[#F1F1F9] shadow-none dark:glassmorphism-sec sm:flex px-[8%] sm:pt-[3%] pb-[5%]"
+        >
           <div className="w-full sm:flex-[0.5] items-center justify-center">
             <Image
               alt="lady-using-smartphone"
@@ -29,7 +40,7 @@ const FirstSection = () => {
               </p>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

@@ -16,19 +16,27 @@ const ThemeSwitch = ({ theme, setTheme }) => {
         localStorage.setItem("oi-theme", theme === "dark" ? "light" : "dark");
       }}
     >
-      <div
-        className={`flex items-center ${
-          theme === "light" ? "justify-end" : "justify-start"
-        } h-[25px] w-[71px] p-[2px] rounded-[12px] bg-white dark:bg-main cursor-pointer transition-[justify-content] duration-200 ease-in-out`}
-      >
-        <div className="flex items-center p-[1px] justify-center h-full w-1/2 rounded-[14px] inner-gold-gradient-bg dark:inner-gradient-bg">
-          <div className="flex items-center justify-center h-[calc(100%-0.5px)] w-[calc(100%-1px)] p-1 rounded-[12px] switch-btn-gradient-bg dark:light-switch-btn-gradient-bg">
-            <div>
-              {theme === "light" ? (
-                <BsFillSunFill color="#ffffff" size={10} />
-              ) : (
-                <BsFillMoonStarsFill color="#ffffff" size={10} />
-              )}
+      <div>
+        <div
+          className={`relative flex items-center h-[25px] w-[71px] p-[2px] rounded-[12px] bg-white dark:bg-main cursor-pointer transition-all duration-500 ease-in-out`}
+        >
+          <div
+            className={`absolute flex items-center justify-center p-[1px] h-[calc(100%-4px)] w-[calc(50%-4px)] rounded-[14px] inner-gold-gradient-bg dark:inner-gradient-bg  ${
+              theme === "light"
+                ? "right-[2px]"
+                : "right-[calc(100%-2px)] translate-x-[100%]"
+            } transition-all duration-500 ease-in-out`}
+          >
+            <div
+              className={`flex items-center justify-center h-[calc(100%-1px)] w-[calc(100%-1px)] p-1 rounded-[12px] switch-btn-gradient-bg dark:light-switch-btn-gradient-bg transition-all duration-500 ease-in-out`}
+            >
+              <div>
+                {theme === "light" ? (
+                  <BsFillSunFill color="#ffffff" size={10} />
+                ) : (
+                  <BsFillMoonStarsFill color="#ffffff" size={10} />
+                )}
+              </div>
             </div>
           </div>
         </div>

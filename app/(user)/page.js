@@ -10,7 +10,7 @@ import Feedback from "@/components/home/Feedback";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white dark:bg-main overflow-hidden">
+    <main className="min-h-screen bg-white dark:bg-main overflow-hidden transition-[background] duration-500 ease-in-out">
       <Hero />
       <FirstSection />
       <Solutions />

@@ -20,7 +20,7 @@ const SearchBar = () => {
     router.push(`/blog/search?query=${query}`);
   };
   return (
-    <div className="relative p-[2px] flex w-[clamp(280px,30%,480px)] rounded-3xl border border-solid border-gray-300 bg-transparent dark:glassmorphism-sec-link dark:border-transparent dark:rounded-3xl">
+    <div className="relative p-[4px] flex w-[clamp(280px,30%,480px)] rounded-3xl border border-solid border-gray-300 bg-transparent dark:glassmorphism-sec-link dark:border-transparent dark:rounded-3xl">
       <input
         onChange={(e) => setQuery(e.target.value)}
         onKeyUp={handleEnterKey}

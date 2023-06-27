@@ -1,8 +1,57 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import Image from "next/image";
+import { motion } from "framer-motion";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 import { feedbacks } from "@/constants";
+
+const containerReveal = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      duration: 1,
+      staggerChildren: 0.5,
+    },
+  },
+};
+
+const itemReveal = {
+  hidden: { opacity: 0, y: 100 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1,
+      type: "spring",
+    },
+  },
+};
+
+const cardItemsReveal = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      duration: 1,
+      type: "spring",
+      delay: 1,
+      staggerChildren: 0.3,
+      delayChildren: 0.9,
+    },
+  },
+};
+const cardReveal = {
+  hidden: { opacity: 0, scale: 1.2 },
+  show: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 1,
+      type: "spring",
+      bounce: 0.4,
+    },
+  },
+};
 
 const Feedback = () => {
   const [current, setCurrent] = useState(0);
@@ -22,21 +71,43 @@ const Feedback = () => {
   ];
 
   return (
-    <div className="w-full bg-[#155F60] dark:bg-[#e9ffec08]">
-      <div className="flex flex-col mx-auto justify-between max-w-[1440px] py-5 px-[5%] sm:px-[10%] items-center">
-        <div className="w-full min-h-[100px] pt-[7%] pb-[5%]">
-          <p className="text-[1.5rem] sm:text-[2.3rem] gradient-text">
+    <div className="w-full bg-[#155F60] dark:bg-[#e9ffec08] transition-[background] duration-500 ease-in-out">
+      <motion.div
+        initial={{ opacity: 0, x: -200 }}
+        whileInView={{
+          opacity: 1,
+          x: 0,
+          transition: { duration: 1.5, type: "spring", bounce: 0.4 },
+        }}
+        className="flex flex-col mx-auto justify-between max-w-[1440px] py-5 px-[5%] sm:px-[10%] items-center"
+      >
+        <motion.div
+          variants={containerReveal}
+          initial="hidden"
+          whileInView="show"
+          className="w-full min-h-[100px] pt-[7%] pb-[5%]"
+        >
+          <motion.p
+            variants={itemReveal}
+            className="text-[1.5rem] sm:text-[2.3rem] gradient-text"
+          >
             <p className="poppins-4">
               <span>Our Customer </span>
               <span className="poppins-6">Feedback</span>
             </p>
-          </p>
-          <p className="poppins-4 text-main text-base mt-3 mb-2 sm:mt-0 sm:mb-0 ">
+          </motion.p>
+          <motion.p
+            variants={itemReveal}
+            className="poppins-4 text-main text-base mt-3 mb-2 sm:mt-0 sm:mb-0 "
+          >
             Don’t take our word for it. Trust our customers
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
         <div className="relative max-w-[280px] min-[980px]:max-w-full min-[980px]:mb-10">
-          <div
+          <motion.div
+            variants={cardItemsReveal}
+            initial="hidden"
+            whileInView="show"
             style={{
               transform: `translateX(-${currentFeedback}px)`,
               transition: "all 300ms ease",
@@ -44,7 +115,8 @@ const Feedback = () => {
             className={`flex mx-auto w-fit gap-4 overflow-scroll-x scrollbar-hidden flex-nowrap`}
           >
             {feedbacks.map((feedback, ind) => (
-              <div
+              <motion.div
+                variants={cardReveal}
                 key={ind}
                 className="flex flex-col gap-3 w-[100%] min-w-[280px] sm p-4 glassmorphism-sec-light dark:glassmorphism-sec rounded-lg dark:rounded-lg"
               >
@@ -63,9 +135,9 @@ const Feedback = () => {
                 <p className="poppins-4 text-sm text-main ">
                   {feedback.comment}
                 </p>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
         <div className="min-[980px]:hidden min-w-[280px] max-w-[280px] h-fit flex justify-between items-center pt-[5vh] pb-[10vh]">
           <BsArrowLeft
@@ -104,7 +176,7 @@ const Feedback = () => {
             }`}
           />
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

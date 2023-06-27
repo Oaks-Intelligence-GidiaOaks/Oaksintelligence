@@ -10,7 +10,7 @@ import React from "react";
 
 const About = () => {
   return (
-    <main className="min-h-screen bg-white dark:bg-main overflow-hidden">
+    <main className="min-h-screen bg-white dark:bg-main overflow-hidden transition-[background] duration-500 ease-in-out">
       <Hero />
       <FirstSection />
       <Framework />
