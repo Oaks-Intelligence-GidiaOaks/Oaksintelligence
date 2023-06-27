@@ -49,12 +49,12 @@ const Solutions = () => {
           className="flex gap-[5%] flex-col justify-center w-full sm:w-2/3 sm:h-[calc(100vh-100px)] sm:pr-[10%]"
         >
           <motion.p variants={itemReveal} className="text-[2rem]">
-            <p className="text-main-light dark:gradient-text poppins-4">
+            <span className="block text-main-light dark:gradient-text poppins-4">
               Unleash Your Potential With Our
-            </p>
-            <p className="text-main-light dark:gradient-text poppins-7">
+            </span>
+            <span className="text-main-light dark:gradient-text poppins-7">
               Next-Level Software Solutions
-            </p>
+            </span>
           </motion.p>
           <motion.p
             variants={itemReveal}

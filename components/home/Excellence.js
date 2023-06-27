@@ -61,14 +61,14 @@ const Excellence = () => {
               variants={itemReveal}
               className="text-[1.3rem] sm:text-[2rem] pt-10 sm:pt-0 text-main dark:gradient-text"
             >
-              <p className="poppins-4">
+              <span className="block poppins-4">
                 <span className="whitespace-nowrap sm:whitespace-normal">
                   Scalable & Secure{" "}
                 </span>{" "}
                 <span className="poppins-6 whitespace-nowrap sm:whitespace-normal">
                   Technological Excellence
                 </span>
-              </p>
+              </span>
             </motion.p>
             <motion.p
               variants={itemReveal}

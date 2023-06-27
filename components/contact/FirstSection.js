@@ -145,10 +145,10 @@ const FirstSection = () => {
           <div className="flex-[0.5] ">
             <div className="flex flex-col justify-center h-full gap-[5%]">
               <p className="text-[2.3rem] text-main-light dark:gradient-text">
-                <p className="poppins-4">
+                <span className="block poppins-4">
                   <span>We build for</span>{" "}
                   <span className="poppins-6">Reliability</span>
-                </p>
+                </span>
               </p>
               <p className="poppins-4 mt-3 text-secondary-main-light dark:text-secondary-main text-lg">
                 Provide us with some details about your specific needs,
@@ -270,10 +270,10 @@ const FirstSection = () => {
           <div className="flex-1 ">
             <div className="flex flex-col justify-center h-full gap-[5%]">
               <p className="text-[1.8rem] sm:text-[2.3rem] text-main-light dark:gradient-text">
-                <p className="poppins-4">
+                <span className="block poppins-4">
                   <span>We build for</span>{" "}
                   <span className="poppins-6">Reliability</span>
-                </p>
+                </span>
               </p>
               <p className="poppins-4 mt-3 text-secondary-main-light dark:text-secondary-main text-lg">
                 Provide us with some details about your specific needs,

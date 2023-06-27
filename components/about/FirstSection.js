@@ -28,10 +28,10 @@ const FirstSection = () => {
           <div className="flex-1 sm:flex-[0.5] ">
             <div className="flex flex-col justify-center h-full gap-6 mt-8 sm:mt-0">
               <p className="text-[2rem] text-main-light dark:gradient-text">
-                <p className="poppins-4">
+                <span className="block poppins-4">
                   <span>Efficient and Timely</span>
-                </p>
-                <p className="poppins-6">Delivery of Projects</p>
+                </span>
+                <span className="block poppins-6">Delivery of Projects</span>
               </p>
               <p className="poppins-4 text-secondary-main-light dark:text-secondary-main text-lg sm:text-justify">
                 We understand that time is a valuable commodity, which is why we

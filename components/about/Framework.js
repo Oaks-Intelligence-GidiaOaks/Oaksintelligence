@@ -82,10 +82,10 @@ const Framework = () => {
             viewport={{ once: true }}
             className="text-[1.8rem] sm:text-[2.3rem] text-main-light dark:gradient-text"
           >
-            <p className="text-center poppins-4">
+            <span className="block text-center poppins-4">
               <span>Our Framework </span>
               <span className="poppins-6">at a glance</span>
-            </p>
+            </span>
           </motion.p>
           <motion.p
             variants={itemRevealLeft}

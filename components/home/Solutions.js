@@ -107,12 +107,12 @@ const Solutions = () => {
             viewport={{ once: true }}
             className="text-[1.4rem] sm:text-[2.3rem] text-main-light dark:gradient-text"
           >
-            <p className="poppins-4">
+            <span className="block poppins-4">
               <span>Solutions For All </span>
               <span className="poppins-6 whitespace-nowrap sm:whitespace-normal">
                 Sectors & Industries
               </span>
-            </p>
+            </span>
           </motion.p>
           <motion.p
             variants={itemReveal}

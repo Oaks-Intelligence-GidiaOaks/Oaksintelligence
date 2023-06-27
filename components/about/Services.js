@@ -10,10 +10,10 @@ const Services = () => {
       <div className="flex relative flex-col mx-auto justify-between max-w-[1440px] py-5 px-[10%] items-center overflow-visible">
         <div className="w-full min-h-[100px] pt-[7%] pb-[5%]">
           <p className="text-[2.3rem] gradient-text">
-            <p className="text-center poppins-4">
+            <span className="block text-center poppins-4">
               <span>Our </span>
               <span className="poppins-6">Services</span>
-            </p>
+            </span>
           </p>
           <p className="poppins-4 text-main dark:text-main text-xl max-w-[784px] mx-auto text-center pt-5">
             At Oaks Intelligence, we are committed to providing our clients with

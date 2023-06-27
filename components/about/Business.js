@@ -83,10 +83,10 @@ const Business = () => {
             whileInView="show"
             className="text-[2.3rem] text-main-light dark:text-main"
           >
-            <p className="text-center poppins-4">
+            <span className="text-center poppins-4">
               <span>Why you should </span>
               <span className="poppins-6">do business with us</span>
-            </p>
+            </span>
           </motion.p>
           <motion.div
             variants={cardItemsReveal}
@@ -205,10 +205,10 @@ const Business = () => {
         </motion.div>
         <div className="block md:hidden w-full min-h-[100px] pt-[7%] pb-[5%]">
           <p className="text-[2rem] sm:text-[2.3rem] text-main-light dark:text-main">
-            <p className="text-center poppins-4">
+            <span className="text-center poppins-4">
               <span>Why you should </span>
               <span className="poppins-6">do business with us</span>
-            </p>
+            </span>
           </p>
           <div className="w-full mt-10 flex gap-[5vh] flex-wrap">
             <div className="flex flex-col justify-center items-center py-10 px-10 gap-[5vh] glassmorphism bg-[#F1F1F9] shadow-none dark:glassmorphism-sec rounded-[25px]">
