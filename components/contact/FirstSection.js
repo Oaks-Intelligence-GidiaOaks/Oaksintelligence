@@ -5,9 +5,8 @@ import Image from "next/image";
 import AppContext from "@/contexts/AppContext";
 import GuyUsingPhone from "../../assets/contact/guy-using-phone.svg";
 import GuyUsingPhoneDark from "../../assets/contact/guy-using-phone-dark.svg";
-import { isValidEmail, isValidPhone } from "form-fields-checker";
+import { isValidEmail } from "form-fields-checker";
 import { BiError, BiErrorCircle } from "react-icons/bi";
-import phone from "phone";
 import { IoMdDoneAll } from "react-icons/io";
 import { Rings } from "react-loader-spinner";
 
@@ -83,10 +82,10 @@ const FirstSection = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsSending(true);
     const formValid = validateForm();
 
     if (formValid) {
+      setIsSending(true);
       try {
         const response = await fetch(`/api/send_email`, {
           method: "POST",
@@ -117,6 +116,8 @@ const FirstSection = () => {
         setMailerError(true);
         setTimeout(() => setMailerError(false), 5000);
       }
+    } else {
+      return;
     }
   };
 

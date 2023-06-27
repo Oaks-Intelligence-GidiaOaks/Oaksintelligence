@@ -13,7 +13,7 @@ import SearchBar from "@/components/blogs/SearchBar";
 import noResults from "@/assets/no-results.png";
 import Image from "next/image";
 
-const ITEMS_PER_PAGE = 1;
+const ITEMS_PER_PAGE = 6;
 const query = groq`
  {
   "posts": *[_type=='post' && title match $searchQuery] {
