@@ -11,7 +11,7 @@ import Link from "next/link";
 import { BiSearch } from "react-icons/bi";
 import SearchBar from "@/components/blogs/SearchBar";
 
-const ITEMS_PER_PAGE = 1;
+const ITEMS_PER_PAGE = 6;
 const query = groq`
  {
   "posts": *[_type=='post'] {

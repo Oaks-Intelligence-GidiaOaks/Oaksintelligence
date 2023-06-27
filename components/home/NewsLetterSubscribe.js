@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { BiError } from "react-icons/bi";
 import { IoMdDoneAll } from "react-icons/io";
@@ -8,6 +8,7 @@ import MailchimpSubscribe from "react-mailchimp-subscribe";
 
 const NewsLetter = ({ subscribe, status, message }) => {
   const [email, setEmail] = useState("");
+  const [subscribeStatus, setSubscribeStatus] = useState(status);
   const getMessage = (message) => {
     if (!message) {
       return null;
@@ -34,6 +35,7 @@ const NewsLetter = ({ subscribe, status, message }) => {
       handleSubmit();
     }
   };
+
   return (
     <div className="flex flex-col w-[21%] min-w-[240px] gap-4">
       <p className="poppins-6 text-white text-xl mb-2">Newsletter</p>
