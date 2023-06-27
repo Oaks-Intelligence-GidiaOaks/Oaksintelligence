@@ -88,10 +88,10 @@ const Services = () => {
             viewport={{ once: true }}
             className="text-[1.5rem] sm:text-[2.3rem] gradient-text"
           >
-            <p className="text-center poppins-4">
+            <span className="block text-center poppins-4">
               <span>Our </span>
               <span className="poppins-6">Services</span>
-            </p>
+            </span>
           </motion.p>
           <motion.p
             variants={itemRevealLeft}

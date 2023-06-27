@@ -91,10 +91,10 @@ const Feedback = () => {
             variants={itemReveal}
             className="text-[1.5rem] sm:text-[2.3rem] gradient-text"
           >
-            <p className="poppins-4">
+            <span className="block poppins-4">
               <span>Our Customer </span>
               <span className="poppins-6">Feedback</span>
-            </p>
+            </span>
           </motion.p>
           <motion.p
             variants={itemReveal}

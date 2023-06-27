@@ -70,9 +70,9 @@ const Hero = () => {
           className="flex gap-5 mb-[5vh] sm:mb-0 sm:gap-[5%] flex-col justify-center w-full sm:w-1/2 pt-[10vh] sm:pt-0 sm:h-[calc(100vh-100px)] pr-0 sm:pr-[10%]"
         >
           <motion.p variants={itemReveal} className="text-[2.5rem]">
-            <p className="text-main-light dark:text-main poppins-7">
+            <span className="block text-main-light dark:text-main poppins-7">
               Contact Us
-            </p>
+            </span>
           </motion.p>
           <motion.p
             variants={itemReveal}

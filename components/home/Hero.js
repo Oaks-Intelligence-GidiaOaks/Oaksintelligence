@@ -87,15 +87,15 @@ const Hero = () => {
                 variants={itemReveal}
                 className="text-[1.5rem] sm:text-[2.5rem] "
               >
-                <p className="poppins-4">
+                <span className="block poppins-4">
                   <span className="text-main-light dark:text-main">
                     Reliable
                   </span>{" "}
                   <span className="gradient-text">Software</span>
-                </p>
-                <p className="text-main-light dark:text-main poppins-7">
+                </span>
+                <span className="block text-main-light dark:text-main poppins-7">
                   Solutions Provider
-                </p>
+                </span>
               </motion.p>
               <motion.p
                 variants={itemReveal}

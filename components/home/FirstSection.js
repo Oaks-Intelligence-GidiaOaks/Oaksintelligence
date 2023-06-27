@@ -27,10 +27,10 @@ const FirstSection = () => {
           <div className="sm:flex-[0.5] ">
             <div className="flex flex-col justify-center h-full gap-[5%]">
               <p className="text-[1.3rem] mt-6 sm:mt-0 sm:text-[2.3rem] text-main-light dark:gradient-text">
-                <p className="poppins-4">
+                <span className="block poppins-4">
                   <span>Guaranteed</span> <span>Customer</span>
-                </p>
-                <p className="poppins-6">Satisfaction</p>
+                </span>
+                <span className="block poppins-6">Satisfaction</span>
               </p>
               <p className="poppins-4 text-secondary-main-light dark:text-secondary-main text-base sm:text-lg mt-4 sm:mt-0 sm:text-justify">
                 We take the time to understand your business and develop
