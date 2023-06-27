@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import Logo from "../../assets/oaks-logo.svg";
@@ -13,11 +14,10 @@ import ThemeSwitch from "../ThemeSwitch";
 const Header = ({ theme, setTheme }) => {
   const [showMenu, setShowMenu] = useState(false);
   const pathname = usePathname();
-  console.log(pathname);
 
   return (
     !pathname.includes("/studio") && (
-      <div className="w-full bg-white dark:bg-main sticky top-0 z-40">
+      <div className="w-full bg-white dark:bg-main sticky top-0 z-40 transition-[background] duration-500 ease-in-out">
         <div className="relative flex mx-auto justify-between max-w-[1440px] z-50 py-3 sm:py-5 pl-[5%] sm:pl-[10%] pr-[5%] sm:pr-[10%] items-center">
           <Link href={"/"} className="relative">
             <Image
@@ -36,7 +36,7 @@ const Header = ({ theme, setTheme }) => {
             />
           </Link>
           <div className="flex flex-1 justify-end gap-[5%] items-center ">
-            <ul className="hidden flex-1 justify-end poppins-6 text-main-light dark:text-main gap-[5%] items-center min-[980px]:flex">
+            <ul className="hidden flex-1 justify-end poppins-6 text-main-light dark:text-main gap-[5%] items-center min-[980px]:flex transition-[background] duration-500 ease-in-out">
               <Link
                 href="/"
                 className={`${
@@ -89,14 +89,14 @@ const Header = ({ theme, setTheme }) => {
                 href="/blog"
                 onClick={() => setShowMenu(false)}
                 className={`${
-                  theme !== "light" && pathname === "/blog"
+                  theme !== "light" && pathname.includes("/blog")
                     ? "glassmorphism-sec-link"
                     : ""
                 } px-[15px] py-[5px]`}
               >
                 <li
                   className={`${
-                    pathname === "/blog"
+                    pathname.includes("/blog")
                       ? "text-secondary-green"
                       : "text-main-light dark:text-main"
                   }`}
@@ -126,95 +126,110 @@ const Header = ({ theme, setTheme }) => {
             </button>
           </div>
         </div>
-        {showMenu && (
-          <div>
-            <div className="min-[980px]:hidden pt-[10vh] fixed top-0 w-full h-full z-30 bg-white dark:bg-main ">
-              <div className="flex justify-between h-full w-full flex-col gap-[5%] ">
-                <ul className="flex flex-[0.6] flex-col gap-[10vh] justify-center poppins-6 items-center mt-[10vh]">
-                  <Link
-                    href="/"
-                    onClick={() => setShowMenu(false)}
-                    className={`${
-                      theme !== "light" && pathname === "/"
-                        ? "glassmorphism-sec-link"
-                        : ""
-                    } px-[15px] py-[5px]`}
-                  >
-                    <li
+        <AnimatePresence>
+          {showMenu && (
+            <div>
+              <motion.div
+                initial={{ x: "-100vw" }}
+                whileInView={{
+                  x: 0,
+                  transition: {
+                    duration: 0.5,
+                    type: "spring",
+                    bounce: 0.4,
+                  },
+                }}
+                exit={{ x: "-100vw" }}
+                viewport={{ once: true }}
+                className="min-[980px]:hidden pt-[10vh] fixed top-0 w-full h-full z-30 bg-white dark:bg-main transition-[background] duration-500 ease-in-out"
+              >
+                <div className="flex justify-between h-full w-full flex-col gap-[5%] ">
+                  <ul className="flex flex-[0.6] flex-col gap-[10vh] justify-center poppins-6 items-center mt-[10vh]">
+                    <Link
+                      href="/"
+                      onClick={() => setShowMenu(false)}
                       className={`${
-                        pathname === "/"
-                          ? "text-secondary-green"
-                          : "text-main-light dark:text-main"
-                      }`}
+                        theme !== "light" && pathname === "/"
+                          ? "glassmorphism-sec-link"
+                          : ""
+                      } px-[15px] py-[5px]`}
                     >
-                      Home
-                    </li>
-                  </Link>
-                  <Link
-                    href="/about"
-                    onClick={() => setShowMenu(false)}
-                    className={`${
-                      theme !== "light" && pathname === "/about"
-                        ? "glassmorphism-sec-link"
-                        : ""
-                    } px-[15px] py-[5px]`}
-                  >
-                    <li
+                      <li
+                        className={`${
+                          pathname === "/"
+                            ? "text-secondary-green"
+                            : "text-main-light dark:text-main"
+                        }`}
+                      >
+                        Home
+                      </li>
+                    </Link>
+                    <Link
+                      href="/about"
+                      onClick={() => setShowMenu(false)}
                       className={`${
-                        pathname === "/about"
-                          ? "text-secondary-green"
-                          : "text-main-light dark:text-main"
-                      }`}
+                        theme !== "light" && pathname === "/about"
+                          ? "glassmorphism-sec-link"
+                          : ""
+                      } px-[15px] py-[5px]`}
                     >
-                      About Us
-                    </li>
-                  </Link>
-                  <Link
-                    href="/contact"
-                    onClick={() => setShowMenu(false)}
-                    className={`${
-                      theme !== "light" && pathname === "/contact"
-                        ? "glassmorphism-sec-link"
-                        : ""
-                    } px-[15px] py-[5px]`}
-                  >
-                    <li
+                      <li
+                        className={`${
+                          pathname === "/about"
+                            ? "text-secondary-green"
+                            : "text-main-light dark:text-main"
+                        }`}
+                      >
+                        About Us
+                      </li>
+                    </Link>
+                    <Link
+                      href="/contact"
+                      onClick={() => setShowMenu(false)}
                       className={`${
-                        pathname === "/contact"
-                          ? "text-secondary-green"
-                          : "text-main-light dark:text-main"
-                      }`}
+                        theme !== "light" && pathname === "/contact"
+                          ? "glassmorphism-sec-link"
+                          : ""
+                      } px-[15px] py-[5px]`}
                     >
-                      Contact Us
-                    </li>
-                  </Link>
-                  <Link
-                    href="/blog"
-                    onClick={() => setShowMenu(false)}
-                    className={`${
-                      theme !== "light" && pathname === "/blog"
-                        ? "glassmorphism-sec-link"
-                        : ""
-                    } px-[15px] py-[5px]`}
-                  >
-                    <li
+                      <li
+                        className={`${
+                          pathname === "/contact"
+                            ? "text-secondary-green"
+                            : "text-main-light dark:text-main"
+                        }`}
+                      >
+                        Contact Us
+                      </li>
+                    </Link>
+                    <Link
+                      href="/blog"
+                      onClick={() => setShowMenu(false)}
                       className={`${
-                        pathname === "/blog"
-                          ? "text-secondary-green"
-                          : "text-main-light dark:text-main"
-                      }`}
+                        theme !== "light" && pathname === "/blog"
+                          ? "glassmorphism-sec-link"
+                          : ""
+                      } px-[15px] py-[5px]`}
                     >
-                      Blog
-                    </li>
-                  </Link>
-                </ul>
-                <div className="block mx-auto p-10 cursor-pointer sm:block">
-                  <ThemeSwitch theme={theme} setTheme={setTheme} />
+                      <li
+                        className={`${
+                          pathname === "/blog"
+                            ? "text-secondary-green"
+                            : "text-main-light dark:text-main"
+                        }`}
+                      >
+                        Blog
+                      </li>
+                    </Link>
+                  </ul>
+                  <div className="block mx-auto p-10 cursor-pointer sm:block">
+                    <ThemeSwitch theme={theme} setTheme={setTheme} />
+                  </div>
                 </div>
-              </div>
+              </motion.div>
             </div>
-          </div>
-        )}
+          )}
+        </AnimatePresence>
       </div>
     )
   );

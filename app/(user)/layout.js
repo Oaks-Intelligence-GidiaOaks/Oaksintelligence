@@ -31,7 +31,7 @@ const Wrapper = ({ children }) => {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <head>
         <link rel="icon" type="image/png" href="/oaks-icon.png" />
       </head>

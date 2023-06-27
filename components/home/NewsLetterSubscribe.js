@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { motion } from "framer-motion";
 import { BiError } from "react-icons/bi";
 import { IoMdDoneAll } from "react-icons/io";
 import { Rings } from "react-loader-spinner";
@@ -51,7 +52,7 @@ const NewsLetter = ({ subscribe, status, message }) => {
         />
         <button
           onClick={handleSubmit}
-          className="bg-[#399944] rounded-lg py-2 px-3"
+          className="gold-gradient-bg hue-rotate-60 rounded-md py-2 px-3 transition-all duration-300 ease hover:hue-rotate-0 hover:backdrop-brightness-50"
         >
           <span className="text-main poppins-4">Subscribe</span>
         </button>

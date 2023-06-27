@@ -20,27 +20,40 @@ const RichTextComponents = {
 
   list: {
     bullet: ({ children }) => (
-      <ul className="ml-10 py-5 list-disc space-y-5">{children}</ul>
+      <ul className="ml-10 py-5 poppins-4 list-disc space-y-5">{children}</ul>
     ),
     number: ({ children }) => (
-      <ol className="mt-lg list-decimal">{children}</ol>
+      <ol className="mt-lg poppins-4 list-decimal">{children}</ol>
     ),
   },
   block: {
     h1: ({ children }) => (
-      <h1 className="text-5xl py-10 font-bold">{children}</h1>
+      <h1 className="text-5xl py-10 font-bold poppins-7 text-main-light dark:gradient-text transition-all duration-300 ease-in-out">
+        {children}
+      </h1>
     ),
     h2: ({ children }) => (
-      <h2 className="text-4xl py-10 font-bold">{children}</h2>
+      <h2 className="text-4xl py-10 font-bold poppins-7 text-main-light dark:gradient-text transition-all duration-300 ease-in-out">
+        {children}
+      </h2>
     ),
     h3: ({ children }) => (
-      <h3 className="text-3xl py-10 font-bold">{children}</h3>
+      <h3 className="text-3xl py-10 font-bold poppins-7 text-main-light dark:gradient-text transition-all duration-300 ease-in-out">
+        {children}
+      </h3>
     ),
     h4: ({ children }) => (
-      <h4 className="text-2xl py-10 font-bold">{children}</h4>
+      <h4 className="text-2xl py-10 font-bold poppins-7 text-main-light dark:gradient-text">
+        {children}
+      </h4>
+    ),
+    normal: ({ children }) => (
+      <p className="text-main-light dark:text-main poppins-4 leading-[34px] mt-4 transition-all duration-300 ease-in-out">
+        {children}
+      </p>
     ),
     blockquote: ({ children }) => (
-      <blockquote className="border-1-[#F7AB0A] border-1-4 pl-5 py-5 my-5">
+      <blockquote className="border-1-[#F7AB0A] border-1-4 pl-5 py-5 my-5 poppins-4 text-main-light dark:text-main poppins-4 leading-[34px] mt-4 transition-all duration-300 ease-in-out">
         {children}
       </blockquote>
     ),

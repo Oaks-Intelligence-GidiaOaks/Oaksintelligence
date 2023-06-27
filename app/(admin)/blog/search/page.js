@@ -10,6 +10,8 @@ import { useParams, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { BiSearch } from "react-icons/bi";
 import SearchBar from "@/components/blogs/SearchBar";
+import noResults from "@/assets/no-results.png";
+import Image from "next/image";
 
 const ITEMS_PER_PAGE = 1;
 const query = groq`
@@ -83,7 +85,7 @@ const About = async ({ searchParams }) => {
       <BlogList posts={posts.posts} />
       <div className="w-full mb-10 md:mb-20">
         <div className="flex mx-auto justify-center max-w-[1440px] py-5 px-[5%] sm:px-[10%] items-center">
-          {currentPage >= 1 ? (
+          {posts.total >= 1 ? (
             <div className="flex w-[280px] md:w-[480px] justify-between">
               {/* Prev button */}
               {currentPage > 1 ? (
@@ -93,19 +95,19 @@ const About = async ({ searchParams }) => {
                     currentPage - 1
                   }&query=${searchQuery}`}
                 >
-                  <span>Previous</span>
+                  <span className="poppins-4">Previous</span>
                 </Link>
               ) : (
                 <button
                   disabled
-                  className="block gold-gradient-bg px-3 py-1 rounded-md grayscale opacity-50 w-20"
+                  className="flex justify-center poppins-4 gold-gradient-bg px-3 py-1 rounded-md grayscale opacity-50 w-20"
                 >
                   Previous
                 </button>
               )}
 
               {/* Current page */}
-              <p className="font-bold text-main-light dark:text-main">
+              <p className="font-bold poppins-6 text-main-light dark:text-main">
                 Page {currentPage}
               </p>
 
@@ -117,20 +119,26 @@ const About = async ({ searchParams }) => {
                     currentPage + 1
                   }&query=${searchQuery}`}
                 >
-                  <span>Next</span>
+                  <span className="poppins-4">Next</span>
                 </Link>
               ) : (
                 <button
                   disabled
-                  className="block gold-gradient-bg px-3 py-1 rounded-md grayscale opacity-50 w-20"
+                  className="flex justify-center poppins-4 gold-gradient-bg px-3 py-1 rounded-md grayscale opacity-50 w-20"
                 >
                   Next
                 </button>
               )}
             </div>
           ) : (
-            <div className="min-h-screen items-center justify-center">
-              <p className="text-lg text-main-light dark:text-main">
+            <div className="mx-auto flex flex-col w-[clamp(240px,40%,600px)] items-center justify-center gap-10">
+              <Image
+                alt="no-results"
+                src={noResults}
+                className="w-full"
+                width={"40%"}
+              />
+              <p className="text-lg text-main-light dark:text-main poppins-4">
                 No results found
               </p>
             </div>

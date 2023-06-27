@@ -1,5 +1,6 @@
 "use client";
 import { useContext, useState } from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import AppContext from "@/contexts/AppContext";
 import GuyUsingPhone from "../../assets/contact/guy-using-phone.svg";
@@ -122,7 +123,17 @@ const FirstSection = () => {
   return (
     <div className="w-full">
       <div className="flex mx-auto justify-between max-w-[1440px] py-5 px-[5%] sm:px-[10%] items-center">
-        <div className="hidden sm:flex w-full p-5 min-h-[100px] items-center bg-[#F1F1F9] rounded-[30px] dark:glassmorphism-sec px-[8%] pt-[3%] pb-[5%]">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+          variants={{
+            visible: { opacity: 1, y: 0 },
+            hidden: { opacity: 0, y: 200 },
+          }}
+          className="hidden sm:flex w-full p-5 min-h-[100px] items-center bg-[#F1F1F9] rounded-[30px] dark:glassmorphism-sec px-[8%] pt-[3%] pb-[5%]"
+        >
           <div className="flex-[0.5] items-center justify-center">
             <Image
               alt="lady-using-smartphone"
@@ -253,7 +264,7 @@ const FirstSection = () => {
               </form>
             </div>
           </div>
-        </div>
+        </motion.div>
         <div className="sm:hidden w-full px-2 py-[10vh] min-h-[100px] items-center bg-[#F1F1F9] rounded-[30px] dark:glassmorphism-sec flex sm:px-[8%] sm:pt-[3%] sm:pb-[5%]">
           <div className="flex-1 ">
             <div className="flex flex-col justify-center h-full gap-[5%]">
