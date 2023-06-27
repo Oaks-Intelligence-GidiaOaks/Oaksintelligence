@@ -8,7 +8,7 @@ import rocket from "../../assets/integration/rocket.svg";
 import saas from "../../assets/integration/cpu-setting.svg";
 import saasLight from "../../assets/integration/cpu-setting-light.svg";
 import presentation from "../../assets/integration/presentation-chart.svg";
-import presentationLight from "../../assets/integration/presentation-chart-Light.svg";
+import presentationLight from "../../assets/integration/presentation-chart-light.svg";
 import monitorMobile from "../../assets/integration/monitor-mobile.svg";
 import monitorMobileLight from "../../assets/integration/monitor-mobile-light.svg";
 import phoneLight from "../../assets/integration/phone-light.svg";
