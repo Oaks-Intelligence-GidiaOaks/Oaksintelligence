@@ -41,7 +41,8 @@ const nestedItemLeft = {
 const Excellence = () => {
   return (
     <div className="w-full">
-      <div className="flex justify-between mx-auto max-w-[1440px] py-[20vmin] px-[5%] sm:px-[10%] bg-[#E9FFEC] dark:bg-[#e9ffec08] transition-[background] duration-500 ease-in-out">
+      <div className="relative overflow-hidden flex justify-between mx-auto max-w-[1440px] py-[20vmin] px-[5%] sm:px-[10%] bg-[#E9FFEC] dark:bg-[#e9ffec08] transition-[background] duration-500 ease-in-out">
+        <motion.div className="absolute -translate-y-1/4 translate-x-1/4 right-0 top-0 w-[30vw] ball-gradient h-[30vw] rounded-full" />
         <motion.div
           initial={{ opacity: 0, x: 200 }}
           whileInView={{

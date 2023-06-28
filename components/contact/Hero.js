@@ -114,7 +114,7 @@ const Hero = () => {
                   x: ["-50%", "-50%", "-50%"],
                 }}
                 transition={{ repeat: Infinity, duration: 5 }}
-                className="absolute w-[100%] z-10 left-[50%] sm:top-[200px] min-[900px]:top-[150px] min-[1100px]:top-[30px] min-[1400px]:top-[50px] -translate-x-[50%]"
+                className="absolute w-[100%] z-10 left-[50%] max-[640px]:top-3 sm:top-[200px] min-[900px]:top-[150px] min-[1100px]:top-[100px] min-[1400px]:top-[50px] -translate-x-[50%]"
               >
                 <Image alt="Ellipse" src={Ellipse} className="w-full" />
               </motion.div>

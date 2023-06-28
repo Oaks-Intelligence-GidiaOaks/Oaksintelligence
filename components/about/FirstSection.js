@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import Image from "next/image";
 import { motion } from "framer-motion";
 import clock from "../../assets/about/clock.svg";
@@ -5,7 +6,7 @@ import clock from "../../assets/about/clock.svg";
 const FirstSection = () => {
   return (
     <div className="w-full">
-      <div className="flex mx-auto justify-between max-w-[1440px] py-5 px-[5%] sm:px-[10%] items-center">
+      <div className="flex mx-auto justify-between max-w-[1440px] py-5 px-[5%] sm:px-[10%] mt-20 sm:mt-0 items-center">
         <motion.div
           initial="hidden"
           whileInView="visible"

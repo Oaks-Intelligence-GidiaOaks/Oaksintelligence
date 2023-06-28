@@ -200,6 +200,9 @@ html {
       "i ii"
       "iii iii";
   }
+  .ball-gradient {
+    background: linear-gradient(0deg, #5f9630 0%, #a6b953 100%);
+  }
   .grid-area-i {
     grid-area: i;
   }

@@ -19,7 +19,7 @@ const TwitterEmbed = () => {
           }}
           renderError={(_err) => (
             <div className="w-full flex items-center justify-center">
-              <p className="w-fit poppins-4 text-secondary-main-light dark:text-secondary-main text-base sm:text-lg mt-4 sm:mt-0 text-justify py-4">
+              <p className="p-2 w-fit poppins-4 text-secondary-main-light dark:text-secondary-main text-base sm:text-lg mt-4 sm:mt-0 text-justify py-4">
                 Could not load timeline. Please check your network and refresh
                 the page.
               </p>

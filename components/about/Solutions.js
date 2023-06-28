@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -15,7 +16,7 @@ const containerReveal = {
   },
 };
 const itemReveal = {
-  hidden: { opacity: 0, y: 100 },
+  hidden: { opacity: 0, y: 200 },
   show: {
     opacity: 1,
     y: 0,
@@ -40,12 +41,12 @@ const cardReveal = {
 
 const Solutions = () => {
   return (
-    <div className="w-full mt-[20vh]">
+    <div className="w-full md:mt-[10vh]">
       <div className="flex flex-wrap sm:flex-nowrap justify-between mx-auto max-w-[1440px] min-h-screen py-5 px-[5%] sm:px-[10%]">
         <motion.div
           variants={containerReveal}
           initial="hidden"
-          animate="show"
+          whileInView="show"
           className="flex gap-[5%] flex-col justify-center w-full sm:w-2/3 sm:h-[calc(100vh-100px)] sm:pr-[10%]"
         >
           <motion.p variants={itemReveal} className="text-[2rem]">
@@ -69,7 +70,7 @@ const Solutions = () => {
           </motion.p>
           <motion.p
             variants={itemReveal}
-            className="poppins-4 text-secondary-main-light mt-2 sm:pt-0 dark:text-secondary-main text-lg"
+            className="poppins-4 text-secondary-main-light mt-4 sm:pt-0 dark:text-secondary-main text-lg"
           >
             We're committed to delivering software solutions that are tailored
             to the specific needs of our clients. We take the time to understand
@@ -87,7 +88,7 @@ const Solutions = () => {
             variants={cardReveal}
             initial="hidden"
             whileInView="show"
-            className="relative flex justify-end items-center w-full h-full"
+            className="relative flex justify-end items-center w-full h-full mt-6 sm:mt-0"
           >
             <Image
               alt="People"

@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
 import { useContext, useState } from "react";
 import { motion } from "framer-motion";
@@ -266,7 +267,17 @@ const FirstSection = () => {
             </div>
           </div>
         </motion.div>
-        <div className="sm:hidden w-full px-2 py-[10vh] min-h-[100px] items-center bg-[#F1F1F9] rounded-[30px] dark:glassmorphism-sec flex sm:px-[8%] sm:pt-[3%] sm:pb-[5%]">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+          variants={{
+            visible: { opacity: 1, y: 0 },
+            hidden: { opacity: 0, y: 200 },
+          }}
+          className="sm:hidden w-full py-[10vh] min-h-[100px] items-center bg-[#F1F1F9] rounded-[30px] dark:glassmorphism-sec flex px-[5%] sm:px-[8%] sm:pt-[3%] sm:pb-[5%] mt-20"
+        >
           <div className="flex-1 ">
             <div className="flex flex-col justify-center h-full gap-[5%]">
               <p className="text-[1.8rem] sm:text-[2.3rem] text-main-light dark:gradient-text">
@@ -393,7 +404,7 @@ const FirstSection = () => {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
