@@ -3,6 +3,10 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 import { feedbacks } from "@/constants";
+import whiteLightBig from "@/assets/dark-home-light-big.png";
+import whiteLightSmall from "@/assets/dark-home-light-small.png";
+import greenLightSmall from "@/assets/dark-home-light-green.png";
+import Image from "next/image";
 
 const containerReveal = {
   hidden: { opacity: 0 },
@@ -57,6 +61,26 @@ const Feedback = () => {
   const [current, setCurrent] = useState(0);
   const [currentFeedback, setCurrentFeedback] = useState(0);
 
+  function shuffle(array) {
+    let currentIndex = array.length,
+      randomIndex;
+
+    // While there remain elements to shuffle.
+    while (currentIndex != 0) {
+      // Pick a remaining element.
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+
+      // And swap it with the current element.
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex],
+        array[currentIndex],
+      ];
+    }
+
+    return array;
+  }
+
   useEffect(() => {
     setCurrentFeedback(`${current * 300}`);
     console.log(`${current * 300}`);
@@ -79,8 +103,67 @@ const Feedback = () => {
           x: 0,
           transition: { duration: 1.5, type: "spring", bounce: 0.4 },
         }}
-        className="flex flex-col mx-auto justify-between max-w-[1440px] py-5 px-[5%] sm:px-[10%] items-center"
+        className="relative flex flex-col mx-auto justify-between max-w-[1440px] py-5 px-[5%] sm:px-[10%] items-center"
       >
+        <motion.div
+          initial={{ opacity: 1 }}
+          animate={{
+            opacity: [1, 1, 1],
+            y: shuffle([0, 100, 0, 80, 20, 100, 0]),
+            x: shuffle([-50, 40, 0, -60, 100, 20, -50]),
+          }}
+          transition={{
+            repeat: Infinity,
+            duration: 30,
+          }}
+          className="hidden z-10 w-full h-full absolute top-0 left-0 sm:block"
+        >
+          <motion.div
+            initial={{ opacity: 1 }}
+            animate={{
+              opacity: [1, 1, 1],
+              y: shuffle([0, 100, 0, 80, 20, 100, 0]),
+              x: shuffle([-50, 40, 0, -60, 100, 20, -50]),
+            }}
+            transition={{
+              repeat: Infinity,
+              duration: 30,
+            }}
+            className="absolute top-[10%] blur-xl right-[40%]"
+          >
+            <div className="w-8 h-8 bg-green-800 "></div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 1 }}
+            animate={{
+              opacity: [1, 1, 1],
+              y: shuffle([0, 100, 0, 80, 20, 100, 0]),
+              x: shuffle([-50, 40, 0, -60, 100, 20, -50]),
+            }}
+            transition={{
+              repeat: Infinity,
+              duration: 30,
+            }}
+            className="absolute top-[0] right-[10%]"
+          >
+            <Image src={whiteLightBig} alt="light" />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 1 }}
+            animate={{
+              opacity: [1, 1, 1],
+              y: [0, 100, 0, 80, 20, 100, 0],
+              x: [-50, 40, 0, -60, 100, 20, -50],
+            }}
+            transition={{
+              repeat: Infinity,
+              duration: 30,
+            }}
+            className="absolute top-[40%] left-[10%]"
+          >
+            <Image src={whiteLightSmall} alt="light" />
+          </motion.div>
+        </motion.div>
         <motion.div
           variants={containerReveal}
           initial="hidden"
