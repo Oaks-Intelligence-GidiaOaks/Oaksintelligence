@@ -1,5 +1,6 @@
 import Link from "next/link";
 import notfound from "@/assets/not-found.png";
+import Image from "next/image";
 
 export default function NotFound() {
   return (
