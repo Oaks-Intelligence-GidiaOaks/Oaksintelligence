@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import Image from "next/image";
 import ladyUsingPhone from "../../assets/firstSection/lady-on-phone.svg";
 import { motion } from "framer-motion";
