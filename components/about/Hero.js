@@ -103,7 +103,7 @@ const Hero = () => {
 
             <Link
               href={"/contact"}
-              className="flex justify-center sm:w-[45%] min-w-[180px] px-4 sm:px-0 py-3 flex-1 sm:flex-none rounded-lg border border-solid border-secondary-green hover:-hue-rotate-[45deg] transition-all duration-300 ease"
+              className="flex justify-center sm:w-[45%] min-w-[180px] px-4 sm:px-0 py-3 sm:flex-none rounded-lg border border-solid border-secondary-green hover:-hue-rotate-[45deg] transition-all duration-300 ease"
             >
               <motion.button variants={nestedItemLeft}>
                 <span className="poppins-4 text-secondary-green text-base">
@@ -120,10 +120,14 @@ const Hero = () => {
             opacity: 1,
             transition: { duration: 1, type: "spring", bounce: 0.4 },
           }}
-          className="w-full overflow-visible  sm:w-1/2 mt-6 sm:mt-0 sm:h-[calc(100vh-100px)] flex justify-center items-center"
+          className="w-full overflow-visible sm:w-1/2 mt-6 sm:mt-0 sm:h-[calc(100vh-100px)] flex justify-center items-center"
         >
           <div className="relative overflow-hidden flex justify-end items-center w-full h-full">
-            <Image alt="People" src={People} className=" w-[100%] z-20" />
+            <Image
+              alt="People"
+              src={People}
+              className="relative w-[100%] z-20 min-[1300px]:left-[4%]"
+            />
             <div className="overflow-hidden w-full h-full">
               <motion.div
                 initial={{ opacity: 0, x: "-50%" }}
@@ -133,7 +137,7 @@ const Hero = () => {
                   x: ["-50%", "-50%", "-50%"],
                 }}
                 transition={{ repeat: Infinity, duration: 5 }}
-                className="absolute w-[100%] z-10 left-[50%] max-[1000px]:top-[100px] top-[50px] -translate-x-[50%]"
+                className="absolute w-[100%] z-10 left-[50%] max-[1300px]:top-[100px] max-[1000px]:top-[150px] max-[800px]:top-[200px] max-[640px]:top-3 top-[50px] -translate-x-[50%]"
               >
                 <Image alt="Ellipse" src={Ellipse} className="w-full" />
               </motion.div>

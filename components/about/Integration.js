@@ -115,7 +115,7 @@ const Integration = () => {
                   theme === "light"
                     ? "w-[78%] top-0 block"
                     : "w-[65%] top-6 hidden"
-                } absolute z-30 left-1/2 -translate-x-1/2`}
+                } absolute z-30 max-[774px]:top-16 left-1/2 -translate-x-1/2`}
               />
               <Image
                 alt="phone"
@@ -124,7 +124,7 @@ const Integration = () => {
                   theme === "light"
                     ? "w-[78%] top-0 hidden"
                     : "w-[65%] top-6 block"
-                } absolute z-30 left-1/2 -translate-x-1/2`}
+                } absolute z-30 max-[674px]:top-32 max-[704px]:top-20 max-[774px]:top-16 left-1/2 -translate-x-1/2`}
               />
               <div className="h-[90%] w-[100%] glassmorphism bg-[#F1F1F9] shadow-none dark:glassmorphism-sec rounded-[25px]"></div>
             </div>
@@ -281,7 +281,7 @@ const Integration = () => {
         </div>
       </div>
       <div className="sm:hidden relative flex-col mx-auto justify-between max-w-[1440px] py-5 px-[10%] items-center overflow-visible mt-[10vmin] min-[520px] mb-[10vmin]">
-        <div className="relative block min-[640px]:hidden min-[380px]:mt-[10vh] min-[480px]:mt-[15vh] min-[520px]:mt-[2vh] sm:my-[20vh] z-10 w-full h-auto glassmorphism bg-[#F1F1F9] shadow-none dark:glassmorphism-sec rounded-[25px] px-8 py-6">
+        <div className="relative block min-[640px]:hidden max-[340px]:-mt-[5vh] min-[380px]:mt-[10vh] min-[480px]:mt-[15vh] min-[520px]:mt-[2vh] sm:my-[20vh] z-10 w-full h-auto glassmorphism bg-[#F1F1F9] shadow-none dark:glassmorphism-sec rounded-[25px] px-8 py-6">
           <div className="w-full flex justify-between">
             <div className="flex flex-col gap-1 items-center">
               <Image alt="saas" src={theme === "light" ? saasLight : saas} />

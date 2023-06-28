@@ -10,6 +10,8 @@ import dashboard from "../../assets/hero/dashboard.svg";
 import Glow from "../../assets/solutions/glow.svg";
 import AppContext from "@/contexts/AppContext";
 import dashboardWide from "@/assets/dashboardMockup/dashboard.svg";
+import whiteLightBig from "@/assets/dark-home-light-big.png";
+import whiteLightSmall from "@/assets/dark-home-light-small.png";
 
 const containerReveal = {
   hidden: { opacity: 0 },
@@ -65,6 +67,26 @@ const nestedItemRight = {
 
 const Hero = () => {
   const { theme } = useContext(AppContext);
+
+  function shuffle(array) {
+    let currentIndex = array.length,
+      randomIndex;
+
+    // While there remain elements to shuffle.
+    while (currentIndex != 0) {
+      // Pick a remaining element.
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+
+      // And swap it with the current element.
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex],
+        array[currentIndex],
+      ];
+    }
+
+    return array;
+  }
   return (
     <div className="w-full">
       <AnimatePresence>
@@ -99,7 +121,7 @@ const Hero = () => {
               </motion.p>
               <motion.p
                 variants={itemReveal}
-                className="poppins-4 text-secondary-main-light dark:text-secondary-main text-lg text-justify mt-4 sm:mt-0"
+                className="poppins-4 text-secondary-main-light dark:text-secondary-main text-lg sm:text-justify mt-4 sm:mt-0"
               >
                 Transform your business with software solutions designed
                 specifically for you. At Oaks Intelligence, we listen to your
@@ -169,7 +191,7 @@ const Hero = () => {
               src={PhoneCircle}
               className="absolute top-[50%] left-0 -translate-y-[30%] w-full z-10 hidden sm:block"
             /> */}
-                <div className="sm:absolute sm:top-[35%] sm:left-[45%] sm:-translate-x-[35%] sm:-translate-y-[30%] w-[100vw] sm:w-[100%] z-20">
+                <div className="sm:absolute sm:top-[35%] sm:left-[45%] sm:-translate-x-[35%] sm:-translate-y-[30%] w-[100%] sm:w-[100%] z-20">
                   <Image alt="dashboard" src={dashboard} className="w-[100%]" />
                 </div>
                 {/* <Image
@@ -189,8 +211,52 @@ const Hero = () => {
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="flex flex-col justify-start sm:justify-between mx-auto max-w-[1440px] sm:min-h-screen py-5 px-[5%] sm:px-[10%]"
+            className="relative flex flex-col justify-start sm:justify-between mx-auto max-w-[1440px] sm:min-h-screen py-5 px-[5%] sm:px-[10%]"
           >
+            <motion.div
+              initial={{ opacity: 1 }}
+              animate={{
+                opacity: [1, 1, 1],
+                y: shuffle([0, 100, 0, 80, 20, 100, 0]),
+                x: shuffle([-50, 40, 0, -60, 100, 20, -50]),
+              }}
+              transition={{
+                repeat: Infinity,
+                duration: 30,
+              }}
+              className="hidden z-10 w-full h-full absolute top-0 left-0 sm:block"
+            >
+              <motion.div
+                initial={{ opacity: 1 }}
+                animate={{
+                  opacity: [1, 1, 1],
+                  y: shuffle([0, 100, 0, 80, 20, 100, 0]),
+                  x: shuffle([-50, 40, 0, -60, 100, 20, -50]),
+                }}
+                transition={{
+                  repeat: Infinity,
+                  duration: 30,
+                }}
+                className="absolute top-[0] right-[10%]"
+              >
+                <Image src={whiteLightBig} alt="light" />
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 1 }}
+                animate={{
+                  opacity: [1, 1, 1],
+                  y: [0, 100, 0, 80, 20, 100, 0],
+                  x: [-50, 40, 0, -60, 100, 20, -50],
+                }}
+                transition={{
+                  repeat: Infinity,
+                  duration: 30,
+                }}
+                className="absolute top-[40%] left-[10%]"
+              >
+                <Image src={whiteLightSmall} alt="light" />
+              </motion.div>
+            </motion.div>
             <motion.div
               variants={containerReveal}
               initial="hidden"
@@ -214,7 +280,7 @@ const Hero = () => {
               </motion.p>
               <motion.p
                 variants={itemReveal}
-                className="poppins-4 w-full max-w-[720px] sm:text-center sm:mx-auto text-secondary-main-light dark:text-secondary-main text-lg text-justify mt-4 sm:mt-4"
+                className="poppins-4 w-full max-w-[720px] sm:text-center sm:mx-auto text-secondary-main-light dark:text-secondary-main text-lg mt-4 sm:mt-4"
               >
                 Transform your business with software solutions designed
                 specifically for you. At Oaks Intelligence, we listen to your
@@ -230,7 +296,7 @@ const Hero = () => {
                   className="flex justify-center w-full sm:w-[45%] max-w-[200px] gold-gradient-bg hue-rotate-60 sepia-[20%] brightness-[80%] px-3 transition-all duration-300 ease hover:hue-rotate-0 hover:sepia-0 hover:brightness-100 hover:backdrop-brightness-50 flex-1 sm:flex-none py-3 rounded-lg"
                 >
                   <motion.button variants={nestedItemLeft} className="">
-                    <span className="poppins-4 text-main-light text-base max-[460px]:text-sm">
+                    <span className="poppins-4 text-black text-base max-[460px]:text-sm">
                       Learn More
                     </span>
                   </motion.button>
@@ -251,7 +317,7 @@ const Hero = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 3 }}
-              className="mt-8 sm:mt-0 w-full sm:w-full flex justify-center items-center"
+              className="relative z-20 mt-8 sm:mt-0 w-full sm:w-full flex justify-center items-center"
             >
               <motion.div
                 initial={{ opacity: 0 }}
@@ -273,7 +339,7 @@ const Hero = () => {
                   initial={{ opacity: 0, y: 100 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 3 }}
-                  className="w-full my-9 flex justify-center"
+                  className="w-full my-9 flex justify-center relative z-10"
                 >
                   <Image
                     alt="dashboard"

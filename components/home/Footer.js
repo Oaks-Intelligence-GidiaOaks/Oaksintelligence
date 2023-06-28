@@ -32,7 +32,7 @@ const Footer = () => {
         className="flex relative flex-col mx-auto justify-between max-w-[1440px] py-5 px-[5%] items-center overflow-visible"
       >
         {pathname !== "/terms" && <TwitterEmbed />}
-        <div className="flex flex-wrap flex-row gap-y-[50px] w-full justify-center gap-[clamp(20px,5vw,30px)] mt-10 min-[524px]:justify-between">
+        <div className="flex flex-wrap flex-row gap-y-[50px] w-full gap-[clamp(20px,5vw,30px)] mt-10 min-[524px]:justify-between">
           <div className="flex flex-col w-[80%] min-w-[240px] gap-6 min-[524px]:w-[21%]">
             <Link href={"/"}>
               <Image alt="company-logo" src={Logo} className="max-w-[150px]" />
