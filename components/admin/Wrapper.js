@@ -12,8 +12,11 @@ export const metadata = {
 
 export const Wrapper = ({ children }) => {
   const pathname = usePathname();
-  const cachedTheme = localStorage.getItem("oi-theme");
-  console.log(cachedTheme);
+  const cachedTheme =
+    typeof window !== "undefined"
+      ? window.localStorage.getItem("oi-theme")
+      : "light";
+
   const [theme, setTheme] = useState(cachedTheme ? cachedTheme : "light");
   const setGlobalTheme = (value) => {
     setTheme(value);

@@ -5,10 +5,7 @@ const AppContext = createContext();
 
 // eslint-disable-next-line react/prop-types
 export function AppProvider({ children }) {
-  const [theme, setTheme] = useState(
-    // localStorage ? localStorage?.getItem("oi-theme") :
-    "light"
-  );
+  const [theme, setTheme] = useState("light");
 
   // useEffect(() => {
   //   const cachedTheme = localStorage.getItem("oi-theme");

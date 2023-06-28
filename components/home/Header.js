@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useLayoutEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
@@ -10,10 +10,18 @@ import { BsFillMoonStarsFill, BsFillSunFill } from "react-icons/bs";
 import { HiMenu } from "react-icons/hi";
 import { IoClose } from "react-icons/io5";
 import ThemeSwitch from "../ThemeSwitch";
+import AppContext from "@/contexts/AppContext";
 
 const Header = ({ theme, setTheme }) => {
   const [showMenu, setShowMenu] = useState(false);
   const pathname = usePathname();
+
+  useLayoutEffect(() => {
+    const cachedTheme = localStorage.getItem("oi-theme")
+      ? localStorage.getItem("oi-theme")
+      : "light";
+    setTheme(cachedTheme);
+  }, [setTheme]);
 
   return (
     !pathname.includes("/studio") && (
