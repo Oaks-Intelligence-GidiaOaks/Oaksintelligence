@@ -168,7 +168,7 @@ const Feedback = () => {
           variants={containerReveal}
           initial="hidden"
           whileInView="show"
-          className="w-full min-h-[100px] pt-[7%] pb-[5%]"
+          className="relative z-20 w-full min-h-[100px] pt-[7%] pb-[5%]"
         >
           <motion.p
             variants={itemReveal}

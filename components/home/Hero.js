@@ -262,7 +262,7 @@ const Hero = () => {
               initial="hidden"
               animate="show"
               exit="hidden"
-              className="flex gap-[5%] flex-col justify-start sm:justify-center w-full mt-[5vh] pt-[5vh] sm:mt-0 sm:my-[10vh] pr-[5%]"
+              className="flex relative z-20 gap-[5%] flex-col justify-start sm:justify-center w-full mt-[5vh] pt-[5vh] sm:mt-0 sm:my-[10vh] pr-[5%]"
             >
               <motion.p
                 variants={itemReveal}
