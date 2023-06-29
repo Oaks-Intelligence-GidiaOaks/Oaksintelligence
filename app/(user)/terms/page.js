@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
 import React, { useContext, useLayoutEffect } from "react";
 import Hero from "@/components/contact/Hero";
