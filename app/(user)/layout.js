@@ -4,9 +4,11 @@ import Header from "../../components/home/Header";
 import "./globals.css";
 import AppContext, { AppProvider } from "@/contexts/AppContext";
 import Footer from "@/components/home/Footer";
+import NewsLetterModal from "@/components/NewsLetterModal";
 
 const Wrapper = ({ children }) => {
-  const { theme, setTheme } = useContext(AppContext);
+  const { theme, setTheme, showNewsletter, setShowNewsletter } =
+    useContext(AppContext);
 
   useEffect(() => {
     theme === "dark"
@@ -18,6 +20,7 @@ const Wrapper = ({ children }) => {
   return (
     <>
       <Header theme={theme} setTheme={setTheme} />
+      {/* <NewsLetterModal /> */}
       {children}
       <Footer />
     </>
@@ -30,7 +33,7 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="icon" type="image/png" href="/oaks-icon.png" />
         <title>Oaks Intelligence</title>
-        <meta charset="UTF-8" />
+        <meta charSet="UTF-8" />
         <meta name="description" content="Innovative Tech Company." />
       </head>
       <body>
