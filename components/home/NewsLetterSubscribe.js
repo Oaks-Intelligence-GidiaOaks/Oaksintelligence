@@ -7,11 +7,15 @@ import { Rings } from "react-loader-spinner";
 import MailchimpSubscribe from "react-mailchimp-subscribe";
 import AppContext from "@/contexts/AppContext";
 
-export const NewsLetter = ({ subscribe, status, message, isHome }) => {
+export const NewsLetter = ({
+  subscribe,
+  status,
+  message,
+  isHome,
+  setShowNewsletter,
+}) => {
   const [email, setEmail] = useState("");
   const [subscribeStatus, setSubscribeStatus] = useState(status);
-
-  // const { setShowNewsletter } = useContext(AppContext);
 
   const getMessage = (message) => {
     if (!message) {
@@ -83,7 +87,7 @@ export const NewsLetter = ({ subscribe, status, message, isHome }) => {
           </div>
         )}
         {status === "success" && (
-          <div className="flex items-start justify-start pt-1">
+          <div className="flex items-start justify-start pt-1 text-transparent">
             <IoMdDoneAll color="#399944" className="flex-[0.1] mt-[3px]" />
             <p
               className="flex-[0.9] text-[#399944]"
