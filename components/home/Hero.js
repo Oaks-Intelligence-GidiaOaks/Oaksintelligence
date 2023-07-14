@@ -264,7 +264,7 @@ const Hero = () => {
               exit="hidden"
               className="flex relative z-20 gap-[5%] flex-col justify-start sm:justify-center w-full mt-[5vh] pt-[5vh] sm:mt-0 sm:my-[10vh] pr-[5%]"
             >
-              <motion.p
+              <motion.div
                 variants={itemReveal}
                 className="flex sm:justify-center gap-x-3 flex-wrap text-[1.5rem] sm:text-[2.5rem] "
               >
@@ -277,7 +277,7 @@ const Hero = () => {
                 <p className="text-main-light dark:text-main poppins-7">
                   Solutions Provider
                 </p>
-              </motion.p>
+              </motion.div>
               <motion.p
                 variants={itemReveal}
                 className="poppins-4 w-full max-w-[720px] sm:text-center sm:mx-auto text-secondary-main-light dark:text-secondary-main text-lg mt-4 sm:mt-4"

@@ -122,13 +122,13 @@ const Hero = () => {
           }}
           className="w-full overflow-visible sm:w-1/2 mt-6 sm:mt-0 sm:h-[calc(100vh-100px)] flex justify-center items-center"
         >
-          <div className="relative overflow-hidden flex justify-end items-center w-full h-full">
+          <div className="relative overflow-y-hidden flex justify-end items-center w-full h-full">
             <Image
               alt="People"
               src={People}
-              className="relative w-[100%] z-20 min-[1300px]:left-[4%]"
+              className="relative w-[95%] z-20 min-[1300px]:left-[0%]"
             />
-            <div className="overflow-hidden w-full h-full">
+            <div className="absolute overflow-hidden w-full h-full">
               <motion.div
                 initial={{ opacity: 0, x: "-50%" }}
                 whileInView={{
