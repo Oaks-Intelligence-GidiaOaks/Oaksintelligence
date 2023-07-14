@@ -102,7 +102,7 @@ const Footer = () => {
           </div>
           <div className="flex flex-col w-[80%] min-w-[240px] gap-6 min-[524px]:w-[21%]">
             <p className="poppins-6 text-white text-xl">Address</p>
-            <p className="flex gap-2 items-center">
+            {/* <p className="flex gap-2 items-center">
               <BsFillTelephoneFill
                 size={18}
                 color="#B7B7B7"
@@ -111,7 +111,7 @@ const Footer = () => {
               <span className="poppins-4 text-main text-base text-justify">
                 +012 345 67890
               </span>
-            </p>
+            </p> */}
             <p className="flex gap-2 items-center">
               <MdEmail
                 size={18}
