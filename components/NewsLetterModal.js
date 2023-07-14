@@ -63,6 +63,7 @@ const NewsLetterModal = () => {
                     status={status}
                     message={message}
                     isHome={true}
+                    setShowNewsletter={setShowNewsletter}
                   />
                 )}
               ></MailchimpSubscribe>
