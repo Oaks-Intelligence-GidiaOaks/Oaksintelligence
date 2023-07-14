@@ -6,8 +6,6 @@ const ThemeSwitch = ({ theme, setTheme }) => {
     <div
       className="flex items-center justify-center h-7 w-[74px] rounded-[14px] gold-gradient-bg dark:light-gradient-bg"
       onClick={() => {
-        console.log("classlist:", document.documentElement.classList);
-
         document.documentElement.classList.contains("dark")
           ? document.documentElement.classList.remove("dark")
           : document.documentElement.classList.add("dark");
