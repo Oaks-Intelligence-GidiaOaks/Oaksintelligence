@@ -1,12 +1,12 @@
 "use client";
 import AppContext from "@/contexts/AppContext";
 import React, { useContext, useState } from "react";
-import NewsLetterSubscribe from "../home/NewsLetterSubscribe";
 import { GrClose } from "react-icons/gr";
 import newsletterBg from "@/assets/newsletter-bg.jpg";
 import Image from "next/image";
 import { IoClose } from "react-icons/io5";
 import { AnimatePresence, motion } from "framer-motion";
+import NewsLetterSubscribe from "../SecondaryNewsletter";
 
 function NewsletterBanner() {
   const [showModal, setShowModal] = useState(false);
@@ -35,7 +35,7 @@ function NewsletterBanner() {
       <hr className="border-[#f7ab0a]" />
       {/* Subscribe modal */}
       <AnimatePresence>
-        {showModal && (
+        {/* {showModal && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, transition: { duration: 1 } }}
@@ -61,7 +61,7 @@ function NewsletterBanner() {
               </div>
             </motion.div>
           </motion.div>
-        )}
+        )} */}
       </AnimatePresence>
     </div>
   );

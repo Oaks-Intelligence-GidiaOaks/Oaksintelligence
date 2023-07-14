@@ -5,6 +5,7 @@ import "./globals.css";
 import AppContext, { AppProvider } from "@/contexts/AppContext";
 import Footer from "@/components/home/Footer";
 import NewsLetterModal from "@/components/NewsLetterModal";
+import { AnimatePresence } from "framer-motion";
 
 const Wrapper = ({ children }) => {
   const { theme, setTheme, showNewsletter, setShowNewsletter } =
@@ -20,7 +21,7 @@ const Wrapper = ({ children }) => {
   return (
     <>
       <Header theme={theme} setTheme={setTheme} />
-      {/* <NewsLetterModal /> */}
+      <NewsLetterModal />
       {children}
       <Footer />
     </>

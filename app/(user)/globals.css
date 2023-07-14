@@ -8,6 +8,9 @@ html {
   --scroll-behavior: smooth !important;
   scroll-behavior: smooth !important;
 }
+body {
+  overflow-x: hidden;
+}
 
 @layer components {
   /* * {
@@ -230,5 +233,15 @@ html {
   .scrollbar-hidden::-webkit-scrollbar-thumb,
   .scrollbar-hidden::-webkit-scrollbar- {
     appearance: none;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    appearance: none;
+    display: none;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .inner-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
   }
 }

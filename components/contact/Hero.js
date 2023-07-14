@@ -105,7 +105,7 @@ const Hero = () => {
               src={Programmer}
               className="relative right-[10%] w-[100%] z-20"
             />
-            <div className="overflow-hidden w-full h-full">
+            <div className="absolute overflow-y-hidden w-full h-full">
               <motion.div
                 initial={{ opacity: 0, x: "-50%" }}
                 whileInView={{
