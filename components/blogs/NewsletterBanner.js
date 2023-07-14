@@ -7,6 +7,7 @@ import Image from "next/image";
 import { IoClose } from "react-icons/io5";
 import { AnimatePresence, motion } from "framer-motion";
 import NewsLetterSubscribe from "../SecondaryNewsletter";
+import BlogNewsletterModal from "../BlogNewsletterModal";
 
 function NewsletterBanner() {
   const [showModal, setShowModal] = useState(false);
@@ -24,7 +25,9 @@ function NewsletterBanner() {
           </p>
           <div className="flex justify-end items-center mt-4">
             <button
-              onClick={() => setShowModal(true)}
+              onClick={() => {
+                setShowModal(true);
+              }}
               className="py-2 px-4 dark:bg-main bg-white dark:text-white text-main-light rounded-3xl hover:bg-[#6FBF21] hover:text-white dark:hover:bg-[#6FBF21] dark:hover:text-main-light transition-all duration-300 ease-in-out"
             >
               <span className="poppins-4 text-base">Sign up now</span>
@@ -35,33 +38,7 @@ function NewsletterBanner() {
       <hr className="border-[#f7ab0a]" />
       {/* Subscribe modal */}
       <AnimatePresence>
-        {/* {showModal && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1, transition: { duration: 1 } }}
-            exit={{ opacity: 0 }}
-            className="flex items-center justify-center fixed top-0 left-0 z-50 backdrop-blur-md w-full h-screen overflow-y-scroll"
-          >
-            <motion.div
-              initial={{ opacity: 0, y: 100 }}
-              animate={{ opacity: 1, y: 0, transition: { duration: 1 } }}
-              exit={{ opacity: 0 }}
-              className="relative rounded-xl overflow-hidden gap-10 max-w-[360px] h-fit flex flex-col items-center justify-center p-6 pb-10 "
-            >
-              <div className="absolute brightness-[30%]  bg-[url(https://img.freepik.com/free-vector/background-realistic-abstract-technology-particle_23-2148431735.jpg?w=900&t=st=1687772731~exp=1687773331~hmac=150e6abd6370800cdaaeac28ee000307b6e75f08511755a9f84d761919f2f1ef)] top-0 left-0 w-full h-full pb-10"></div>
-              <div className="relative z-50  w-full flex justify-end">
-                <IoClose
-                  onClick={() => setShowModal(false)}
-                  size={28}
-                  className="text-[#ffffff] hover:text-[#f7ab0a] transition-all duration-300 ease-in-out cursor-pointer"
-                />
-              </div>
-              <div className="relative z-50 flex mb-10 items center justify-center">
-                <NewsLetterSubscribe />
-              </div>
-            </motion.div>
-          </motion.div>
-        )} */}
+        {showModal && <BlogNewsletterModal setShowModal={setShowModal} />}
       </AnimatePresence>
     </div>
   );
