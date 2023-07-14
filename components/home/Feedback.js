@@ -83,7 +83,6 @@ const Feedback = () => {
 
   useEffect(() => {
     setCurrentFeedback(`${current * 300}`);
-    console.log(`${current * 300}`);
   }, [current]);
 
   const tailwindGradients = [
@@ -249,7 +248,6 @@ const Feedback = () => {
             size={20}
             color="#ffffff"
             onClick={() => {
-              console.log(`${current * 300}px`);
               setCurrent((prev) => prev + 1);
             }}
             className={`${

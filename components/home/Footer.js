@@ -3,14 +3,14 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import React from "react";
 import Logo from "../../assets/oaks-logo.svg";
-import { GrTwitter, GrYoutube } from "react-icons/gr";
+import { GrInstagram, GrTwitter, GrYoutube } from "react-icons/gr";
 import { FaFacebook, FaLinkedinIn } from "react-icons/fa";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
 import { IoLocationOutline } from "react-icons/io5";
 import { BiChevronRight } from "react-icons/bi";
 import NewsLetterSubscribe from "./NewsLetterSubscribe";
-import TwitterEmbed from "../TwitterEmbed";
+import SocialMediaEmbed from "../SocialMediaEmbed";
 import { usePathname } from "next/navigation";
 
 const Footer = () => {
@@ -29,10 +29,10 @@ const Footer = () => {
             bounce: 0.4,
           },
         }}
-        className="flex relative flex-col mx-auto justify-between max-w-[1440px] py-5 px-[5%] items-center overflow-visible"
+        className="flex relative flex-col mx-auto justify-between max-w-[1440px] py-5 items-center overflow-visible"
       >
-        {pathname !== "/terms" && <TwitterEmbed />}
-        <div className="flex flex-wrap flex-row gap-y-[50px] w-full gap-[clamp(20px,5vw,30px)] mt-10 min-[524px]:justify-between">
+        {pathname !== "/terms" && <SocialMediaEmbed />}
+        <div className="flex flex-wrap flex-row gap-y-[50px] px-[5%] w-full gap-[clamp(20px,5vw,30px)] mt-10 min-[524px]:justify-between">
           <div className="flex flex-col w-[80%] min-w-[240px] gap-6 min-[524px]:w-[21%]">
             <Link href={"/"}>
               <Image alt="company-logo" src={Logo} className="max-w-[150px]" />
@@ -42,7 +42,7 @@ const Footer = () => {
               business needs.
             </p>
             <div className="flex gap-8">
-              <Link href="#">
+              <Link href="https://twitter.com/Oaksintel">
                 <motion.p
                   initial={{ color: "#B7B7B7", scale: 1 }}
                   whileHover={{
@@ -66,19 +66,27 @@ const Footer = () => {
                   <FaFacebook size={18} />
                 </motion.p>
               </Link>
-              <Link href="#">
+              <Link href="https://www.instagram.com/oaksintel/">
                 <motion.p
-                  initial={{ color: "#B7B7B7", scale: 1 }}
+                  initial={{
+                    color: "#B7B7B7",
+                    scale: 1,
+                    background:
+                      "linear-gradient(to right top, #ffff0000, #ff000000, #80008000 50%)",
+                    borderRadius: "6px",
+                  }}
                   whileHover={{
-                    color: "red",
+                    color: "white",
                     scale: 1.2,
+                    background:
+                      "linear-gradient(to right top, #ffff00, #ff0000, #800080 50%)",
                     transition: { duration: 0.3, type: "spring", bounce: 0.6 },
                   }}
                 >
-                  <GrYoutube size={18} />
+                  <GrInstagram size={18} />
                 </motion.p>
               </Link>
-              <Link href="#">
+              <Link href="https://www.linkedin.com/company/oaks-intelligence-limited/">
                 <motion.p
                   initial={{ color: "#B7B7B7", scale: 1 }}
                   whileHover={{
@@ -94,22 +102,34 @@ const Footer = () => {
           </div>
           <div className="flex flex-col w-[80%] min-w-[240px] gap-6 min-[524px]:w-[21%]">
             <p className="poppins-6 text-white text-xl">Address</p>
-            <p className="flex gap-2 items-center">
-              <BsFillTelephoneFill size={18} color="#B7B7B7" />
+            {/* <p className="flex gap-2 items-center">
+              <BsFillTelephoneFill
+                size={18}
+                color="#B7B7B7"
+                className="block min-w-[18px] min-h-[18px]"
+              />
               <span className="poppins-4 text-main text-base text-justify">
                 +012 345 67890
               </span>
-            </p>
+            </p> */}
             <p className="flex gap-2 items-center">
-              <MdEmail size={18} color="#B7B7B7" />
+              <MdEmail
+                size={18}
+                color="#B7B7B7"
+                className="block min-w-[18px] min-h-[18px]"
+              />
               <span className="poppins-4 text-main text-base text-justify">
-                info@example.com
+                info@oaksintelligence.co
               </span>
             </p>
-            <p className="flex gap-2 items-center">
-              <IoLocationOutline size={18} color="#B7B7B7" />
-              <span className="poppins-4 text-main text-base text-justify">
-                123 Street, New York, USA
+            <p className="flex gap-2 items-start">
+              <IoLocationOutline
+                size={18}
+                color="#B7B7B7"
+                className="block min-w-[18px] min-h-[18px]"
+              />
+              <span className="poppins-4 text-main text-base block ">
+                27 Iwaya Road, Onike-Sabo, Yaba, Lagos, Nigeria
               </span>
             </p>
           </div>
@@ -196,8 +216,11 @@ const Footer = () => {
           </div>
           <NewsLetterSubscribe />
         </div>
-        <hr className="border-gray-800 w-full  mt-10 mb-5" />
-        <p className="poppins-4 text-center text-main md:text-[15px]">
+
+        <div className="px-[5%] w-full">
+          <hr className="border-gray-800 w-full mt-10 mb-5" />
+        </div>
+        <p className="poppins-4  px-[5%] text-center text-main md:text-[15px]">
           &copy; <span className="text-[#399944]">Oaks Intelligence </span>
           {new Date().getFullYear()}. All Rights Reserved.
         </p>

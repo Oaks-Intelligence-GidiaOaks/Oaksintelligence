@@ -4,6 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  overflow-x: hidden;
+}
+
 @layer components {
   /* * {
     transition: background 300ms ease, opacity 300ms ease;
@@ -219,5 +223,15 @@
   .scrollbar-hidden::-webkit-scrollbar-thumb,
   .scrollbar-hidden::-webkit-scrollbar- {
     appearance: none;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    appearance: none;
+    display: none;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
   }
 }

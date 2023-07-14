@@ -3,7 +3,6 @@ import nodemailer from "nodemailer";
 
 export async function POST(request) {
   const body = await request.json();
-  console.log(body);
 
   await transporter.sendMail({
     ...mailOptions,
