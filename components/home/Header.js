@@ -19,7 +19,7 @@ const Header = ({ theme, setTheme }) => {
   useLayoutEffect(() => {
     const cachedTheme = localStorage.getItem("oi-theme")
       ? localStorage.getItem("oi-theme")
-      : "light";
+      : "dark";
     setTheme(cachedTheme);
   }, [setTheme]);
 

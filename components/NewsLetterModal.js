@@ -47,13 +47,12 @@ const NewsLetterModal = () => {
           >
             <div className="flex flex-col gap-4 w[clamp(680px,90%,240px)] min-[680px]:w-[50%] ">
               <p className="font-semibold dark:gradient-text text-main-light text-2xl poppins-7">
-                Join Our Newsletter
+                Join Our EcoWeather Newsletter
               </p>
               <p className="poppins-4 dark:text-secondary-main text-secondary-main-light">
-                Stay in the loop with exclusive updates, insider tips, and
-                exciting surprises on our products.
+                🌿 Stay Ahead of the Financial Forecast and Elevate Your
+                Financial Intelligence with Ecoweather! 🌦️
                 <br />
-                Subscribe to our newsletter and be the first to know!
               </p>
               <MailchimpSubscribe
                 url={url}
