@@ -107,8 +107,11 @@ export const NewsLetter = ({
     <div className="flex flex-col w-[21%] min-w-[240px] gap-4">
       <p className="poppins-6 text-white text-xl mb-2">Newsletter</p>
       <p className="poppins-4 text-main text-base">
-        Sign up for our newsletter and stay up to date with technology news
-        trends
+        <p className="poppins-4 dark:text-secondary-main text-secondary-main-light">
+          Sign up for our Ecoweather Newsletter to stay ahead of the financial
+          forecast and elevate your financial intelligence.
+          <br />
+        </p>
       </p>
       <div className="border border-solid border-main rounded-lg p-[6px] flex flex-col justify-between">
         <input

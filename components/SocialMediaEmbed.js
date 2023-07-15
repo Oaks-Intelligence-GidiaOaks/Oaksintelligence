@@ -62,14 +62,14 @@ const SocialMediaEmbed = () => {
       <div className="relative w-full my-10">
         <div className="w-full rounded-[10px] overflow-visible">
           <div className="flex relative z-10 flex-nowrap gap-6 px-[5%] py-6 overflow-scroll hide-scrollbar">
-            <div className="max-h-[372px] min-w-[325px] drop-shadow-[0_5px_7px_#00000035] inner-scrollbar overflow-hidden rounded bg-white overflow-y-scroll font-['Poppins,sans-serif_!important']">
+            <div className="max-h-[372px] min-w-[325px] drop-shadow-[0_5px_7px_#00000035] inner-scrollbar overflow-hidden rounded bg-white overflow-y-scroll font-['Poppins,sans-serif_!important'] scrollbar-hidden">
               <LinkedInEmbed
-                postUrl="https://www.linkedin.com/posts/peterdiamandis_5-discoveries-the-james-webb-telescope-will-activity-6898694773406875648-z-D7"
-                url="https://www.linkedin.com/embed/feed/update/urn:li:share:6898694772484112384"
+                postUrl="https://www.linkedin.com/posts/oaks-intelligence-limited_ecoweather-ecotracker-nigeria-activity-7085600487823032320-1eSK?utm_source=share&utm_medium=member_desktop"
+                url="https://www.linkedin.com/embed/feed/update/urn:li:share:7085600486321512448"
                 width={325}
               />
             </div>
-            <div className="max-h-[372px] min-w-[325px] drop-shadow-[0_5px_7px_#00000035] inner-scrollbar overflow-hidden rounded bg-white overflow-y-scroll">
+            <div className="max-h-[372px] px-2 min-w-[325px] drop-shadow-[0_5px_7px_#00000035] inner-scrollbar overflow-hidden rounded bg-white overflow-y-scroll scrollbar-hidden">
               <Tweet
                 options={{
                   chrome: "noborders transparent",
@@ -77,20 +77,20 @@ const SocialMediaEmbed = () => {
                 renderError={(_err) => (
                   <p className="poppins-4 p-3">Could not load tweet</p>
                 )}
-                tweetId="841418541026877441"
+                tweetId="1679608885210906624"
               />
             </div>
-            <div className="max-h-[372px] min-w-[325px] drop-shadow-[0_5px_7px_#00000035] inner-scrollbar overflow-hidden bg-white rounded overflow-y-scroll">
+            <div className="max-h-[372px] min-w-[325px] drop-shadow-[0_5px_7px_#00000035] inner-scrollbar overflow-hidden bg-white rounded overflow-y-scroll scrollbar-hidden">
               <FacebookEmbed
                 placeholderSpinnerDisabled={true}
-                url="https://web.facebook.com/now.arsenal/posts/pfbid028AWXRPveDrfGU9b9owyxidRemXjfCfVkTkkWYv1eVjErhACbpZWUeQ35YBCfsXfcl?__cft__[0]=AZUWCfre9-crbIZEL-lvwy0zMQwmmDwQcUsQKKkdppokRK51VWCrXnZ4inOF2z9qx0XPk6PDjYtyd_OC3G5TOlMnz1gtML59TSR42NCXAD3nA7S4Xrf1AUqagLGi3MPTYj94_-_84L7SzS72j0kp5Bg_glzikpi2svWMGHCuJ9_7dDFAHIJuv2tZH4A7qCUaG0ALrPDi0NtBDrRCBtgq4-Rl&__tn__=%2CO%2CP-R"
+                url="https://web.facebook.com/oaksintel/posts/pfbid0cvUfLSAtKdyCY4DKoZhctBcMWhc5kD13tAf2Vdcn8wKCLgEEjD55UajCnDfsQ8ynl?__cft__[0]=AZXWdxXO6LjFKbvvrJI-wA_ibYtqbYxS6AJeaeOH34ryVM2DhS8EzqtVHU6RaVJvzW1omxxSgV_PgjRs9y_c_fNfQ-vREE7m2imnOTHZWA75cX8TQJx6Y6ew05K7s3U7qv1j8kEAka-CRkCwM4Ulc8e9ygh6LG9elspdUkchHL1Aws9ZVgZ0_rLYxuCiUfYWIF8&__tn__=%2CO%2CP-R"
                 width={325}
               />
             </div>
-            <div className="max-h-[372px] min-w-[328px] drop-shadow-[0_5px_7px_#00000035] inner-scrollbar overflow-hidden rounded bg-white overflow-y-scroll">
+            <div className="max-h-[372px] min-w-[328px] drop-shadow-[0_5px_7px_#00000035] inner-scrollbar overflow-hidden rounded bg-white overflow-y-scroll scrollbar-hidden">
               <InstagramEmbed
                 igVersion=""
-                url="https://www.instagram.com/p/CUbHfhpswxt/"
+                url="https://www.instagram.com/p/CurafBaoVOb/"
                 width={328}
               />
             </div>
