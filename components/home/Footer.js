@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import React from "react";
 import Logo from "../../assets/oaks-logo.svg";
 import { GrInstagram, GrTwitter, GrYoutube } from "react-icons/gr";
-import { FaFacebook, FaLinkedinIn } from "react-icons/fa";
+import { FaFacebook, FaLinkedinIn, FaTiktok } from "react-icons/fa";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
 import { IoLocationOutline } from "react-icons/io5";
@@ -12,6 +12,7 @@ import { BiChevronRight } from "react-icons/bi";
 import NewsLetterSubscribe from "./NewsLetterSubscribe";
 import SocialMediaEmbed from "../SocialMediaEmbed";
 import { usePathname } from "next/navigation";
+import threadsLogo from "../../assets/threads.png";
 
 const Footer = () => {
   const pathname = usePathname();
@@ -41,8 +42,8 @@ const Footer = () => {
               Experience the power of custom software solutions tailored to your
               business needs.
             </p>
-            <div className="flex gap-8">
-              <Link href="https://twitter.com/Oaksintel">
+            <div className="flex flex-wrap gap-8">
+              <Link target="_blank" href="https://twitter.com/Oaksintel">
                 <motion.p
                   initial={{ color: "#B7B7B7", scale: 1 }}
                   whileHover={{
@@ -54,7 +55,7 @@ const Footer = () => {
                   <GrTwitter size={18} />
                 </motion.p>
               </Link>
-              <Link href="#">
+              <Link target="_blank" href="https://web.facebook.com/oaksintel">
                 <motion.p
                   initial={{ color: "#B7B7B7", scale: 1 }}
                   whileHover={{
@@ -66,7 +67,7 @@ const Footer = () => {
                   <FaFacebook size={18} />
                 </motion.p>
               </Link>
-              <Link href="https://www.instagram.com/oaksintel/">
+              <Link target="_blank" href="https://www.instagram.com/oaksintel/">
                 <motion.p
                   initial={{
                     color: "#B7B7B7",
@@ -86,7 +87,10 @@ const Footer = () => {
                   <GrInstagram size={18} />
                 </motion.p>
               </Link>
-              <Link href="https://www.linkedin.com/company/oaks-intelligence-limited/">
+              <Link
+                target="_blank"
+                href="https://www.linkedin.com/company/oaks-intelligence-limited/"
+              >
                 <motion.p
                   initial={{ color: "#B7B7B7", scale: 1 }}
                   whileHover={{
@@ -96,6 +100,35 @@ const Footer = () => {
                   }}
                 >
                   <FaLinkedinIn size={18} />
+                </motion.p>
+              </Link>
+              <Link target="_blank" href="https://www.tiktok.com/@oaksintel">
+                <motion.p
+                  initial={{ color: "#B7B7B7", scale: 1 }}
+                  whileHover={{
+                    color: "cyan",
+                    scale: 1.2,
+                    transition: { duration: 0.3, type: "spring", bounce: 0.6 },
+                  }}
+                >
+                  <FaTiktok size={18} className="shadow-red-800" />
+                </motion.p>
+              </Link>
+              <Link target="_blank" href="https://www.threads.net/@oaksintel">
+                <motion.p
+                  initial={{ color: "#B7B7B7", scale: 1 }}
+                  whileHover={{
+                    scale: 1.2,
+                    transition: { duration: 0.3, type: "spring", bounce: 0.6 },
+                  }}
+                >
+                  <Image
+                    width={18}
+                    height={18}
+                    src={threadsLogo}
+                    alt="threads"
+                    className="invert-[0.8] brightness-50 hover:invert hover:brightness-200"
+                  />
                 </motion.p>
               </Link>
             </div>
