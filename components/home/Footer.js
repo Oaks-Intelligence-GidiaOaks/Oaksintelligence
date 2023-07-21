@@ -155,7 +155,7 @@ const Footer = () => {
                 info@oaksintelligence.co
               </span>
             </p>
-            <p className="flex gap-2 items-start">
+            {/* <p className="flex gap-2 items-start">
               <IoLocationOutline
                 size={18}
                 color="#B7B7B7"
@@ -164,7 +164,7 @@ const Footer = () => {
               <span className="poppins-4 text-main text-base block ">
                 27 Iwaya Road, Onike-Sabo, Yaba, Lagos, Nigeria
               </span>
-            </p>
+            </p> */}
           </div>
           <div className="flex flex-col w-[80%] min-w-[240px] gap-4 min-[524px]:w-[21%]">
             <p className="poppins-6 text-white text-xl mb-2">Quick Links</p>
