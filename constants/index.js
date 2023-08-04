@@ -141,23 +141,23 @@ export const framework = [
 export const feedbacks = [
   {
     avatar: avatar1,
-    name: "Floyd Miles",
+    name: "Like A Palm Tree Foundation",
     comment:
-      "Exceptional software development services! They delivered a top-notch product that exceeded our expectations. The team was highly skilled, professional, and responsive throughout the entire process.",
+      "We had a great experience working with Oaks Intelligence. First, we could not even find any other company doing what the company is doing, and with the extent of spread that the company had. We are impressed by their believe in data, their pursuit of integrity in data gathering and analysis, and their desire to see the fulfillment of the business goals of partners.",
     rating: 5,
   },
-  {
-    avatar: avatar2,
-    name: "Ronald Richards",
-    comment:
-      "I highly recommend Oaks Intelligence. Their commitment to quality is evident in the flawless product they delivered. The level of collaboration and communication was impressive, ensuring our needs were met every step of the way.",
-    rating: 4,
-  },
-  {
-    avatar: avatar3,
-    name: "Savannah Nguyen",
-    comment:
-      "Impressive customer support and timely delivery! They went above and beyond to ensure our satisfaction. They were proactive in addressing any issues and were always available to assist us.",
-    rating: 4.5,
-  },
+  // {
+  //   avatar: avatar2,
+  //   name: "Ronald Richards",
+  //   comment:
+  //     "I highly recommend Oaks Intelligence. Their commitment to quality is evident in the flawless product they delivered. The level of collaboration and communication was impressive, ensuring our needs were met every step of the way.",
+  //   rating: 4,
+  // },
+  // {
+  //   avatar: avatar3,
+  //   name: "Savannah Nguyen",
+  //   comment:
+  //     "Impressive customer support and timely delivery! They went above and beyond to ensure our satisfaction. They were proactive in addressing any issues and were always available to assist us.",
+  //   rating: 4.5,
+  // },
 ];
