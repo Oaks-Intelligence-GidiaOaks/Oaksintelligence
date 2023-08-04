@@ -149,7 +149,7 @@ const Header = ({ theme, setTheme }) => {
                 }}
                 exit={{ x: "-100vw" }}
                 viewport={{ once: true }}
-                className="min-[980px]:hidden pt-[10vh] fixed top-0 w-full h-full z-30 bg-white dark:bg-main transition-[background] duration-500 ease-in-out"
+                className="min-[980px]:hidden pt-[10vh] fixed top-0 w-screen h-full z-30 bg-white dark:bg-main transition-[background] duration-500 ease-in-out"
               >
                 <div className="flex justify-between h-full w-full flex-col gap-[5%] ">
                   <ul className="flex flex-[0.6] flex-col gap-[10vh] justify-center poppins-6 items-center mt-[10vh]">
