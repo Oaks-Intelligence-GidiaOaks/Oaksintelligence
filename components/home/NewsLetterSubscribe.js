@@ -105,14 +105,14 @@ export const NewsLetter = ({
     </div>
   ) : (
     <div className="flex flex-col w-[21%] min-w-[240px] gap-4">
-      <p className="poppins-6 text-white text-xl mb-2">Newsletter</p>
-      <p className="poppins-4 text-main text-base">
-        <p className="poppins-4 dark:text-secondary-main text-secondary-main-light">
+      <div className="poppins-6 text-white text-xl mb-2">Newsletter</div>
+      <div className="poppins-4 text-main text-base">
+        <div className="poppins-4 dark:text-secondary-main text-secondary-main-light">
           Sign up for our Ecoweather Newsletter to stay ahead of the financial
           forecast and elevate your financial intelligence.
           <br />
-        </p>
-      </p>
+        </div>
+      </div>
       <div className="border border-solid border-main rounded-lg p-[6px] flex flex-col justify-between">
         <input
           className="flex py-2 remove-autofill-bg text-white flex-1 min-w-[100px] poppins-4 pl-2 bg-transparent outline-none caret-[#eb8a00] w-full"

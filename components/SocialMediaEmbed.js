@@ -69,15 +69,12 @@ const SocialMediaEmbed = () => {
                 url="https://www.linkedin.com/embed/feed/update/urn:li:share:7085600486321512448"
                 width={325}
               /> */}
-              <div
-                class="sk-ww-linkedin-page-post"
-                data-embed-id="176669"
-              ></div>
+              <div class="sk-ww-linkedin-page-post" data-embed-id="176669" />
               <script
                 src="https://widgets.sociablekit.com/linkedin-page-posts/widget.js"
                 async
                 defer
-              ></script>
+              />
             </div>
             {/* X */}
             <div className="max-h-[372px] min-w-[325px] drop-shadow-[0_5px_7px_#00000035] inner-scrollbar overflow-hidden bg-white rounded-xl overflow-y-scroll scrollbar-hidden">
@@ -104,12 +101,12 @@ const SocialMediaEmbed = () => {
                 data-width="325"
                 data-height="372"
                 href="https://twitter.com/Oaksintel?ref_src=twsrc%5Etfw"
-              ></a>
+              />
               <script
                 async
                 src="https://platform.twitter.com/widgets.js"
                 charset="utf-8"
-              ></script>
+              />
             </div>
             {/* Facebook */}
             <div className="max-h-[372px] min-w-[325px] drop-shadow-[0_5px_7px_#00000035] inner-scrollbar overflow-hidden bg-white rounded-xl overflow-y-scroll scrollbar-hidden">
@@ -122,16 +119,16 @@ const SocialMediaEmbed = () => {
                 frameborder="0"
                 allowfullscreen="true"
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-              ></iframe>
+              />
             </div>
             {/* Instagram */}
             <div className="max-h-[372px] min-w-[328px] drop-shadow-[0_5px_7px_#00000035] inner-scrollbar overflow-hidden rounded-xl bg-white overflow-y-scroll scrollbar-hidden">
-              <div class="sk-instagram-feed" data-embed-id="176661"></div>
+              <div class="sk-instagram-feed" data-embed-id="176661" />
               <script
                 src="https://widgets.sociablekit.com/instagram-feed/widget.js"
                 async
                 defer
-              ></script>
+              />
             </div>
             {/* Youtube */}
             {/* <div className="max-h-[372px] min-w-[325px] drop-shadow-[0_5px_7px_#00000035] overflow-hidden rounded bg-white overflow-y-scroll">
