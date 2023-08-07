@@ -143,7 +143,7 @@ export const feedbacks = [
     avatar: avatar1,
     name: "Like A Palm Tree Foundation",
     comment:
-      "We had a great experience working with Oaks Intelligence. First, we could not even find any other company doing what the company is doing, and with the extent of spread that the company had. We are impressed by their believe in data, their pursuit of integrity in data gathering and analysis, and their desire to see the fulfillment of the business goals of partners.",
+      "We had a great experience working with Oaks Intelligence. First, we could not even find any other company doing what the company is doing, and with the extent of spread that the company had. We are impressed by their belief in data, their pursuit of integrity in data gathering and analysis, and their desire to see the fulfillment of the business goals of partners.",
     rating: 5,
   },
   // {
