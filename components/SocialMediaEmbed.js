@@ -63,7 +63,7 @@ const SocialMediaEmbed = () => {
         <div className="w-full rounded-[10px] overflow-visible">
           <div className="flex relative z-10 flex-nowrap gap-6 px-[5%] py-6 overflow-scroll hide-scrollbar">
             {/* Linkedin */}
-            <div className="max-h-[372px] min-w-[325px] drop-shadow-[0_5px_7px_#00000035] inner-scrollbar overflow-hidden rounded bg-white overflow-y-scroll font-['Poppins,sans-serif_!important'] scrollbar-hidden">
+            <div className="max-h-[372px] min-w-[325px] drop-shadow-[0_5px_7px_#00000035] inner-scrollbar overflow-hidden rounded-xl bg-white overflow-y-scroll font-['Poppins,sans-serif_!important'] scrollbar-hidden">
               {/* <LinkedInEmbed
                 // postUrl="https://www.linkedin.com/posts/oaks-intelligence-limited_ecoweather-ecotracker-nigeria-activity-7085600487823032320-1eSK?utm_source=share&utm_medium=member_desktop"
                 url="https://www.linkedin.com/embed/feed/update/urn:li:share:7085600486321512448"
@@ -112,7 +112,7 @@ const SocialMediaEmbed = () => {
               ></script>
             </div>
             {/* Facebook */}
-            <div className="max-h-[372px] min-w-[325px] drop-shadow-[0_5px_7px_#00000035] inner-scrollbar overflow-hidden bg-white rounded overflow-y-scroll scrollbar-hidden">
+            <div className="max-h-[372px] min-w-[325px] drop-shadow-[0_5px_7px_#00000035] inner-scrollbar overflow-hidden bg-white rounded-xl overflow-y-scroll scrollbar-hidden">
               <iframe
                 src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fweb.facebook.com%2Foaksintel&tabs=timeline&width=325&height=372&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
                 width="325"
@@ -125,7 +125,7 @@ const SocialMediaEmbed = () => {
               ></iframe>
             </div>
             {/* Instagram */}
-            <div className="max-h-[372px] min-w-[328px] drop-shadow-[0_5px_7px_#00000035] inner-scrollbar overflow-hidden rounded bg-white overflow-y-scroll scrollbar-hidden">
+            <div className="max-h-[372px] min-w-[328px] drop-shadow-[0_5px_7px_#00000035] inner-scrollbar overflow-hidden rounded-xl bg-white overflow-y-scroll scrollbar-hidden">
               <div class="sk-instagram-feed" data-embed-id="176661"></div>
               <script
                 src="https://widgets.sociablekit.com/instagram-feed/widget.js"
