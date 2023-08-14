@@ -7,6 +7,12 @@ import { Rings } from "react-loader-spinner";
 import MailchimpSubscribe from "react-mailchimp-subscribe";
 import AppContext from "@/contexts/AppContext";
 
+const defaultStatus = {
+  firstName: false,
+  lastName: false,
+  email: false,
+};
+
 export const NewsLetter = ({
   subscribe,
   status,
@@ -15,7 +21,11 @@ export const NewsLetter = ({
   setShowNewsletter,
 }) => {
   const [email, setEmail] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [subscribeStatus, setSubscribeStatus] = useState(status);
+
+  const [invalid, setInvalid] = useState(defaultStatus);
 
   const getMessage = (message) => {
     if (!message) {
@@ -30,7 +40,30 @@ export const NewsLetter = ({
     return formattedMessage ? formattedMessage : null;
   };
   const handleSubmit = () => {
-    const emailValidated = subscribe({ EMAIL: email });
+    setInvalid(defaultStatus);
+
+    if (firstName.trim().length < 1) {
+      setInvalid((prev) => ({ ...prev, firstName: true }));
+    }
+    if (lastName.trim().length < 1) {
+      setInvalid((prev) => ({ ...prev, lastName: true }));
+    }
+    if (email.trim().length < 1) {
+      setInvalid((prev) => ({ ...prev, email: true }));
+    }
+
+    if (
+      firstName.trim().length < 1 ||
+      lastName.trim().length < 1 ||
+      email.trim().length < 1
+    )
+      return;
+
+    const emailValidated = subscribe({
+      EMAIL: email,
+      FNAME: firstName,
+      LNAME: lastName,
+    });
 
     // Clear email field if email is validated
     emailValidated && setEmail("");
@@ -43,14 +76,60 @@ export const NewsLetter = ({
       handleSubmit();
     }
   };
+  const handleFirstName = (e) => {
+    setInvalid((prev) => ({ ...prev, firstName: false }));
+    const result = e.target.value.replace(/[0-9]/g, "");
+    setFirstName(result);
+  };
+  const handleLastName = (e) => {
+    setInvalid((prev) => ({ ...prev, lastName: false }));
+    const result = e.target.value.replace(/[0-9]/g, "");
+    setLastName(result);
+  };
+  const handleEmail = (e) => {
+    setInvalid((prev) => ({ ...prev, email: false }));
+    setEmail(e.target.value);
+  };
 
   return isHome ? (
     <div className="flex flex-col gap-4">
-      <div className="w-full border border-solid border-main rounded-lg p-[6px] flex justify-between">
+      <div className="flex gap-x-2">
+        <div
+          className={`border border-solid ${
+            invalid.firstName ? "border-red-600" : "border-main"
+          } rounded-lg p-[6px] flex flex-col justify-between`}
+        >
+          <input
+            className="flex py-2 remove-autofill-bg text-main-light dark:text-secondary-main flex-1 min-w-[100px] poppins-4 pl-2 bg-transparent outline-none caret-[#eb8a00] w-full"
+            placeholder="First Name"
+            onChange={handleFirstName}
+            value={firstName}
+            autoComplete="none"
+          />
+        </div>
+        <div
+          className={`border border-solid ${
+            invalid.lastName ? "border-red-600" : "border-main"
+          } rounded-lg p-[6px] flex flex-col justify-between`}
+        >
+          <input
+            className="flex py-2 remove-autofill-bg text-main-light dark:text-secondary-main flex-1 min-w-[100px] poppins-4 pl-2 bg-transparent outline-none caret-[#eb8a00] w-full"
+            placeholder="Last Name"
+            onChange={handleLastName}
+            value={lastName}
+            autoComplete="none"
+          />
+        </div>
+      </div>
+      <div
+        className={`w-full border border-solid ${
+          invalid.email ? "border-red-600" : "border-main"
+        } rounded-lg p-[6px] flex justify-between`}
+      >
         <input
           className="flex py-2 remove-autofill-bg text-main-light dark:text-secondary-main flex-1 min-w-[100px] poppins-4 pl-2 bg-transparent outline-none caret-[#eb8a00] w-full"
           placeholder="Your email"
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={handleEmail}
           value={email}
           autoComplete="none"
           onKeyUp={handleEnterKey}
@@ -113,11 +192,44 @@ export const NewsLetter = ({
           <br />
         </div>
       </div>
-      <div className="border border-solid border-main rounded-lg p-[6px] flex flex-col justify-between">
+
+      <div className="flex gap-x-2">
+        <div
+          className={`border border-solid ${
+            invalid.firstName ? "border-red-600" : "border-main"
+          } rounded-lg p-[6px] flex flex-col justify-between`}
+        >
+          <input
+            className="flex py-2 remove-autofill-bg text-white flex-1 min-w-[100px] poppins-4 pl-2 bg-transparent outline-none caret-[#eb8a00] w-full"
+            placeholder="First Name"
+            onChange={handleFirstName}
+            value={firstName}
+            autoComplete="none"
+          />
+        </div>
+        <div
+          className={`border border-solid ${
+            invalid.lastName ? "border-red-600" : "border-main"
+          } rounded-lg p-[6px] flex flex-col justify-between`}
+        >
+          <input
+            className="flex py-2 remove-autofill-bg text-white flex-1 min-w-[100px] poppins-4 pl-2 bg-transparent outline-none caret-[#eb8a00] w-full"
+            placeholder="Last Name"
+            onChange={handleLastName}
+            value={lastName}
+            autoComplete="none"
+          />
+        </div>
+      </div>
+      <div
+        className={`border border-solid ${
+          invalid.email ? "border-red-600" : "border-main"
+        } rounded-lg p-[6px] flex flex-col justify-between`}
+      >
         <input
           className="flex py-2 remove-autofill-bg text-white flex-1 min-w-[100px] poppins-4 pl-2 bg-transparent outline-none caret-[#eb8a00] w-full"
           placeholder="Your email"
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={handleEmail}
           value={email}
           autoComplete="none"
           onKeyUp={handleEnterKey}
