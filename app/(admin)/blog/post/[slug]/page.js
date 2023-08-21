@@ -59,7 +59,7 @@ const Post = async ({ params: { slug } }) => {
                   })}
                 </p>
               </div>
-              <div className="flex items-start space-x-2">
+              <div className="flex items-start w-64 justify-end space-x-2">
                 <Image
                   className="rounded-full"
                   src={urlFor(post.author.image).url()}
@@ -67,7 +67,7 @@ const Post = async ({ params: { slug } }) => {
                   height={40}
                   width={40}
                 />
-                <div className="flex flex-col w-64">
+                <div className="flex flex-col w-fit">
                   <h3 className="text-white dark:text-main-light transition-all duration-300 ease-in-out text-lg jost font-bold">
                     {post.author.name}
                   </h3>
