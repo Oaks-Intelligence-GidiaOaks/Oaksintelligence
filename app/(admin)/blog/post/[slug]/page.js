@@ -102,11 +102,11 @@ const Post = async ({ params: { slug } }) => {
         </h3>
         <div className="flex flex-wrap justify-start gap-6">
           <Image
-            className="rounded-full w-[120px] h-[120px]"
+            className="rounded-full w-[50px] h-[50px] bg-main"
             src={urlFor(post.author.image).url()}
             alt={post.author.name}
-            height={120}
-            width={120}
+            height={50}
+            width={50}
           />
           <div className="flex max-w-[360px] flex-col">
             <h3 className="gold-gradient-text transition-all duration-300 ease-in-out text-xl jost font-bold">
