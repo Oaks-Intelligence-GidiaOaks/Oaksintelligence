@@ -61,6 +61,31 @@ export const missions = [
   },
 ];
 
+export const dashboardInstructions = [
+  {
+    title: "Side Navigation Tab",
+    description: "Each tab on the left hand side of the dashboard features.",
+    icon: research,
+  },
+  {
+    title: "Filter by Geopolitical Zone",
+    description:
+      "Conducting responsible research and innovation (RRI) for product suitability.",
+    icon: research,
+  },
+  {
+    title: "Side Navigation Tab",
+    description: "Each tab on the left hand side of the dashboard features ",
+    icon: research,
+  },
+  {
+    title: "Filter by Geopolitical Zone",
+    description:
+      "Conducting responsible research and innovation (RRI) for product suitability.",
+    icon: research,
+  },
+];
+
 export const tailwindGradients = [
   "bg-gradient-to-b from-green-300 via-blue-500 to-purple-600",
   "bg-gradient-to-b from-pink-500 via-red-500 to-yellow-500",

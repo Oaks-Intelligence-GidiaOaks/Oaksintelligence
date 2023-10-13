@@ -44,7 +44,7 @@ const Header = ({ theme, setTheme }) => {
             />
           </Link>
           <div className="flex flex-1 justify-end gap-[5%] items-center ">
-            <ul className="hidden flex-1 justify-end poppins-6 text-main-light dark:text-main gap-[5%] items-center min-[980px]:flex transition-[background] duration-500 ease-in-out">
+            <ul className="hidden flex-1 justify-end poppins-6 text-main-light dark:text-main gap-[5%] items-center min-[1180px]:flex transition-[background] duration-500 ease-in-out">
               <Link
                 href="/"
                 className={`${
@@ -94,6 +94,25 @@ const Header = ({ theme, setTheme }) => {
                 </li>
               </Link>
               <Link
+                href="/dashboard"
+                onClick={() => setShowMenu(false)}
+                className={`${
+                  theme !== "light" && pathname.includes("/dashboard")
+                    ? "glassmorphism-sec-link"
+                    : ""
+                } px-[15px] py-[5px]`}
+              >
+                <li
+                  className={`${
+                    pathname.includes("/dashboard")
+                      ? "text-secondary-green"
+                      : "text-main-light dark:text-main"
+                  }`}
+                >
+                  Dashboard
+                </li>
+              </Link>
+              <Link
                 href="/blog"
                 onClick={() => setShowMenu(false)}
                 className={`${
@@ -113,11 +132,11 @@ const Header = ({ theme, setTheme }) => {
                 </li>
               </Link>
             </ul>
-            <div className="hidden p-2 cursor-pointer min-[980px]:block">
+            <div className="hidden p-2 cursor-pointer min-[1180px]:block">
               <ThemeSwitch theme={theme} setTheme={setTheme} />
             </div>
             <button
-              className="block p-2 cursor-pointer min-[980px]:hidden"
+              className="block p-2 cursor-pointer min-[1180px]:hidden"
               onClick={() => setShowMenu(!showMenu)}
             >
               {showMenu ? (
@@ -149,10 +168,10 @@ const Header = ({ theme, setTheme }) => {
                 }}
                 exit={{ x: "-100vw" }}
                 viewport={{ once: true }}
-                className="min-[980px]:hidden pt-[10vh] fixed top-0 w-screen h-full z-30 bg-white dark:bg-main transition-[background] duration-500 ease-in-out"
+                className="min-[1180px]:hidden pt-[10vh] fixed top-0 w-screen h-full z-30 bg-white dark:bg-main transition-[background] duration-500 ease-in-out"
               >
                 <div className="flex justify-between h-full w-full flex-col gap-[5%] ">
-                  <ul className="flex flex-[0.6] flex-col gap-[10vh] justify-center poppins-6 items-center mt-[10vh]">
+                  <ul className="flex flex-[0.6] flex-col gap-[7vh] justify-center poppins-6 items-center mt-[10vh]">
                     <Link
                       href="/"
                       onClick={() => setShowMenu(false)}
@@ -208,6 +227,25 @@ const Header = ({ theme, setTheme }) => {
                         }`}
                       >
                         Contact Us
+                      </li>
+                    </Link>
+                    <Link
+                      href="/dashboard"
+                      onClick={() => setShowMenu(false)}
+                      className={`${
+                        theme !== "light" && pathname === "/dashboard"
+                          ? "glassmorphism-sec-link"
+                          : ""
+                      } px-[15px] py-[5px]`}
+                    >
+                      <li
+                        className={`${
+                          pathname === "/dashboard"
+                            ? "text-secondary-green"
+                            : "text-main-light dark:text-main"
+                        }`}
+                      >
+                        Dashboard
                       </li>
                     </Link>
                     <Link

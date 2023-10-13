@@ -3,7 +3,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import React from "react";
 import Logo from "../../assets/oaks-logo.svg";
-import { GrInstagram, GrTwitter, GrYoutube } from "react-icons/gr";
+import { GrInstagram, GrYoutube } from "react-icons/gr";
 import { FaFacebook, FaLinkedinIn, FaTiktok } from "react-icons/fa";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
@@ -13,6 +13,7 @@ import NewsLetterSubscribe from "./NewsLetterSubscribe";
 import SocialMediaEmbed from "../SocialMediaEmbed";
 import { usePathname } from "next/navigation";
 import threadsLogo from "../../assets/threads.png";
+import { RiTwitterXLine } from "react-icons/ri";
 
 const Footer = () => {
   const pathname = usePathname();
@@ -47,12 +48,12 @@ const Footer = () => {
                 <motion.p
                   initial={{ color: "#B7B7B7", scale: 1 }}
                   whileHover={{
-                    color: "dodgerblue",
+                    color: "white",
                     scale: 1.2,
                     transition: { duration: 0.3, type: "spring", bounce: 0.6 },
                   }}
                 >
-                  <GrTwitter size={18} />
+                  <RiTwitterXLine size={18} />
                 </motion.p>
               </Link>
               <Link target="_blank" href="https://web.facebook.com/oaksintel">
