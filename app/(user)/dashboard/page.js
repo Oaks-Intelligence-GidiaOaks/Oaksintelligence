@@ -5,6 +5,7 @@ import DashboardHero from "@/components/dashboard/DashboardHero";
 import { DataDashboard } from "@/components/dashboard/DataDashboard";
 import DashboardInstructions from "@/components/dashboard/DashboardInstructions";
 import AboutLeaderboard from "@/components/dashboard/AboutLeaderboard";
+import { Leaderboard } from "@/components/dashboard/Leaderboard";
 
 const About = () => {
   const { setTheme } = useContext(AppContext);
@@ -40,6 +41,7 @@ const About = () => {
       <DataDashboard />
       <DashboardInstructions />
       <AboutLeaderboard />
+      <Leaderboard />
     </main>
   );
 };
