@@ -97,7 +97,7 @@ const SocialMediaEmbed = () => {
                 }}
               /> */}
               <a
-                class="twitter-timeline"
+                className="twitter-timeline"
                 data-width="325"
                 data-height="372"
                 href="https://twitter.com/Oaksintel?ref_src=twsrc%5Etfw"
@@ -105,7 +105,8 @@ const SocialMediaEmbed = () => {
               <script
                 async
                 src="https://platform.twitter.com/widgets.js"
-                charset="utf-8"
+                // charset="utf-8"
+                charSet="utf-8"
               />
             </div>
             {/* Facebook */}
@@ -116,14 +117,15 @@ const SocialMediaEmbed = () => {
                 height="372"
                 style={{ border: "none", overflow: "hidden" }}
                 scrolling="no"
-                frameborder="0"
-                allowfullscreen="true"
+                // frameborder="0"
+                frameBorder={0}
+                allowFullScreen="true"
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
               />
             </div>
             {/* Instagram */}
             <div className="max-h-[372px] min-w-[328px] drop-shadow-[0_5px_7px_#00000035] inner-scrollbar overflow-hidden rounded-xl bg-white overflow-y-scroll scrollbar-hidden">
-              <div class="sk-instagram-feed" data-embed-id="176661" />
+              <div className="sk-instagram-feed" data-embed-id="176661" />
               <script
                 src="https://widgets.sociablekit.com/instagram-feed/widget.js"
                 async

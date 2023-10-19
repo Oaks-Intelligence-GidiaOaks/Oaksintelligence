@@ -33,7 +33,7 @@ const Footer = () => {
         }}
         className="flex relative flex-col mx-auto justify-between max-w-[1440px] py-5 items-center overflow-visible"
       >
-        {pathname !== "/terms" && <SocialMediaEmbed />}
+        {/* {pathname !== "/terms" && <SocialMediaEmbed />} */}
         <div className="flex flex-wrap flex-row gap-y-[50px] px-[5%] w-full gap-[clamp(20px,5vw,30px)] mt-10 min-[524px]:justify-between">
           <div className="flex flex-col w-[80%] min-w-[240px] gap-6 min-[524px]:w-[21%]">
             <Link href={"/"}>
