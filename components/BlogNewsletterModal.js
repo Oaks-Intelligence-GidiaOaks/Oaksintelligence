@@ -1,10 +1,12 @@
 import { motion } from "framer-motion";
 import { IoClose } from "react-icons/io5";
 import NewsLetterSubscribe from "./home/NewsLetterSubscribe";
-import Lottie from "lottie-react";
+// import Lottie from "lottie-react";
 import React, { useState } from "react";
 import BlogNewsLetterSubscribe from "./BlogNewsletterSubscribe";
 import newsletterAnimation from "../assets/newsletter.json";
+import Image from "next/image";
+import mailbox from "../assets/mailbox.svg";
 
 const BlogNewsletterModal = ({ setShowModal }) => {
   return (
@@ -41,11 +43,14 @@ const BlogNewsletterModal = ({ setShowModal }) => {
             </p>
             <BlogNewsLetterSubscribe setShowModal={setShowModal} />
           </div>
-          <Lottie
+          <div className="w-[clamp(240px,40%,180px)] hidden min-[680px]:block ">
+            <Image src={mailbox} alt="mailbox" />
+          </div>
+          {/* <Lottie
             className="w-[clamp(240px,40%,180px)] hidden min-[680px]:block "
             animationData={newsletterAnimation}
             loop={true}
-          />
+          /> */}
         </motion.div>
         {/* <motion.div
           initial={{ opacity: 0, y: 100 }}
