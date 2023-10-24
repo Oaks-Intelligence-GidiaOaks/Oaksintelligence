@@ -81,20 +81,9 @@ const DashboardInstructions = () => {
             className="text-[1.5rem] sm:text-[2.3rem] gradient-text"
           >
             <span className="block text-left poppins-4">
-              <span>How to navigate the </span>
+              <span>Using the </span>
               <span className="poppins-6">Dashboard</span>
             </span>
-          </motion.p>
-          <motion.p
-            variants={itemRevealRight}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            className="poppins-4 leading-5 md:leading-9 text-secondary-main-light dark:text-secondary-main text-base sm:text-lg max-w-[784px] text-left pt-5"
-          >
-            By staying at the forefront of technological advancements, we ensure
-            that our products are fast, efficient and capable of adapting to the
-            rapidly changing demands of the modern business landscape.
           </motion.p>
         </motion.div>
         {/* {theme === "light" ? (
