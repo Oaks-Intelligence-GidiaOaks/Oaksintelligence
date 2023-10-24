@@ -18,7 +18,6 @@
     "eslint-config-next": "13.4.3",
     "form-fields-checker": "^1.0.4",
     "framer-motion": "^10.12.17",
-    "lottie-react": "^2.4.0",
     "next": "13.4.3",
     "next-sanity": "^4.3.3",
     "nodemailer": "^6.9.3",
