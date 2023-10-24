@@ -63,25 +63,27 @@ export const missions = [
 
 export const dashboardInstructions = [
   {
-    title: "Side Navigation Tab",
-    description: "Each tab on the left hand side of the dashboard features.",
-    icon: research,
-  },
-  {
-    title: "Filter by Geopolitical Zone",
+    title: "Filters",
     description:
-      "Conducting responsible research and innovation (RRI) for product suitability.",
+      "You can make use of any of the buttons (with arrows at the edges) to filter down the data by a range of dates, geopolitical zone, state, LGA, or commodity.",
     icon: research,
   },
   {
-    title: "Side Navigation Tab",
-    description: "Each tab on the left hand side of the dashboard features ",
-    icon: research,
-  },
-  {
-    title: "Filter by Geopolitical Zone",
+    title: "Navigation",
     description:
-      "Conducting responsible research and innovation (RRI) for product suitability.",
+      "You can navigate the pages of the dashboard using the buttons on the left panel of the dashboard. To do this, simply click on the button that corresponds to the page or category you want to view.",
+    icon: research,
+  },
+  {
+    title: "Dashed Lines",
+    description:
+      "On the Price changes page, the dashed lines represent 0 while on the category pages, the dashed lines represent the minimum value of that commodity or item for the given state.",
+    icon: research,
+  },
+  {
+    title: "Social Media",
+    description:
+      "You can connect with us on social media by clicking any of the buttons at the bottom left of the page. Also, subscribe to our weekly newsletters using the open mail button.",
     icon: research,
   },
 ];

@@ -6,6 +6,8 @@ import { DataDashboard } from "@/components/dashboard/DataDashboard";
 import DashboardInstructions from "@/components/dashboard/DashboardInstructions";
 import AboutLeaderboard from "@/components/dashboard/AboutLeaderboard";
 import { Leaderboard } from "@/components/dashboard/Leaderboard";
+import Overview from "@/components/dashboard/Overview";
+import Disclaimer from "@/components/dashboard/Disclaimer";
 
 const About = () => {
   const { setTheme } = useContext(AppContext);
@@ -38,10 +40,12 @@ const About = () => {
   return (
     <main className="min-h-screen bg-white dark:bg-main overflow-hidden transition-[background] duration-500 ease-in-out pb-10">
       <DashboardHero />
+      <Overview />
       <DataDashboard />
       <DashboardInstructions />
       <AboutLeaderboard />
       <Leaderboard />
+      <Disclaimer />
     </main>
   );
 };
