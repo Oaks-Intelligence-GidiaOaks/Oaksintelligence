@@ -43,7 +43,7 @@ const About = () => {
       <Overview />
       <DataDashboard />
       <DashboardInstructions />
-      <AboutLeaderboard />
+      {/* <AboutLeaderboard /> */}
       <Leaderboard />
       <Disclaimer />
     </main>
