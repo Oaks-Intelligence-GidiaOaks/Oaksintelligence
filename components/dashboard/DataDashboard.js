@@ -1,10 +1,11 @@
 "use client";
-import React, { useContext, useEffect, useLayoutEffect } from "react";
+import React, { useContext, useEffect, useLayoutEffect, useRef } from "react";
 import AppContext from "@/contexts/AppContext";
 import DashboardHero from "@/components/dashboard/DashboardHero";
 
 export const DataDashboard = () => {
   const { setTheme } = useContext(AppContext);
+  const containerRef = useRef();
 
   useLayoutEffect(() => {
     const cachedTheme = localStorage.getItem("oi-theme")
@@ -17,18 +18,20 @@ export const DataDashboard = () => {
     var divElement = document.getElementById("viz1697056329627");
     var vizElement = divElement.getElementsByTagName("object")[0];
     if (divElement.offsetWidth > 800) {
-      vizElement.style.width = "100%";
-      vizElement.style.height = "877px";
+      vizElement.style.width = "1280px";
+      vizElement.style.height = "727px";
     } else if (divElement.offsetWidth > 500) {
-      vizElement.style.width = "100%";
-      vizElement.style.height = "877px";
+      vizElement.style.width = "1280px";
+      vizElement.style.height = "727px";
     } else {
       vizElement.style.width = "100%";
-      vizElement.style.height = "3327px";
+      vizElement.style.height = "700px";
     }
     var scriptElement = document.createElement("script");
     scriptElement.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
     vizElement.parentNode.insertBefore(scriptElement, vizElement);
+
+    // var divElement = document.getElementById("viz1698669916215");
   }, []);
 
   return (
@@ -41,19 +44,22 @@ export const DataDashboard = () => {
           <div
             style={{
               position: "relative",
-              padding: "4vmax",
+              // padding: "10px",
               background: "rgba(255,255,255, 0.3)",
             }}
-            className="border border-solid border-white sm:rounded-[60px] rounded-[20px] shadow-[inset_0_0_0_0.5vw_#155F60] dark:shadow-[inset_0_0_0_0.5vw_#032929]"
+            className="border-0 border-solid border-white sm:rounded-[60px] rounded-[20px] shadow-[inset_0_0_0_0.5vw_#155F60] dark:shadow-[inset_0_0_0_0.5vw_#032929]"
           >
-            <div className="relative rounded-[calc(4vw-20px)] overflow-hidden bg-white">
+            <div
+              ref={containerRef}
+              className="relative rounded-[calc(4vw-20px)] overflow-hidden bg-white"
+            >
               <div
-                class="tableauPlaceholder"
                 id="viz1697056329627"
                 style={{
                   position: "relative",
+                  height: "700px",
                 }}
-                className="sm:rounded-[30px] rounded-[10px] overflow-[hidden_!important]"
+                className="tableauPlaceholder h-[2000px_!important] min-[519px]:h-[700px_!important]  sm:rounded-[30px] rounded-[10px] overflow-[hidden_!important]"
               >
                 <noscript>
                   <a href="#">
@@ -64,7 +70,7 @@ export const DataDashboard = () => {
                     />
                   </a>
                 </noscript>
-                <object class="tableauViz" style={{ display: "none" }}>
+                <object className="tableauViz" style={{ display: "none" }}>
                   <param
                     name="host_url"
                     value="https%3A%2F%2Fpublic.tableau.com%2F"
