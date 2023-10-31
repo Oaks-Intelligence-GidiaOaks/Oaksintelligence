@@ -119,7 +119,7 @@ const SocialMediaEmbed = () => {
                 scrolling="no"
                 // frameborder="0"
                 frameBorder={0}
-                allowFullScreen="true"
+                allowFullScreen={true}
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
               />
             </div>

@@ -244,7 +244,4 @@ body {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
   }
-  iframe html body {
-    display: none !important;
-  }
 }

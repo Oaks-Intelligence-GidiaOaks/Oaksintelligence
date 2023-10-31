@@ -41,10 +41,10 @@ export const Leaderboard = () => {
           <div
             style={{
               position: "relative",
-              padding: "4vmax",
+              // padding: "4vmax",
               background: "rgba(255,255,255, 0.3)",
             }}
-            className="border border-solid border-white sm:rounded-[60px] rounded-[20px] shadow-[inset_0_0_0_0.5vw_#155F60] dark:shadow-[inset_0_0_0_0.5vw_#032929]"
+            className="border-0 border-solid border-white sm:rounded-[60px] rounded-[20px] shadow-[inset_0_0_0_0.5vw_#155F60] dark:shadow-[inset_0_0_0_0.5vw_#032929]"
           >
             <div className="relative rounded-[calc(4vw-20px)] overflow-hidden bg-white">
               <div
@@ -53,7 +53,7 @@ export const Leaderboard = () => {
                 style={{
                   position: "relative",
                 }}
-                className="sm:rounded-[30px] rounded-[10px] overflow-[hidden_!important]"
+                className="tableauPlaceholder h-[1020px_!important] min-[519px]:h-[670px_!important] sm:rounded-[30px] rounded-[10px] overflow-[hidden_!important]"
               >
                 <noscript>
                   <a href="#">
