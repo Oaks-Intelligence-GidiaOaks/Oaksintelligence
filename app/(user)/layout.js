@@ -24,7 +24,6 @@ const Wrapper = ({ children }) => {
       <Header theme={theme} setTheme={setTheme} />
       <NewsLetterModal />
       {children}
-      <Analytics />
       <Footer />
     </>
   );
@@ -77,6 +76,7 @@ export default function RootLayout({ children }) {
         <AppProvider>
           <Wrapper>{children}</Wrapper>
         </AppProvider>
+        <Analytics />
       </body>
     </html>
   );
