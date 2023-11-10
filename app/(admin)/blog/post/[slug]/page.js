@@ -1,4 +1,5 @@
 import RichTextComponents from "@/components/admin/RichTextComponents";
+import CommentForm from "@/components/blogs/CommentForm";
 import { client } from "@/sanity/lib/client";
 import urlFor from "@/sanity/lib/urlFor";
 import { PortableText } from "@portabletext/react";
@@ -121,6 +122,13 @@ const Post = async ({ params: { slug } }) => {
           </div>
         </div>
       </section>
+      {/* Comments */}
+      {/* <section className="mt-10">
+        <h3 className="text-3xl pb-10 font-bold poppins-7 text-main-light dark:gradient-text transition-all duration-300 ease-in-out">
+          Comments
+        </h3>
+        <CommentForm _id={post._id} />
+      </section> */}
     </article>
   );
 };

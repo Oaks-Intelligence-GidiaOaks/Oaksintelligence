@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { BiSearch } from "react-icons/bi";
 
-const SearchBar = () => {
+const SearchBar = ({ placeholder, category }) => {
   const [query, setQuery] = useState("");
   const router = useRouter();
 
@@ -24,7 +24,7 @@ const SearchBar = () => {
       <input
         onChange={(e) => setQuery(e.target.value)}
         onKeyUp={handleEnterKey}
-        placeholder="Search blog"
+        placeholder={placeholder ?? "Search blog"}
         className="flex-[0.8] poppins-4 outline-none bg-transparent px-4 py-2 rounded-3xl text-main-light dark:text-main"
       />
       <button
