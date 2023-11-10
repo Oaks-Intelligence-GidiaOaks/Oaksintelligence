@@ -6,6 +6,7 @@ import AppContext, { AppProvider } from "@/contexts/AppContext";
 import Footer from "@/components/home/Footer";
 import NewsLetterModal from "@/components/NewsLetterModal";
 import { AnimatePresence } from "framer-motion";
+import { Analytics } from "@vercel/analytics/react";
 
 const Wrapper = ({ children }) => {
   const { theme, setTheme, showNewsletter, setShowNewsletter } =
@@ -23,6 +24,7 @@ const Wrapper = ({ children }) => {
       <Header theme={theme} setTheme={setTheme} />
       <NewsLetterModal />
       {children}
+      <Analytics />
       <Footer />
     </>
   );

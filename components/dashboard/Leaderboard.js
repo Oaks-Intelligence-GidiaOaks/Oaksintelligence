@@ -36,17 +36,15 @@ export const Leaderboard = () => {
       id="view"
       className="w-full bg-[#155F60] dark:bg-[#032929] mt-[30px] "
     >
-      <div className={"max-w-[1800px] mx-auto"}>
+      <div className={"mx-auto"}>
         <div style={{ position: "relative", padding: "5vmax" }}>
           <div
             style={{
               position: "relative",
-              // padding: "4vmax",
-              background: "rgba(255,255,255, 0.3)",
             }}
-            className="border-0 border-solid border-white sm:rounded-[60px] rounded-[20px] shadow-[inset_0_0_0_0.5vw_#155F60] dark:shadow-[inset_0_0_0_0.5vw_#032929]"
+            className="mx-auto shadow-[inset_0_0_0_0.5vw_#155F60] max-w-[1200px_!important] dark:shadow-[inset_0_0_0_0.5vw_#032929]"
           >
-            <div className="relative rounded-[calc(4vw-20px)] overflow-hidden bg-white">
+            <div className="relative rounded-3xl overflow-hidden bg-white">
               <div
                 class="tableauPlaceholder"
                 id="viz1697709748497"
