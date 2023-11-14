@@ -69,7 +69,10 @@ const SocialMediaEmbed = () => {
                 url="https://www.linkedin.com/embed/feed/update/urn:li:share:7085600486321512448"
                 width={325}
               /> */}
-              <div class="sk-ww-linkedin-page-post" data-embed-id="176669" />
+              <div
+                className="sk-ww-linkedin-page-post"
+                data-embed-id="176669"
+              />
               <script
                 src="https://widgets.sociablekit.com/linkedin-page-posts/widget.js"
                 async

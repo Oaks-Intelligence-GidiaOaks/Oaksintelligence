@@ -6,6 +6,7 @@ import AppContext, { AppProvider } from "@/contexts/AppContext";
 import Footer from "@/components/home/Footer";
 import NewsLetterModal from "@/components/NewsLetterModal";
 import { AnimatePresence } from "framer-motion";
+import { Analytics } from "@vercel/analytics/react";
 
 const Wrapper = ({ children }) => {
   const { theme, setTheme, showNewsletter, setShowNewsletter } =
@@ -75,6 +76,7 @@ export default function RootLayout({ children }) {
         <AppProvider>
           <Wrapper>{children}</Wrapper>
         </AppProvider>
+        <Analytics />
       </body>
     </html>
   );

@@ -1,5 +1,6 @@
 import { Wrapper } from "@/components/admin/Wrapper";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata = {
   title: "Oaks Intelligence",
@@ -14,6 +15,7 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <Wrapper>{children}</Wrapper>
+        <Analytics />
       </body>
     </html>
   );
