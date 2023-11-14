@@ -6,7 +6,7 @@ import ClientSideRoute from "./ClientSideRoute";
 const ComicList = ({ comics }) => {
   return (
     <div className="mx-auto max-w-[1440px] py-3 sm:py-5 pl-[5%] sm:pl-[10%] pr-[5%] sm:pr-[10%]">
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 gap-y-16 pb-24">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 gap-y-16 pb-24">
         {/* Comics */}
         {comics.map((comic) => {
           return (

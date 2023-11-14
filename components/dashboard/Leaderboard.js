@@ -46,7 +46,6 @@ export const Leaderboard = () => {
           >
             <div className="relative rounded-3xl overflow-hidden bg-white">
               <div
-                class="tableauPlaceholder"
                 id="viz1697709748497"
                 style={{
                   position: "relative",

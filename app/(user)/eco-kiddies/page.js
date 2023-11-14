@@ -15,7 +15,7 @@ import ComicList from "@/components/admin/ComicList";
 const ITEMS_PER_PAGE = 6;
 const query = groq`
  {
-  "posts": *[_type=='post'] {
+  "posts": *[_type=='eco-kiddies'] {
     ...,
   author->,
   categories[]->
@@ -23,7 +23,7 @@ const query = groq`
   // === SLICING THE COLLECTION ===
   [($pageIndex * ${ITEMS_PER_PAGE})...($pageIndex + 1) * ${ITEMS_PER_PAGE}]
   ,
-  "total": count(*[_type == "post"]) 
+  "total": count(*[_type == "eco-kiddies"]) 
 }
 `;
 
