@@ -1,6 +1,6 @@
-const ecoTails = {
-  name: "eco-tails",
-  title: "Eco Tails",
+const ecoTales = {
+  name: "eco-tales",
+  title: "Eco Tales",
   type: "document",
   fields: [
     {
@@ -51,4 +51,4 @@ const ecoTails = {
   ],
 };
 
-export { ecoTails };
+export { ecoTales };

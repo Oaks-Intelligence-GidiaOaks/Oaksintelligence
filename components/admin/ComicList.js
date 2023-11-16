@@ -3,15 +3,21 @@ import Image from "next/image";
 import { BsArrowUpRight } from "react-icons/bs";
 import ClientSideRoute from "./ClientSideRoute";
 
-const ComicList = ({ comics }) => {
+const ComicList = ({ comics, type }) => {
   return (
     <div className="mx-auto max-w-[1440px] py-3 sm:py-5 pl-[5%] sm:pl-[10%] pr-[5%] sm:pr-[10%]">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 gap-y-16 pb-24">
+      <div
+        className={`grid grid-cols-1 ${
+          type === "market-intelligence-report"
+            ? "md:grid-cols-3"
+            : "md:grid-cols-3"
+        } gap-10 gap-y-16 pb-24`}
+      >
         {/* Comics */}
         {comics.map((comic) => {
           return (
             <ClientSideRoute
-              route={`/eco-kiddies/${comic.slug.current}`}
+              route={`/${type}/${comic.slug.current}`}
               key={comic._id}
             >
               <div className="flex flex-col group cursor-pointer rounded-lg overflow-hidden shadow-lg dark:glassmorphism-sec-link dark:shadow-none dark:rounded-3xl ">
