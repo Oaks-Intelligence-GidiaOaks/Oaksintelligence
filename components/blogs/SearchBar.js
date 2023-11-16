@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { BiSearch } from "react-icons/bi";
 
-const SearchBar = ({ placeholder, category }) => {
+const SearchBar = ({ placeholder, category, type }) => {
   const [query, setQuery] = useState("");
   const router = useRouter();
 
@@ -17,7 +17,7 @@ const SearchBar = ({ placeholder, category }) => {
   const handleSearch = () => {
     if (query.length < 1) return;
 
-    router.push(`/blog/search?query=${query}`);
+    router.push(`/${type ?? "blog"}/search?query=${query}`);
   };
   return (
     <div className="relative p-[4px] flex w-[clamp(280px,30%,480px)] rounded-3xl border border-solid border-gray-300 bg-transparent dark:glassmorphism-sec-link dark:border-transparent dark:rounded-3xl">
