@@ -273,6 +273,24 @@ const Header = ({ theme, setTheme }) => {
                           Surveys
                         </li>
                       </Link>
+                      <Link
+                        href="/newsletters"
+                        className={`${
+                          theme !== "light" && pathname === "/newsletters"
+                            ? "glassmorphism-sec-link"
+                            : ""
+                        } px-[15px] py-[5px]`}
+                      >
+                        <li
+                          className={`${
+                            pathname === "/newsletters"
+                              ? "text-secondary-green"
+                              : ""
+                          } whitespace-nowrap p-1 border-gray-500 hover:text-secondary-green transition-all`}
+                        >
+                          Newsletters
+                        </li>
+                      </Link>
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -505,6 +523,24 @@ const Header = ({ theme, setTheme }) => {
                                 } whitespace-nowrap p-1 border-gray-500 hover:text-secondary-green transition-all`}
                               >
                                 Surveys
+                              </li>
+                            </Link>
+                            <Link
+                              href="/newsletters"
+                              className={`${
+                                theme !== "light" && pathname === "/newsletters"
+                                  ? "glassmorphism-sec-link"
+                                  : ""
+                              } px-[15px] py-[5px]`}
+                            >
+                              <li
+                                className={`${
+                                  pathname === "/newsletters"
+                                    ? "text-secondary-green"
+                                    : "text-main-light dark:text-main"
+                                } whitespace-nowrap p-1 border-gray-500 hover:text-secondary-green transition-all`}
+                              >
+                                Newsletters
                               </li>
                             </Link>
                           </motion.div>

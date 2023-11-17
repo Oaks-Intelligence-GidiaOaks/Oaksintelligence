@@ -10,15 +10,15 @@ import ecoImage from "../../assets/eco-weather.svg";
 const NewsletterCard = ({ data }) => {
   return (
     <div className=" my-3 py-3 border p-4 h-64 drop-shadow-sm rounded-md flex flex-col gap-2">
-      <div className="flex items-center gap-2">
+      <div className="flex items-end gap-2">
         {/* avatar */}
 
         <Image src="/eco-weather.png" width={40} height={60} alt="Icon image" />
 
-        <span className="text-gray-500">{data?.settings?.title}</span>
+        <span className="text-gray-500">{data?.settings?.from_name}</span>
 
         {/* time ago time */}
-        <span className="text-xs text-gray-500">
+        <span className="text-xs ml-auto text-gray-500">
           <Timeago date={data?.send_time} />
         </span>
       </div>
@@ -35,7 +35,7 @@ const NewsletterCard = ({ data }) => {
 
       <div className="flex gap-4 mt-auto">
         <span className="p-1 border rounded-md text-xs bg-gray-200">
-          {data?.settings?.title} Yard Peppo
+          {data?.settings?.title}
         </span>
 
         <Link

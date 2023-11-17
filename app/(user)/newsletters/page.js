@@ -11,7 +11,7 @@ import NewsletterBanner from "@/components/blogs/NewsletterBanner";
 import NewsletterCard from "@/components/newsletter/NewsletterCard";
 
 const Newsletters = () => {
-  const [pageData, setPageData] = useState([]);
+  const [pageData, setPageData] = useState(null);
   const [count, setCount] = useState(10);
   const [offset, setOffset] = useState(0);
   const { setTheme } = useContext(AppContext);
@@ -21,19 +21,18 @@ const Newsletters = () => {
     async function fetchData() {
       try {
         const response = await fetch(
-          `http://localhost:3000/api/get_campaigns?offset=${offset}&status=sent&count=${count}`
+          `/api/get_campaigns?offset=${offset}&status=sent&count=10`
         );
 
         const data = await response.json();
-        console.log(data);
-        setPageData(data.data);
+        setPageData(data);
       } catch (err) {
         console.error(err);
       }
     }
 
     fetchData();
-  }, [count, offset]);
+  }, [offset]);
 
   useLayoutEffect(() => {
     const cachedTheme = localStorage.getItem("oi-theme")
@@ -43,10 +42,8 @@ const Newsletters = () => {
   }, [setTheme]);
 
   const nextPage = () => {
-    if (pageData.length >= offset) {
-      return;
-    } else {
-      setOffset(offset + count);
+    if (!(pageData.count < offset)) {
+      setOffset(offset + 10);
     }
   };
 
@@ -58,9 +55,7 @@ const Newsletters = () => {
     }
   };
 
-  let pageNo = offset < 10 ? 1 : offset / count;
-
-  console.log("page no", pageNo);
+  let pageNo = Math.floor(offset / count) + 1;
 
   return (
     <main className="min-h-screen bg-white dark:bg-main overflow-hidden transition-[background] duration-500 ease-in-out">
@@ -70,8 +65,8 @@ const Newsletters = () => {
         {/* Content goes in here */}
 
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
-          {pageData.length > 0 &&
-            pageData?.map((item) => (
+          {pageData?.data?.length > 0 &&
+            pageData?.data?.map((item) => (
               <NewsletterCard key={item.id} data={item} />
             ))}
         </div>

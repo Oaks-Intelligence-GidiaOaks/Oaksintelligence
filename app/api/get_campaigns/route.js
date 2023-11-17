@@ -2,8 +2,8 @@ import mailchimp from "@mailchimp/mailchimp_marketing";
 import { NextResponse } from "next/server";
 
 mailchimp.setConfig({
-  apiKey: "16a89c084c7c999bd1909a8f811cdde4-us9",
-  server: "us9",
+  apiKey: "9120661c314bbc1f1b53c277c6248dbb-us21",
+  server: "us21",
 });
 
 export async function GET(request) {
@@ -11,8 +11,6 @@ export async function GET(request) {
   const searchParams = request.nextUrl.searchParams;
   const offset = searchParams.get("offset");
   const count = searchParams.get("count");
-
-  console.log(offset);
 
   try {
     let response = await mailchimp.campaigns.list({
@@ -23,7 +21,10 @@ export async function GET(request) {
       sort_dir: "DESC",
     });
 
-    return NextResponse.json({ data: response.campaigns });
+    return NextResponse.json({
+      data: response.campaigns,
+      count: response.total_items,
+    });
   } catch (err) {
     return NextResponse.json({ data: "error occurred", error: err.message });
   }
