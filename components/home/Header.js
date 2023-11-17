@@ -446,7 +446,7 @@ const Header = ({ theme, setTheme }) => {
                                 className={`${
                                   pathname === "/eco-kiddies"
                                     ? "text-secondary-green"
-                                    : ""
+                                    : "text-main-light dark:text-main"
                                 } whitespace-nowrap p-1 border-gray-500 hover:text-secondary-green transition-all`}
                               >
                                 Eco-Kiddies
@@ -464,7 +464,7 @@ const Header = ({ theme, setTheme }) => {
                                 className={`${
                                   pathname === "/eco-tales"
                                     ? "text-secondary-green"
-                                    : ""
+                                    : "text-main-light dark:text-main"
                                 } whitespace-nowrap p-1 border-gray-500 hover:text-secondary-green transition-all`}
                               >
                                 Eco-Tales
@@ -476,14 +476,14 @@ const Header = ({ theme, setTheme }) => {
                                 theme !== "light" &&
                                 pathname === "/market-intelligence-reports"
                                   ? "glassmorphism-sec-link"
-                                  : ""
+                                  : "text-main-light dark:text-main"
                               } px-[15px] py-[5px]`}
                             >
                               <li
                                 className={`${
                                   pathname === "/market-intelligence-reports"
                                     ? "text-secondary-green"
-                                    : ""
+                                    : "text-main-light dark:text-main"
                                 } whitespace-nowrap p-1 border-gray-500 hover:text-secondary-green transition-all`}
                               >
                                 Market Intelligence Reports
@@ -501,7 +501,7 @@ const Header = ({ theme, setTheme }) => {
                                 className={`${
                                   pathname === "/surveys"
                                     ? "text-secondary-green"
-                                    : ""
+                                    : "text-main-light dark:text-main"
                                 } whitespace-nowrap p-1 border-gray-500 hover:text-secondary-green transition-all`}
                               >
                                 Surveys
