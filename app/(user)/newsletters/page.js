@@ -64,7 +64,7 @@ const Newsletters = () => {
 
         {/* Content goes in here */}
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mt-10">
           {pageData?.data?.length > 0 &&
             pageData?.data?.map((item) => (
               <NewsletterCard key={item.id} data={item} />
@@ -72,7 +72,7 @@ const Newsletters = () => {
         </div>
 
         {/* pagination */}
-        <div className="text-sm mt-10 mx-auto flex justify-between md:w-1/2 items-center">
+        <div className="text-sm mt-10 mx-auto flex justify-between md:w-1/2 items-center poppins-4">
           <button
             onClick={prevPage}
             className="bg-gray-200 text-sm p-2 rounded-md text-gray-500"
