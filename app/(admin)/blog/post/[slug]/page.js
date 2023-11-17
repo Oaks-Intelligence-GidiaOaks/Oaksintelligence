@@ -1,3 +1,5 @@
+import Comment from "@/components/Comment";
+import CommentSection from "@/components/CommentSection";
 import RichTextComponents from "@/components/admin/RichTextComponents";
 import CommentForm from "@/components/blogs/CommentForm";
 import { client } from "@/sanity/lib/client";
@@ -28,6 +30,7 @@ const Post = async ({ params: { slug } }) => {
     *[_type=="post" && slug.current == $slug][0]
     {
         ...,
+    "comments": *[_type=='comment' && post._ref == ^._id] | order(_createdAt desc),
         author->,
         categories[]->
     }
@@ -123,12 +126,12 @@ const Post = async ({ params: { slug } }) => {
         </div>
       </section>
       {/* Comments */}
-      {/* <section className="mt-10">
+      <section className="mt-10">
         <h3 className="text-3xl pb-10 font-bold poppins-7 text-main-light dark:gradient-text transition-all duration-300 ease-in-out">
           Comments
         </h3>
-        <CommentForm _id={post._id} />
-      </section> */}
+        <CommentSection comments={post?.comments} postId={post._id} />
+      </section>
     </article>
   );
 };

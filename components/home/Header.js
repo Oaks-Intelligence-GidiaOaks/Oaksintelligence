@@ -1,5 +1,11 @@
 "use client";
-import React, { useContext, useEffect, useLayoutEffect, useState } from "react";
+import React, {
+  useCallback,
+  useContext,
+  useEffect,
+  useLayoutEffect,
+  useState,
+} from "react";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
@@ -8,13 +14,29 @@ import Logo from "../../assets/oaks-logo.svg";
 import LogoDark from "../../assets/oaks-logo-dark.svg";
 import { BsFillMoonStarsFill, BsFillSunFill } from "react-icons/bs";
 import { HiMenu } from "react-icons/hi";
-import { IoClose } from "react-icons/io5";
+import { IoChevronDown, IoClose } from "react-icons/io5";
 import ThemeSwitch from "../ThemeSwitch";
 import AppContext from "@/contexts/AppContext";
+import { useRef } from "react";
 
 const Header = ({ theme, setTheme }) => {
   const [showMenu, setShowMenu] = useState(false);
+  const [showProductsMenu, setShowProductsMenu] = useState(false);
   const pathname = usePathname();
+  const productsMenu = useRef(null);
+
+  const closeProductsMenu = useCallback(
+    (e) => {
+      if (
+        productsMenu.current &&
+        showProductsMenu &&
+        !productsMenu.current.contains(e.target)
+      ) {
+        setShowProductsMenu(false);
+      }
+    },
+    [showProductsMenu]
+  );
 
   useLayoutEffect(() => {
     const cachedTheme = localStorage.getItem("oi-theme")
@@ -22,6 +44,13 @@ const Header = ({ theme, setTheme }) => {
       : "dark";
     setTheme(cachedTheme);
   }, [setTheme]);
+
+  useEffect(() => {
+    window.addEventListener("mousedown", closeProductsMenu);
+    return () => {
+      window.removeEventListener("mousedown", closeProductsMenu);
+    };
+  }, [closeProductsMenu]);
 
   return (
     !pathname.includes("/studio") && (
@@ -44,7 +73,7 @@ const Header = ({ theme, setTheme }) => {
             />
           </Link>
           <div className="flex flex-1 justify-end gap-[5%] items-center ">
-            <ul className="hidden flex-1 justify-end poppins-6 text-main-light dark:text-main gap-[5%] items-center min-[1180px]:flex transition-[background] duration-500 ease-in-out">
+            <ul className="hidden flex-1 justify-end poppins-6 text-main-light dark:text-main gap-[2%] min-[1350px]:gap-[3%] items-center min-[1180px]:flex transition-[background] duration-500 ease-in-out">
               <Link
                 href="/"
                 className={`${
@@ -131,8 +160,125 @@ const Header = ({ theme, setTheme }) => {
                   Blog
                 </li>
               </Link>
+              <div
+                className={`${
+                  theme !== "light" &&
+                  (pathname.includes("/eco-kiddies") ||
+                    pathname.includes("/eco-tales") ||
+                    pathname.includes("/market-intelligence-reports") ||
+                    pathname.includes("/surveys"))
+                    ? "glassmorphism-sec-link"
+                    : ""
+                } px-[15px] py-[5px] relative`}
+              >
+                <li
+                  className={`${
+                    pathname.includes("/eco-kiddies") ||
+                    pathname.includes("/eco-tales") ||
+                    pathname.includes("/market-intelligence-reports") ||
+                    pathname.includes("/surveys")
+                      ? "text-secondary-green"
+                      : "text-main-light dark:text-main"
+                  } flex gap-1 items-center cursor-pointer`}
+                  onClick={() => setShowProductsMenu(!showProductsMenu)}
+                >
+                  <span>Products</span>
+                  <IoChevronDown
+                    className={`${
+                      showProductsMenu ? "rotate-180" : "rotate-0"
+                    } transition-all`}
+                  />
+                </li>
+                {/* Products nav */}
+                <AnimatePresence>
+                  {showProductsMenu && (
+                    <motion.div
+                      className="flex flex-col rounded-md absolute top-10 glassmorphism-menu dark:glassmorphism-menu-dark w-fit left-0"
+                      onClick={() => setShowProductsMenu(false)}
+                      initial={{ top: 0, opacity: 0 }}
+                      animate={{ top: "40px", opacity: 1 }}
+                      exit={{ top: 0, opacity: 0 }}
+                      ref={productsMenu}
+                    >
+                      <Link
+                        href="/eco-kiddies"
+                        className={`${
+                          theme !== "light" && pathname === "/eco-kiddies"
+                            ? "glassmorphism-sec-link"
+                            : ""
+                        } px-[15px] py-[5px]`}
+                      >
+                        <li
+                          className={`${
+                            pathname === "/eco-kiddies"
+                              ? "text-secondary-green"
+                              : ""
+                          } whitespace-nowrap p-1 border-gray-500 hover:text-secondary-green transition-all`}
+                        >
+                          Eco-Kiddies
+                        </li>
+                      </Link>
+                      <Link
+                        href="/eco-tales"
+                        className={`${
+                          theme !== "light" && pathname === "/eco-tales"
+                            ? "glassmorphism-sec-link"
+                            : ""
+                        } px-[15px] py-[5px]`}
+                      >
+                        <li
+                          className={`${
+                            pathname === "/eco-tales"
+                              ? "text-secondary-green"
+                              : ""
+                          } whitespace-nowrap p-1 border-gray-500 hover:text-secondary-green transition-all`}
+                        >
+                          Eco-Tales
+                        </li>
+                      </Link>
+                      <Link
+                        href="/market-intelligence-reports"
+                        className={`${
+                          theme !== "light" &&
+                          pathname === "/market-intelligence-reports"
+                            ? "glassmorphism-sec-link"
+                            : ""
+                        } px-[15px] py-[5px]`}
+                      >
+                        <li
+                          className={`${
+                            pathname === "/market-intelligence-reports"
+                              ? "text-secondary-green"
+                              : ""
+                          } whitespace-nowrap p-1 border-gray-500 hover:text-secondary-green transition-all`}
+                        >
+                          Market Intelligence Reports
+                        </li>
+                      </Link>
+                      <Link
+                        href="/surveys"
+                        className={`${
+                          theme !== "light" && pathname === "/surveys"
+                            ? "glassmorphism-sec-link"
+                            : ""
+                        } px-[15px] py-[5px]`}
+                      >
+                        <li
+                          className={`${
+                            pathname === "/surveys"
+                              ? "text-secondary-green"
+                              : ""
+                          } whitespace-nowrap p-1 border-gray-500 hover:text-secondary-green transition-all`}
+                        >
+                          Surveys
+                        </li>
+                      </Link>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
             </ul>
-            <div className="hidden p-2 cursor-pointer min-[1180px]:block">
+            <div className="hidden p-2 cursor-pointer min-[1200px]:block">
               <ThemeSwitch theme={theme} setTheme={setTheme} />
             </div>
             <button
@@ -248,6 +394,123 @@ const Header = ({ theme, setTheme }) => {
                         Dashboard
                       </li>
                     </Link>
+                    <div
+                      className={`${
+                        theme !== "light" &&
+                        (pathname.includes("/eco-kiddies") ||
+                          pathname.includes("/eco-tales") ||
+                          pathname.includes("/market-intelligence-reports") ||
+                          pathname.includes("/surveys"))
+                          ? "glassmorphism-sec-link"
+                          : ""
+                      } px-[15px] py-[5px] relative`}
+                      ref={productsMenu}
+                    >
+                      <li
+                        className={`${
+                          pathname.includes("/eco-kiddies") ||
+                          pathname.includes("/eco-tales") ||
+                          pathname.includes("/market-intelligence-reports") ||
+                          pathname.includes("/surveys")
+                            ? "text-secondary-green"
+                            : "text-main-light dark:text-main"
+                        } flex gap-1 items-center cursor-pointer`}
+                        onClick={() => setShowProductsMenu(!showProductsMenu)}
+                      >
+                        <span>Products</span>
+                        <IoChevronDown
+                          className={`${
+                            showProductsMenu ? "rotate-180" : "rotate-0"
+                          } transition-all`}
+                        />
+                      </li>
+                      {/* Products nav */}
+                      <AnimatePresence>
+                        {showProductsMenu && (
+                          <motion.div
+                            className="flex flex-col rounded-md absolute -top-44 -left-1/2 glassmorphism-menu dark:glassmorphism-menu-dark w-fit"
+                            onClick={() => setShowProductsMenu(false)}
+                            initial={{ top: "-156px", opacity: 0 }}
+                            animate={{ top: "-176px", opacity: 1 }}
+                            exit={{ top: "-156px", opacity: 0 }}
+                          >
+                            <Link
+                              href="/eco-kiddies"
+                              className={`${
+                                theme !== "light" && pathname === "/eco-kiddies"
+                                  ? "glassmorphism-sec-link"
+                                  : ""
+                              } px-[15px] py-[5px]`}
+                            >
+                              <li
+                                className={`${
+                                  pathname === "/eco-kiddies"
+                                    ? "text-secondary-green"
+                                    : "text-main-light dark:text-main"
+                                } whitespace-nowrap p-1 border-gray-500 hover:text-secondary-green transition-all`}
+                              >
+                                Eco-Kiddies
+                              </li>
+                            </Link>
+                            <Link
+                              href="/eco-tales"
+                              className={`${
+                                theme !== "light" && pathname === "/eco-tales"
+                                  ? "glassmorphism-sec-link"
+                                  : ""
+                              } px-[15px] py-[5px]`}
+                            >
+                              <li
+                                className={`${
+                                  pathname === "/eco-tales"
+                                    ? "text-secondary-green"
+                                    : "text-main-light dark:text-main"
+                                } whitespace-nowrap p-1 border-gray-500 hover:text-secondary-green transition-all`}
+                              >
+                                Eco-Tales
+                              </li>
+                            </Link>
+                            <Link
+                              href="/market-intelligence-reports"
+                              className={`${
+                                theme !== "light" &&
+                                pathname === "/market-intelligence-reports"
+                                  ? "glassmorphism-sec-link"
+                                  : "text-main-light dark:text-main"
+                              } px-[15px] py-[5px]`}
+                            >
+                              <li
+                                className={`${
+                                  pathname === "/market-intelligence-reports"
+                                    ? "text-secondary-green"
+                                    : "text-main-light dark:text-main"
+                                } whitespace-nowrap p-1 border-gray-500 hover:text-secondary-green transition-all`}
+                              >
+                                Market Intelligence Reports
+                              </li>
+                            </Link>
+                            <Link
+                              href="/surveys"
+                              className={`${
+                                theme !== "light" && pathname === "/surveys"
+                                  ? "glassmorphism-sec-link"
+                                  : ""
+                              } px-[15px] py-[5px]`}
+                            >
+                              <li
+                                className={`${
+                                  pathname === "/surveys"
+                                    ? "text-secondary-green"
+                                    : "text-main-light dark:text-main"
+                                } whitespace-nowrap p-1 border-gray-500 hover:text-secondary-green transition-all`}
+                              >
+                                Surveys
+                              </li>
+                            </Link>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
                     <Link
                       href="/blog"
                       onClick={() => setShowMenu(false)}

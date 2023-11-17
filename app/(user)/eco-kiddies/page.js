@@ -53,10 +53,10 @@ const EcoKiddies = async ({ searchParams }) => {
       {/* Search bar */}
       <div className="w-full">
         <div className="flex mx-auto justify-end max-w-[1440px] py-5 px-[5%] sm:px-[10%] items-center">
-          <SearchBar placeholder="Search Eco-Kiddies" />
+          <SearchBar placeholder="Search Eco-Kiddies" type={"eco-kiddies"} />
         </div>
       </div>
-      <ComicList comics={posts.posts} />
+      <ComicList comics={posts.posts} type={"eco-kiddies"} />
       <div className="w-full mb-10 md:mb-20">
         <div className="flex mx-auto justify-center max-w-[1440px] py-5 px-[5%] sm:px-[10%] items-center">
           <div className="flex w-[280px] md:w-[480px] justify-between">
