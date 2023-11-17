@@ -4,7 +4,7 @@ import { post } from "./schemas/post";
 import { author } from "./schemas/author";
 import { comment } from "./schemas/comment";
 import { ecoKiddies } from "./schemas/eco-kiddies";
-import { ecoTails } from "./schemas/eco-tails";
+import { ecoTales } from "./schemas/eco-tales";
 import { marketIntelligenceReport } from "./schemas/mir";
 import { survey } from "./schemas/survey";
 
@@ -16,7 +16,7 @@ export const schema = {
     category,
     blockContent,
     ecoKiddies,
-    ecoTails,
+    ecoTales,
     marketIntelligenceReport,
     survey,
   ],

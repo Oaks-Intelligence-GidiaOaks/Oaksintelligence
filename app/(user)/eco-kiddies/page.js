@@ -15,7 +15,7 @@ import ComicList from "@/components/admin/ComicList";
 const ITEMS_PER_PAGE = 6;
 const query = groq`
  {
-  "posts": *[_type=='post'] {
+  "posts": *[_type=='eco-kiddies'] {
     ...,
   author->,
   categories[]->
@@ -23,7 +23,7 @@ const query = groq`
   // === SLICING THE COLLECTION ===
   [($pageIndex * ${ITEMS_PER_PAGE})...($pageIndex + 1) * ${ITEMS_PER_PAGE}]
   ,
-  "total": count(*[_type == "post"]) 
+  "total": count(*[_type == "eco-kiddies"]) 
 }
 `;
 
@@ -53,10 +53,10 @@ const EcoKiddies = async ({ searchParams }) => {
       {/* Search bar */}
       <div className="w-full">
         <div className="flex mx-auto justify-end max-w-[1440px] py-5 px-[5%] sm:px-[10%] items-center">
-          <SearchBar placeholder="Search Eco-Kiddies" />
+          <SearchBar placeholder="Search Eco-Kiddies" type={"eco-kiddies"} />
         </div>
       </div>
-      <ComicList comics={posts.posts} />
+      <ComicList comics={posts.posts} type={"eco-kiddies"} />
       <div className="w-full mb-10 md:mb-20">
         <div className="flex mx-auto justify-center max-w-[1440px] py-5 px-[5%] sm:px-[10%] items-center">
           <div className="flex w-[280px] md:w-[480px] justify-between">
