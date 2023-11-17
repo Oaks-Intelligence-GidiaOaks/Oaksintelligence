@@ -39,12 +39,36 @@ const PDFViewer = ({ callback, file }) => {
       document.body.style.overflow = "auto";
     };
   }, []);
+
+  useEffect(() => {
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft") {
+        setPageNumber((prev) => (prev > 1 ? prev - 1 : prev));
+      }
+      if (e.key === "ArrowRight") {
+        setPageNumber((prev) => (prev < numPages ? prev + 1 : prev));
+      }
+    });
+
+    return () => {
+      window.removeEventListener("keydown", (e) => {
+        // console.log(e);
+        if (e.key === "ArrowLeft") {
+          setPageNumber((prev) => (prev > 1 ? prev - 1 : prev));
+        }
+        if (e.key === "ArrowRight") {
+          setPageNumber((prev) => (prev < numPages ? prev + 1 : prev));
+        }
+      });
+    };
+  }, [numPages]);
+
   return (
     <div className="w-screen h-screen bg-[rgba(0,0,0,0.5)] backdrop-blur-lg flex flex-col justify-center fixed top-0 left-0 items-center z-[1000000]">
-      <div className="w-[clamp(240px,100%,1440px)] items-center flex justify-between py-2 px-2 sm:px-5">
+      <div className="w-[clamp(240px,100%,1440px)] items-center flex justify-between px-2 sm:px-5">
         {/* Navigation */}
         <div className="flex items-center gap-3 flex-[0.33]">
-          <div className="flex gap-0 sm:gap-4">
+          {/* <div className="flex gap-0 sm:gap-4">
             <button
               onClick={() => {
                 setPageNumber((prev) => (prev > 1 ? prev - 1 : prev));
@@ -71,7 +95,7 @@ const PDFViewer = ({ callback, file }) => {
                 color={pageNumber >= numPages ? "gray" : "white"}
               />
             </button>
-          </div>
+          </div> */}
           <p className="whitespace-nowrap poppins-4">
             Page{" "}
             <input
@@ -98,7 +122,7 @@ const PDFViewer = ({ callback, file }) => {
             }
             className="hover:bg-gray-700 p-1 rounded-md transition-all"
           >
-            <IoIosRemove size={20} title="Zoom out" />
+            <IoIosRemove size={40} title="Zoom out" />
           </button>
           <p
             title="Scale"
@@ -112,7 +136,7 @@ const PDFViewer = ({ callback, file }) => {
             }}
             className="hover:bg-gray-700 p-1 rounded-md transition-all"
           >
-            <IoIosAdd size={20} title="Zoom in" />
+            <IoIosAdd size={40} title="Zoom in" />
           </button>
         </div>
         <div className="flex items-center w-fit sm:flex-[0.33] justify-end">
@@ -134,7 +158,34 @@ const PDFViewer = ({ callback, file }) => {
             onLoadSuccess={onDocumentLoadSuccess}
             className="h-[calc(100vh-80px)] transition-all"
           >
-            <Outline />
+            {/* <Outline /> */}
+
+            <button
+              onClick={() => {
+                setPageNumber((prev) => (prev > 1 ? prev - 1 : prev));
+              }}
+              disabled={pageNumber <= 1}
+              className="hover:bg-gray-700 sm:p-1 bg-[rgba(0,0,0,0.2)] rounded-full transition-all fixed top-1/2 -translate-y-1/2 left-[3vw] z-[10000]"
+            >
+              <BsCaretLeft
+                title="Previous Page"
+                color={pageNumber <= 1 ? "gray" : "white"}
+                className="w-[40px] h-[40px] sm:w-[100px] sm:h-[100px]"
+              />
+            </button>
+            <button
+              onClick={() => {
+                setPageNumber((prev) => (prev < numPages ? prev + 1 : prev));
+              }}
+              disabled={pageNumber === numPages}
+              className="hover:bg-gray-700 sm:p-1 bg-[rgba(0,0,0,0.2)] rounded-full transition-all fixed top-1/2 -translate-y-1/2 right-[3vw] z-[10000]"
+            >
+              <BsCaretRight
+                title="Next Page"
+                color={pageNumber >= numPages ? "gray" : "white"}
+                className="w-[40px] h-[40px] sm:w-[100px] sm:h-[100px]"
+              />
+            </button>
             <Page
               pageNumber={pageNumber}
               height={
