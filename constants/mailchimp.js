@@ -1,2 +1,2 @@
-export const API_BASE = "https://us9.api.mailchimp.com/3.0/";
-export const API_TOKEN = "16a89c084c7c999bd1909a8f811cdde4-us9";
+export const API_BASE = process.env.NEXT_PUBLIC_MAILCHIMP_NEWSLETTER_API_BASE;
+export const API_TOKEN = process.env.NEXT_PUBLIC_MAILCHIMP_NEWSLETTER_API_TOKEN;
