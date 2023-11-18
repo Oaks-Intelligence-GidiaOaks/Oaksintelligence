@@ -12,6 +12,9 @@ import React from "react";
 // revalidate this page every 30 seconds
 export const revalidate = 30;
 
+// regenerate static params
+export const dynamic = "auto";
+
 export async function generateStaticParams() {
   const query = groq`*[_type=="post"]
   {
