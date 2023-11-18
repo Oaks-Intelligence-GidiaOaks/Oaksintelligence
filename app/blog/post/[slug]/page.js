@@ -12,6 +12,9 @@ import React from "react";
 // revalidate this page every 30 seconds
 export const revalidate = 30;
 
+// regenerate static params
+export const dynamic = "auto";
+
 export async function generateStaticParams() {
   const query = groq`*[_type=="post"]
   {
@@ -36,6 +39,7 @@ const Post = async ({ params: { slug } }) => {
     }
     `;
   const post = await client.fetch(query, { slug });
+  console.log(post);
 
   return (
     <article className="pb-28 mx-auto justify-between max-w-[1440px] py-5 px-[5%] sm:px-[10%] items-center bg-white dark:bg-main transition-all duration-300 ease-in-out">
@@ -112,7 +116,7 @@ const Post = async ({ params: { slug } }) => {
             height={50}
             width={50}
           />
-          <div className="flex max-w-[360px] flex-col">
+          <div className="flex max-w-[720px] flex-col">
             <h3 className="gold-gradient-text transition-all duration-300 ease-in-out text-xl jost font-bold">
               {post.author.name}
             </h3>
