@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Header from "../home/Header";
-import "../../app/(admin)/blog/globals.css";
+import "../../app/blog/globals.css";
 import Footer from "@/components/home/Footer";
 
 export const metadata = {
