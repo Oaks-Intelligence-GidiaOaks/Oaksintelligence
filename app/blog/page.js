@@ -29,7 +29,7 @@ const query = groq`
 // revalidate this page every 30 seconds
 export const revalidate = 30;
 
-const About = async ({ searchParams }) => {
+const Blog = async ({ searchParams }) => {
   const { isEnabled } = draftMode();
 
   const pageIndex = searchParams.page ? Number(searchParams.page) - 1 : 0;
@@ -46,6 +46,7 @@ const About = async ({ searchParams }) => {
   }
 
   const posts = await client.fetch(query, { pageIndex });
+
   return (
     <main className="min-h-screen bg-white dark:bg-main transition-all duration-300 ease-in-out overflow-hidden">
       <NewsletterBanner />
@@ -104,4 +105,4 @@ const About = async ({ searchParams }) => {
   );
 };
 
-export default About;
+export default Blog;

@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { BiSearch } from "react-icons/bi";
 
-const SearchBar = ({ placeholder, category, type }) => {
+const SearchBar = ({ placeholder, type }) => {
   const [query, setQuery] = useState("");
   const router = useRouter();
 
