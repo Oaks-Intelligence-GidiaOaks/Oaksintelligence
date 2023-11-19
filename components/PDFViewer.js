@@ -7,6 +7,8 @@ import { BsCaretLeft, BsCaretRight } from "react-icons/bs";
 import { IoIosAdd, IoIosRemove } from "react-icons/io";
 import { useSwipeable } from "react-swipeable";
 import { useEffect } from "react";
+import FlipPage from "react-flip-page";
+import HTMLFlipBook from "react-pageflip";
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   "pdfjs-dist/build/pdf.worker.min.js",
@@ -41,7 +43,7 @@ const PDFViewer = ({ callback, file }) => {
   }, []);
 
   useEffect(() => {
-    window.addEventListener("keydown", (e) => {
+    document.addEventListener("keydown", (e) => {
       if (e.key === "ArrowLeft") {
         setPageNumber((prev) => (prev > 1 ? prev - 1 : prev));
       }
@@ -51,7 +53,7 @@ const PDFViewer = ({ callback, file }) => {
     });
 
     return () => {
-      window.removeEventListener("keydown", (e) => {
+      document.removeEventListener("keydown", (e) => {
         // console.log(e);
         if (e.key === "ArrowLeft") {
           setPageNumber((prev) => (prev > 1 ? prev - 1 : prev));
@@ -195,10 +197,8 @@ const PDFViewer = ({ callback, file }) => {
               renderAnnotationLayer={false}
               renderTextLayer={false}
               scale={scale}
+              _className="w-full"
             />
-            {/* <Page
-            pageNumber={pageNumber}
-          /> */}
           </Document>
         </div>
       </div>
