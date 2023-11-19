@@ -11,7 +11,8 @@ export async function POST(request) {
   const { name, text, _id } = await request.json();
 
   try {
-    client
+    console.log("start");
+    await client
       .config({
         token: apiToken,
       })
@@ -24,13 +25,14 @@ export async function POST(request) {
           _ref: _id,
         },
       });
+    console.log("finish");
 
     return new Response(JSON.stringify({ message: "OK" }), {
       status: 200,
     });
   } catch (error) {
     return new Response(JSON.stringify(error), {
-      status: 400,
+      status: 500,
     });
   }
 }

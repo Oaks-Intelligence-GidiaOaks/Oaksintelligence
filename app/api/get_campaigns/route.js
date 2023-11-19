@@ -2,7 +2,7 @@ import mailchimp from "@mailchimp/mailchimp_marketing";
 import { NextResponse } from "next/server";
 
 mailchimp.setConfig({
-  apiKey: "9120661c314bbc1f1b53c277c6248dbb-us21",
+  apiKey: process.env.NEXT_PUBLIC_MAILCHIMP_API_KEY,
   server: "us21",
 });
 

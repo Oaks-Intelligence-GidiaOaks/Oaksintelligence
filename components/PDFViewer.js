@@ -7,11 +7,35 @@ import { BsCaretLeft, BsCaretRight } from "react-icons/bs";
 import { IoIosAdd, IoIosRemove } from "react-icons/io";
 import { useSwipeable } from "react-swipeable";
 import { useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   "pdfjs-dist/build/pdf.worker.min.js",
   import.meta.url
 ).toString();
+
+const initialLeft = {
+  opacity: 0,
+  translateX: "-20%",
+};
+const initialRight = {
+  opacity: 0,
+  translateX: "20%",
+};
+const exitLeft = {
+  opacity: 0,
+  translateX: "-20%",
+};
+const exitRight = {
+  opacity: 0,
+  translateX: "20%",
+};
+const animateIn = {
+  opacity: 1,
+  translateX: 0,
+};
+
+let direction = "right";
 
 const PDFViewer = ({ callback, file }) => {
   const [numPages, setNumPages] = useState();
@@ -22,15 +46,15 @@ const PDFViewer = ({ callback, file }) => {
     setNumPages(numPages);
   }
 
-  const handlers = useSwipeable({
-    onSwipedLeft: (eventData) => {
-      setPageNumber((prev) => (prev < numPages ? prev + 1 : prev));
-    },
-    onSwipedRight: (eventData) => {
-      setPageNumber((prev) => (prev > 1 ? prev - 1 : prev));
-    },
-    // ...config,
-  });
+  // const handlers = useSwipeable({
+  //   onSwipedLeft: (eventData) => {
+  //     setPageNumber((prev) => (prev < numPages ? prev + 1 : prev));
+  //   },
+  //   onSwipedRight: (eventData) => {
+  //     setPageNumber((prev) => (prev > 1 ? prev - 1 : prev));
+  //   },
+  //   // ...config,
+  // });
 
   useEffect(() => {
     document.body.style.overflow = "hidden";
@@ -41,22 +65,26 @@ const PDFViewer = ({ callback, file }) => {
   }, []);
 
   useEffect(() => {
-    window.addEventListener("keydown", (e) => {
+    document.addEventListener("keydown", (e) => {
       if (e.key === "ArrowLeft") {
+        direction = "left";
         setPageNumber((prev) => (prev > 1 ? prev - 1 : prev));
       }
       if (e.key === "ArrowRight") {
+        direction = "right";
         setPageNumber((prev) => (prev < numPages ? prev + 1 : prev));
       }
     });
 
     return () => {
-      window.removeEventListener("keydown", (e) => {
+      document.removeEventListener("keydown", (e) => {
         // console.log(e);
         if (e.key === "ArrowLeft") {
+          direction = "left";
           setPageNumber((prev) => (prev > 1 ? prev - 1 : prev));
         }
         if (e.key === "ArrowRight") {
+          direction = "right";
           setPageNumber((prev) => (prev < numPages ? prev + 1 : prev));
         }
       });
@@ -148,8 +176,8 @@ const PDFViewer = ({ callback, file }) => {
         </div>
       </div>
       <div
-        {...handlers}
-        style={{ touchAction: "pan-y" }}
+        // {...handlers}
+        // style={{ touchAction: "pan-y" }}
         className="max-w-[1440px] w-full flex justify-center h-screen overflow-auto"
       >
         <div className="PdfDiv">
@@ -162,6 +190,7 @@ const PDFViewer = ({ callback, file }) => {
 
             <button
               onClick={() => {
+                direction = "left";
                 setPageNumber((prev) => (prev > 1 ? prev - 1 : prev));
               }}
               disabled={pageNumber <= 1}
@@ -175,6 +204,7 @@ const PDFViewer = ({ callback, file }) => {
             </button>
             <button
               onClick={() => {
+                direction = "right";
                 setPageNumber((prev) => (prev < numPages ? prev + 1 : prev));
               }}
               disabled={pageNumber === numPages}
@@ -186,19 +216,36 @@ const PDFViewer = ({ callback, file }) => {
                 className="w-[40px] h-[40px] sm:w-[100px] sm:h-[100px]"
               />
             </button>
-            <Page
-              pageNumber={pageNumber}
-              height={
-                document.getElementsByClassName("PdfDiv")[0]?.clientHeight *
-                  1 ?? 150
-              }
-              renderAnnotationLayer={false}
-              renderTextLayer={false}
-              scale={scale}
-            />
-            {/* <Page
-            pageNumber={pageNumber}
-          /> */}
+            <AnimatePresence mode="wait">
+              {Array(numPages)
+                .fill(0)
+                .map((_, i) => i + 1)
+                .map(
+                  (page) =>
+                    pageNumber === page && (
+                      <motion.div
+                        key={page}
+                        initial={
+                          direction === "right" ? initialRight : initialLeft
+                        }
+                        animate={animateIn}
+                        exit={direction === "right" ? exitLeft : exitRight}
+                      >
+                        <Page
+                          pageNumber={page}
+                          height={
+                            document.getElementsByClassName("PdfDiv")[0]
+                              ?.clientHeight * 1 ?? 150
+                          }
+                          renderAnnotationLayer={false}
+                          renderTextLayer={false}
+                          scale={scale}
+                          _className="w-full"
+                        />
+                      </motion.div>
+                    )
+                )}
+            </AnimatePresence>
           </Document>
         </div>
       </div>
