@@ -447,7 +447,10 @@ const Header = ({ theme, setTheme }) => {
                         {showProductsMenu && (
                           <motion.div
                             className="flex flex-col rounded-md absolute -top-44 -left-1/2 glassmorphism-menu dark:glassmorphism-menu-dark w-fit"
-                            onClick={() => setShowProductsMenu(false)}
+                            onClick={() => {
+                              setShowProductsMenu(false);
+                              setShowMenu(false);
+                            }}
                             initial={{ top: "-156px", opacity: 0 }}
                             animate={{ top: "-176px", opacity: 1 }}
                             exit={{ top: "-156px", opacity: 0 }}
