@@ -4,12 +4,18 @@ import React from "react";
 import { FaNewspaper } from "react-icons/fa6";
 import Timeago from "react-timeago";
 import ecoImage from "../../assets/eco-weather.svg";
+import { motion } from "framer-motion";
 // import frenchStrings from "react-timeago/lib/language-strings/fr";
 // import buildFormatter from "react-timeago/lib/formatters/buildFormatter";
 
 const NewsletterCard = ({ data }) => {
   return (
-    <div className=" my-3 py-3 p-4 h-64 drop-shadow-sm rounded-md flex flex-col gap-2 glassmorphism dark:glassmorphism-sec-link">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className=" my-3 py-3 p-4 h-64 drop-shadow-sm rounded-md flex flex-col gap-2 glassmorphism dark:glassmorphism-sec-link"
+    >
       <div className="flex items-end gap-2">
         {/* avatar */}
 
@@ -32,7 +38,7 @@ const NewsletterCard = ({ data }) => {
           </h5>
         </Link>
 
-        <p className="text-gray-500 poppins-4">
+        <p className="text-gray-500 poppins-4 line-clamp-4">
           {data?.settings?.preview_text}
         </p>
       </div>
@@ -54,7 +60,7 @@ const NewsletterCard = ({ data }) => {
 
         {/* dots icon */}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

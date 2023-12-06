@@ -41,7 +41,7 @@ const Surveys = async ({ searchParams }) => {
   if (isEnabled) {
     return (
       <main className="min-h-screen bg-white dark:bg-main overflow-hidden">
-        <NewsletterBanner />
+        {/* <NewsletterBanner /> */}
         <PreviewBlogList query={query} />
       </main>
     );
@@ -50,7 +50,7 @@ const Surveys = async ({ searchParams }) => {
   const posts = await client.fetch(query, { pageIndex });
   return (
     <main className="min-h-screen bg-white dark:bg-main transition-all duration-300 ease-in-out overflow-hidden">
-      <NewsletterBanner />
+      {/* <NewsletterBanner /> */}
       {posts.posts.length ? (
         <>
           {/* Search bar */}
