@@ -5,7 +5,6 @@ import { IoClose } from "react-icons/io5";
 import { useState } from "react";
 import { BsCaretLeft, BsCaretRight } from "react-icons/bs";
 import { IoIosAdd, IoIosRemove } from "react-icons/io";
-import { useSwipeable } from "react-swipeable";
 import { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
