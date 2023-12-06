@@ -7,6 +7,8 @@ import Footer from "@/components/home/Footer";
 import NewsLetterModal from "@/components/NewsLetterModal";
 import { AnimatePresence } from "framer-motion";
 import { Analytics } from "@vercel/analytics/react";
+import "react-loading-skeleton/dist/skeleton.css";
+import { SkeletonTheme } from "react-loading-skeleton";
 
 const Wrapper = ({ children }) => {
   const { theme, setTheme, showNewsletter, setShowNewsletter } =
@@ -23,7 +25,12 @@ const Wrapper = ({ children }) => {
     <>
       <Header theme={theme} setTheme={setTheme} />
       <NewsLetterModal />
-      {children}
+      <SkeletonTheme
+        baseColor={theme === "dark" ? "#444444" : "#d9d9d9"}
+        highlightColor={theme === "dark" ? "#555555" : "#e9e9e9"}
+      >
+        {children}
+      </SkeletonTheme>
       <Footer />
     </>
   );
