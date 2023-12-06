@@ -51,7 +51,7 @@ const MarketIntelligenceReports = async ({ searchParams }) => {
   const posts = await client.fetch(query, { pageIndex });
   return (
     <main className="min-h-screen bg-white dark:bg-main transition-all duration-300 ease-in-out overflow-hidden">
-      <NewsletterBanner />
+      {/* <NewsletterBanner /> */}
       {posts.posts.length ? (
         <>
           {/* Search bar */}
