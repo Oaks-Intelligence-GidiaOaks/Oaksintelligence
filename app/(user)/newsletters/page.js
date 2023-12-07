@@ -134,25 +134,25 @@ const Newsletters = () => {
         </div>
 
         {/* pagination */}
-        <div className="text-sm mt-10 mx-auto flex justify-between md:w-1/2 items-center poppins-4">
-          <button
-            onClick={prevPage}
-            className="bg-gray-200 text-sm p-2 rounded-md text-gray-500"
-          >
-            Previous
-          </button>
+        {!isLoading && pageData?.data?.length > 0 && (
+          <div className="text-sm mt-10 mx-auto flex justify-between md:w-1/2 items-center poppins-4">
+            <button
+              onClick={prevPage}
+              className="bg-gray-200 text-sm p-2 rounded-md text-gray-500"
+            >
+              Previous
+            </button>
 
-          <span className="dark:text-gray-300">Page {pageNo}</span>
+            <span className="dark:text-gray-300">Page {pageNo}</span>
 
-          <Skeleton />
-
-          <button
-            onClick={nextPage}
-            className="bg-gray-200 text-sm p-2 rounded-md text-gray-500"
-          >
-            Next
-          </button>
-        </div>
+            <button
+              onClick={nextPage}
+              className="bg-gray-200 text-sm p-2 rounded-md text-gray-500"
+            >
+              Next
+            </button>
+          </div>
+        )}
       </div>
     </main>
   );
