@@ -145,6 +145,13 @@ const Newsletters = () => {
           <span className="dark:text-gray-300">Page {pageNo}</span>
 
           <Skeleton />
+
+          <button
+            onClick={nextPage}
+            className="bg-gray-200 text-sm p-2 rounded-md text-gray-500"
+          >
+            Next
+          </button>
         </div>
       </div>
     </main>
