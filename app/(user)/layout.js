@@ -1,5 +1,5 @@
 "use client";
-import { useContext, useEffect } from "react";
+import { Suspense, useContext, useEffect } from "react";
 import Header from "../../components/home/Header";
 import "./globals.css";
 import AppContext, { AppProvider } from "@/contexts/AppContext";
@@ -9,6 +9,8 @@ import { AnimatePresence } from "framer-motion";
 import { Analytics } from "@vercel/analytics/react";
 import "react-loading-skeleton/dist/skeleton.css";
 import { SkeletonTheme } from "react-loading-skeleton";
+import posthog from "posthog-js";
+import { PHProvider, PostHogPageview } from "../providers";
 
 const Wrapper = ({ children }) => {
   const { theme, setTheme, showNewsletter, setShowNewsletter } =
@@ -79,12 +81,17 @@ export default function RootLayout({ children }) {
           content="Revolutionizing the tech landscape with cutting-edge solutions. Our startup combines innovation and expertise to deliver transformative products that empower businesses and individuals. Discover how our advanced technologies are reshaping industries and driving digital transformation. Join us on this journey towards a smarter, more connected future."
         />
       </head>
-      <body>
-        <AppProvider>
-          <Wrapper>{children}</Wrapper>
-        </AppProvider>
-        <Analytics />
-      </body>
+      <Suspense>
+        <PostHogPageview />
+      </Suspense>
+      <PHProvider>
+        <body>
+          <AppProvider>
+            <Wrapper>{children}</Wrapper>
+          </AppProvider>
+          <Analytics />
+        </body>
+      </PHProvider>
     </html>
   );
 }
