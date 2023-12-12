@@ -1,6 +1,8 @@
 import { Wrapper } from "@/components/admin/Wrapper";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
+import { PHProvider, PostHogPageview } from "../providers";
+import { Suspense } from "react";
 
 export const metadata = {
   title: "Oaks Intelligence",
@@ -50,10 +52,15 @@ export default function RootLayout({ children }) {
           content="Revolutionizing the tech landscape with cutting-edge solutions. Our startup combines innovation and expertise to deliver transformative products that empower businesses and individuals. Discover how our advanced technologies are reshaping industries and driving digital transformation. Join us on this journey towards a smarter, more connected future."
         />
       </head>
-      <body>
-        <Wrapper>{children}</Wrapper>
-        <Analytics />
-      </body>
+      <Suspense>
+        <PostHogPageview />
+      </Suspense>
+      <PHProvider>
+        <body>
+          <Wrapper>{children}</Wrapper>
+          <Analytics />
+        </body>
+      </PHProvider>
     </html>
   );
 }
