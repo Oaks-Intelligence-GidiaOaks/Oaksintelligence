@@ -3,7 +3,7 @@ import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import { PHProvider, PostHogPageview } from "../providers";
 import { Suspense } from "react";
-import GoogleAnalytics from "@bradgarropy/next-google-analytics/dist/types/components/GoogleAnalytics";
+import GoogleAnalytics from "@bradgarropy/next-google-analytics";
 
 export const metadata = {
   title: "Oaks Intelligence",

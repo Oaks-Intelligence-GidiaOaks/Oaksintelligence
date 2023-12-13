@@ -11,7 +11,7 @@ import "react-loading-skeleton/dist/skeleton.css";
 import { SkeletonTheme } from "react-loading-skeleton";
 import posthog from "posthog-js";
 import { PHProvider, PostHogPageview } from "../providers";
-import GoogleAnalytics from "@bradgarropy/next-google-analytics/dist/types/components/GoogleAnalytics";
+import GoogleAnalytics from "@bradgarropy/next-google-analytics";
 
 const Wrapper = ({ children }) => {
   const { theme, setTheme, showNewsletter, setShowNewsletter } =
