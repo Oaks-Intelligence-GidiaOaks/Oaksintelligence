@@ -1,3 +1,5 @@
+"use client";
+
 import AppContext from "@/contexts/AppContext";
 import React, { useContext } from "react";
 import { Timeline, Tweet } from "react-twitter-widgets";

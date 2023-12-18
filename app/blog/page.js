@@ -11,6 +11,8 @@ import Link from "next/link";
 import { BiSearch } from "react-icons/bi";
 import SearchBar from "@/components/blogs/SearchBar";
 import ComingSoon from "@/components/ComingSoon";
+import PostHogClient from "../posthog";
+import posthog from "posthog-js";
 
 const ITEMS_PER_PAGE = 6;
 const query = groq`
@@ -31,6 +33,11 @@ const query = groq`
 export const revalidate = 30;
 
 const Blog = async ({ searchParams }) => {
+  // const posthogClient = PostHogClient();
+  // posthogClient.capture({
+  //   distinctId: posthog
+  // })
+
   const { isEnabled } = draftMode();
 
   const pageIndex = searchParams.page ? Number(searchParams.page) - 1 : 0;
@@ -50,7 +57,7 @@ const Blog = async ({ searchParams }) => {
 
   return (
     <main className="min-h-screen bg-white dark:bg-main transition-all duration-300 ease-in-out overflow-hidden">
-      <NewsletterBanner />
+      {/* <NewsletterBanner /> */}
       {posts.posts.length ? (
         <>
           {/* Search bar */}
