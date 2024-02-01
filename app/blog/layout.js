@@ -1,7 +1,7 @@
 import { Wrapper } from "@/components/admin/Wrapper";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
-import { PHProvider, PostHogPageview } from "../providers";
+// import { PHProvider, PostHogPageview } from "../providers";
 import { Suspense } from "react";
 import GoogleAnalytics from "@bradgarropy/next-google-analytics";
 
@@ -54,15 +54,15 @@ export default function RootLayout({ children }) {
         />
       </head>
       <GoogleAnalytics measurementId={process.env.NEXT_PUBLIC_GANALYTICS_ID} />
-      <Suspense>
+      {/* <Suspense>
         <PostHogPageview />
-      </Suspense>
-      <PHProvider>
-        <body>
-          <Wrapper>{children}</Wrapper>
-          <Analytics />
-        </body>
-      </PHProvider>
+      </Suspense> */}
+      {/* <PHProvider> */}
+      <body>
+        <Wrapper>{children}</Wrapper>
+        <Analytics />
+      </body>
+      {/* </PHProvider> */}
     </html>
   );
 }

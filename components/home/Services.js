@@ -4,7 +4,8 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Glow from "../../assets/solutions/glow.svg";
 import { services } from "../../constants";
-import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
+import { BsArrowLeft } from "@react-icons/all-files/bs/BsArrowLeft";
+import { BsArrowRight } from "@react-icons/all-files/bs/BsArrowRight";
 import Link from "next/link";
 
 const containerReveal = {
@@ -73,7 +74,7 @@ const Services = () => {
       id="services"
       className="w-full bg-dark-blue dark:bg-dark-black sm:pb-10 transition-[background] duration-500 ease-in-out"
     >
-      <div className="flex relative flex-col mx-auto justify-between max-w-[1440px] py-5 items-center overflow-visible">
+      <div className="flex relative flex-col mx-auto justify-between max-w-[1560px] py-5 items-center overflow-visible">
         <motion.div
           variants={containerReveal}
           initial="hidden"

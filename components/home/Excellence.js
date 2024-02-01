@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
-import experience from "../../assets/experience/experience.svg";
+import experience from "../../assets/experience/experience.webp";
 import Link from "next/link";
 
 const containerReveal = {
@@ -41,7 +41,7 @@ const nestedItemLeft = {
 const Excellence = () => {
   return (
     <div className="w-full bg-[#E9FFEC] dark:bg-[#e9ffec08] transition-[background] duration-500 ease-in-out overflow-hidden">
-      <div className="relative flex justify-between mx-auto max-w-[1440px] py-[20vmin] px-[5%] sm:px-[10%] transition-[background] duration-500 ease-in-out">
+      <div className="relative flex justify-between mx-auto max-w-[1560px] py-[20vmin] px-[5%] sm:px-[10%] transition-[background] duration-500 ease-in-out">
         <motion.div className="absolute -translate-y-1/4 translate-x-1/4 right-0 top-0 w-[30vw] ball-gradient h-[30vw] max-w-[460px] max-h-[460px] rounded-full" />
         <motion.div
           initial={{ opacity: 0, x: 200 }}

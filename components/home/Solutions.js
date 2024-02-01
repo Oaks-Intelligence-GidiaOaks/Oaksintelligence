@@ -90,7 +90,7 @@ const Solutions = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
-        className="flex relative flex-col mx-auto justify-between max-w-[1440px] py-5 px-[5%] sm:px-[10%] items-center overflow-visible"
+        className="flex relative flex-col mx-auto justify-between max-w-[1560px] py-5 px-[5%] sm:px-[10%] items-center overflow-visible"
       >
         {/* Title and subtitle */}
         <motion.div

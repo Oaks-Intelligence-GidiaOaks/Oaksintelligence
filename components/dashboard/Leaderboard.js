@@ -61,7 +61,7 @@ export const Leaderboard = () => {
                     />
                   </a>
                 </noscript>
-                <object class="tableauViz" style={{ display: "none" }}>
+                <object className="tableauViz" style={{ display: "none" }}>
                   <param
                     name="host_url"
                     value="https%3A%2F%2Fpublic.tableau.com%2F"

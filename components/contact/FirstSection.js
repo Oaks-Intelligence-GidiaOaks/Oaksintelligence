@@ -4,11 +4,12 @@ import { useContext, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import AppContext from "@/contexts/AppContext";
-import GuyUsingPhone from "../../assets/contact/guy-using-phone.svg";
-import GuyUsingPhoneDark from "../../assets/contact/guy-using-phone-dark.svg";
+import GuyUsingPhone from "../../assets/contact/guy-using-phone.webp";
+import GuyUsingPhoneDark from "../../assets/contact/guy-using-phone-dark.webp";
 import { isValidEmail } from "form-fields-checker";
-import { BiError, BiErrorCircle } from "react-icons/bi";
-import { IoMdDoneAll } from "react-icons/io";
+import { BiErrorCircle } from "@react-icons/all-files/bi/BiErrorCircle";
+import { BiError } from "@react-icons/all-files/bi/BiError";
+import { IoMdDoneAll } from "@react-icons/all-files/io/IoMdDoneAll";
 import { Rings } from "react-loader-spinner";
 
 const FirstSection = () => {
@@ -124,7 +125,7 @@ const FirstSection = () => {
 
   return (
     <div className="w-full">
-      <div className="flex mx-auto justify-between max-w-[1440px] py-5 px-[5%] sm:px-[10%] items-center">
+      <div className="flex mx-auto justify-between max-w-[1560px] py-5 px-[5%] sm:px-[10%] items-center">
         <motion.div
           initial="hidden"
           whileInView="visible"

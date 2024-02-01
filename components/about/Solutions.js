@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import React from "react";
-import collaborating from "../../assets/about/collaborating.svg";
+import collaborating from "../../assets/about/collaborating.webp";
 
 const containerReveal = {
   hidden: { opacity: 0 },
@@ -42,7 +42,7 @@ const cardReveal = {
 const Solutions = () => {
   return (
     <div className="w-full md:mt-[10vh]">
-      <div className="flex flex-wrap sm:flex-nowrap justify-between mx-auto max-w-[1440px] min-h-screen py-5 px-[5%] sm:px-[10%]">
+      <div className="flex flex-wrap sm:flex-nowrap justify-between mx-auto max-w-[1560px] min-h-screen py-5 px-[5%] sm:px-[10%]">
         <motion.div
           variants={containerReveal}
           initial="hidden"

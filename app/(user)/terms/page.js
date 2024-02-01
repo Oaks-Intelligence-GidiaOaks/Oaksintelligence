@@ -18,7 +18,7 @@ const About = () => {
 
   return (
     <main className="min-h-screen bg-white dark:bg-main overflow-hidden transition-[background] duration-500 ease-in-out">
-      <div className="mx-auto max-w-[1440px] py-5 px-[5%] sm:px-[10%] mt-10">
+      <div className="mx-auto max-w-[1560px] py-5 px-[5%] sm:px-[10%] mt-10">
         <h1 className="text-[2rem] font-bold poppins-7 text-main-light dark:gradient-text">
           Terms and Conditions for Oaks Intelligence
         </h1>

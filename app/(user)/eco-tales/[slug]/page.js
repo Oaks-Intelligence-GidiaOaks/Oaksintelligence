@@ -36,7 +36,7 @@ const Post = async ({ params: { slug } }) => {
 
   return (
     <div>
-      <article className="pb-28 mx-auto justify-between max-w-[1440px] py-5 px-[5%] sm:px-[10%] items-center bg-white dark:bg-main transition-all duration-300 ease-in-out">
+      <article className="pb-28 mx-auto justify-between max-w-[1560px] py-5 px-[5%] sm:px-[10%] items-center bg-white dark:bg-main transition-all duration-300 ease-in-out">
         <section className="space-y-2 border border-[#F7AB0A] mb-10 text-white rounded-lg overflow-hidden">
           <div className="relative min-h-56 flex flex-col md:flex-row justify-between">
             <div className="absolute top-0 w-full h-full opacity-10 blur-sm p-10">

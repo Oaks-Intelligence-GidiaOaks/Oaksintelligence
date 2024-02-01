@@ -7,7 +7,7 @@ import { services } from "../../constants";
 const Services = () => {
   return (
     <div className="w-full mt-[20vh] bg-dark-blue dark:bg-dark-black">
-      <div className="flex relative flex-col mx-auto justify-between max-w-[1440px] py-5 px-[10%] items-center overflow-visible">
+      <div className="flex relative flex-col mx-auto justify-between max-w-[1560px] py-5 px-[10%] items-center overflow-visible">
         <div className="w-full min-h-[100px] pt-[7%] pb-[5%]">
           <p className="text-[2.3rem] gradient-text">
             <span className="block text-center poppins-4">

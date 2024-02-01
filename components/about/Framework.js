@@ -67,7 +67,7 @@ const rowReveal = {
 const Framework = () => {
   return (
     <div className="w-full">
-      <div className="flex relative flex-col mx-auto justify-between max-w-[1440px] py-5 px-5 sm:px-[10%] items-center overflow-visible">
+      <div className="flex relative flex-col mx-auto justify-between max-w-[1560px] py-5 px-5 sm:px-[10%] items-center overflow-visible">
         <motion.div
           variants={containerReveal}
           initial="hidden"

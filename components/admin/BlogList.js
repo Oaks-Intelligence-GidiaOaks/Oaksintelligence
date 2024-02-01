@@ -1,11 +1,11 @@
 import urlFor from "@/sanity/lib/urlFor";
 import Image from "next/image";
-import { BsArrowUpRight } from "react-icons/bs";
+import { BsArrowUpRight } from "@react-icons/all-files/bs/BsArrowUpRight";
 import ClientSideRoute from "./ClientSideRoute";
 
 const BlogList = ({ posts }) => {
   return (
-    <div className="mx-auto max-w-[1440px] py-3 sm:py-5 pl-[5%] sm:pl-[10%] pr-[5%] sm:pr-[10%]">
+    <div className="mx-auto max-w-[1560px] py-3 sm:py-5 pl-[5%] sm:pl-[10%] pr-[5%] sm:pr-[10%]">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 gap-y-16 pb-24">
         {/* Posts */}
         {posts.map((post) => {
@@ -21,6 +21,8 @@ const BlogList = ({ posts }) => {
                     alt={post.author.name}
                     src={urlFor(post.mainImage).url()}
                     fill
+                    sizes="480px"
+                    priority
                   />
                   <div className="absolute bottom-0 w-full bg-opacity-20 bg-black backdrop-blur-lg rounded drop-shadow-lg text-white p-5 flex justify-between">
                     <div>
@@ -46,7 +48,7 @@ const BlogList = ({ posts }) => {
                   </div>
                 </div>
                 <div className="mt-5 flex-1 px-5">
-                  <p className="underline poppins-6 text-lg font-bold text-main-light dark:text-main">
+                  <p className="underline poppins-6 text-lg font-bold text-main-light dark:text-main line-clamp-1">
                     {post.title}
                   </p>
                   <p className="line-clamp-2 poppins-4 text-gray-500">

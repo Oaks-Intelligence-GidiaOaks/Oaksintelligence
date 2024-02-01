@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { IoCheckmarkDone } from "react-icons/io5";
-import { MdErrorOutline } from "react-icons/md";
+import { IoCheckmarkDone } from "@react-icons/all-files/io5/IoCheckmarkDone";
+import { MdError } from "@react-icons/all-files/md/MdError";
 import { AnimatePresence, motion } from "framer-motion";
 
 const CommentForm = ({ _id, setNewComments }) => {

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import React, { useContext } from "react";
-import People from "../../assets/about/people.svg";
+import People from "../../assets/about/people.webp";
 import Ellipse from "../../assets/contact/ellipse.svg";
 import AppContext from "@/contexts/AppContext";
 import Link from "next/link";
@@ -61,7 +61,7 @@ const nestedItemRight = {
 const Hero = () => {
   return (
     <div className="w-full">
-      <div className="flex flex-wrap sm:flex-nowrap justify-between mx-auto max-w-[1440px] min-h-screen pt-5 px-5 sm:px-[10%]">
+      <div className="flex flex-wrap sm:flex-nowrap justify-between mx-auto max-w-[1560px] min-h-screen pt-5 px-5 sm:px-[10%]">
         <motion.div
           variants={containerReveal}
           initial="hidden"

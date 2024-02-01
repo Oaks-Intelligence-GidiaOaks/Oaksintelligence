@@ -1,11 +1,11 @@
 import urlFor from "@/sanity/lib/urlFor";
 import Image from "next/image";
-import { BsArrowUpRight } from "react-icons/bs";
+import { BsArrowUpRight } from "@react-icons/all-files/bs/BsArrowUpRight";
 import ClientSideRoute from "./ClientSideRoute";
 
 const ComicList = ({ comics, type }) => {
   return (
-    <div className="mx-auto max-w-[1440px] py-3 sm:py-5 pl-[5%] sm:pl-[10%] pr-[5%] sm:pr-[10%]">
+    <div className="mx-auto max-w-[1560px] py-3 sm:py-5 pl-[5%] sm:pl-[10%] pr-[5%] sm:pr-[10%]">
       <div
         className={`grid grid-cols-1 ${
           type === "market-intelligence-report"
@@ -27,6 +27,8 @@ const ComicList = ({ comics, type }) => {
                     alt={comic.slug.current}
                     src={urlFor(comic.mainImage).url()}
                     fill
+                    sizes="360px"
+                    priority
                   />
                   <div className="absolute bottom-0 w-full bg-opacity-20 bg-black backdrop-blur-lg rounded drop-shadow-lg text-white p-5 flex justify-between">
                     <div>
