@@ -1,12 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
 import Image from "next/image";
-import ladyUsingPhone from "../../assets/firstSection/lady-on-phone.svg";
+import ladyUsingPhone from "../../assets/firstSection/lady-on-phone.webp";
 import { motion } from "framer-motion";
 
 const FirstSection = () => {
   return (
     <div className="w-full">
-      <div className="flex flex-col sm:flex-row mx-auto sm:justify-between max-w-[1440px] py-5 px-[5%] sm:px-[10%] sm:items-center">
+      <div className="flex flex-col sm:flex-row mx-auto sm:justify-between max-w-[1560px] py-5 px-[5%] sm:px-[10%] sm:items-center">
         <motion.div
           initial="hidden"
           whileInView="visible"

@@ -80,7 +80,7 @@ const Newsletters = ({ params }) => {
 
   return (
     <main className="min-h-screen bg-white dark:bg-main overflow-hidden transition-[background] duration-500 ease-in-out">
-      <div className="mx-auto max-w-[1440px]  border border-red-500 py-5 px-[5%] sm:px-[10%] mt-10">
+      <div className="mx-auto max-w-[1560px]  border border-red-500 py-5 px-[5%] sm:px-[10%] mt-10">
         {/* <NewsletterBanner /> */}
 
         {/* Content goes in here */}

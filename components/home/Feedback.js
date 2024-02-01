@@ -1,7 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
+import { BsArrowLeft } from "@react-icons/all-files/bs/BsArrowLeft";
+import { BsArrowRight } from "@react-icons/all-files/bs/BsArrowRight";
 import { feedbacks } from "@/constants";
 import whiteLightBig from "@/assets/dark-home-light-big.png";
 import whiteLightSmall from "@/assets/dark-home-light-small.png";
@@ -102,7 +103,7 @@ const Feedback = () => {
           x: 0,
           transition: { duration: 1.5, type: "spring", bounce: 0.4 },
         }}
-        className="relative flex flex-col mx-auto justify-between max-w-[1440px] py-5 px-[5%] sm:px-[10%] items-center"
+        className="relative flex flex-col mx-auto justify-between max-w-[1560px] py-5 px-[5%] sm:px-[10%] items-center"
       >
         <motion.div
           initial={{ opacity: 1 }}

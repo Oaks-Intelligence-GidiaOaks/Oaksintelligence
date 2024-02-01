@@ -3,7 +3,7 @@
 import { redirect } from "next/navigation";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { BiSearch } from "react-icons/bi";
+import { BiSearch } from "@react-icons/all-files/bi/BiSearch";
 
 const SearchBar = ({ placeholder, type }) => {
   const [query, setQuery] = useState("");

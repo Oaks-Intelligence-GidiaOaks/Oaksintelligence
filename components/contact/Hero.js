@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import React, { useContext } from "react";
-import Programmer from "../../assets/contact/programmer.svg";
+import Programmer from "../../assets/contact/programmer.webp";
 import Ellipse from "../../assets/contact/ellipse.svg";
 import AppContext from "@/contexts/AppContext";
 
@@ -62,7 +62,7 @@ const Hero = () => {
   const { theme } = useContext(AppContext);
   return (
     <div className="w-full">
-      <div className="flex justify-start sm:justify-between mx-auto max-w-[1440px] sm:min-h-screen py-5 px-[5%] sm:px-[10%] flex-col sm:flex-row">
+      <div className="flex justify-start sm:justify-between mx-auto max-w-[1560px] sm:min-h-screen py-5 px-[5%] sm:px-[10%] flex-col sm:flex-row">
         <motion.div
           variants={containerReveal}
           initial="hidden"

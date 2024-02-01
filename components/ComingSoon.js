@@ -4,7 +4,7 @@ import Image from "next/image";
 const ComingSoon = () => {
   return (
     <div className="w-full">
-      <div className="flex mx-auto justify-between max-w-[1440px] py-5 px-[5%] sm:px-[10%] items-center">
+      <div className="flex mx-auto justify-between max-w-[1560px] py-5 px-[5%] sm:px-[10%] items-center">
         <div className="w-full min-h-[20vh] p-3 rounded-md">
           <h1 className="poppins-7 dark:text-white text-center text-main-light text-3xl transition-all duration-300 ease-in-out">
             Coming Soon!!!

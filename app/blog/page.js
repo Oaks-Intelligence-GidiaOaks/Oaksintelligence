@@ -8,11 +8,10 @@ import PreviewBlogList from "@/components/admin/PreviewBlogList";
 import BlogList from "@/components/admin/BlogList";
 import { useParams, useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { BiSearch } from "react-icons/bi";
 import SearchBar from "@/components/blogs/SearchBar";
 import ComingSoon from "@/components/ComingSoon";
-import PostHogClient from "../posthog";
-import posthog from "posthog-js";
+// import PostHogClient from "../posthog";
+// import posthog from "posthog-js";
 
 const ITEMS_PER_PAGE = 6;
 const query = groq`
@@ -62,13 +61,13 @@ const Blog = async ({ searchParams }) => {
         <>
           {/* Search bar */}
           <div className="w-full">
-            <div className="flex mx-auto justify-end max-w-[1440px] py-5 px-[5%] sm:px-[10%] items-center">
+            <div className="flex mx-auto justify-end max-w-[1560px] py-5 px-[5%] sm:px-[10%] items-center">
               <SearchBar />
             </div>
           </div>
           <BlogList posts={posts.posts} />
           <div className="w-full mb-10 md:mb-20">
-            <div className="flex mx-auto justify-center max-w-[1440px] py-5 px-[5%] sm:px-[10%] items-center">
+            <div className="flex mx-auto justify-center max-w-[1560px] py-5 px-[5%] sm:px-[10%] items-center">
               <div className="flex w-[280px] md:w-[480px] justify-between">
                 {/* Prev button */}
                 {currentPage > 1 ? (

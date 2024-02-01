@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { RiArrowGoBackLine } from "react-icons/ri";
+import { RiArrowGoBackLine } from "@react-icons/all-files/ri/RiArrowGoBackLine";
 import oaksLogo from "../../assets/oaks-logo.svg";
 
 function StudioNavbar(props) {

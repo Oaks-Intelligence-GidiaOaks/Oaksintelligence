@@ -3,17 +3,21 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import React from "react";
 import Logo from "../../assets/oaks-logo.svg";
-import { GrInstagram, GrYoutube } from "react-icons/gr";
-import { FaFacebook, FaLinkedinIn, FaTiktok } from "react-icons/fa";
-import { BsFillTelephoneFill } from "react-icons/bs";
-import { MdEmail } from "react-icons/md";
-import { IoLocationOutline } from "react-icons/io5";
-import { BiChevronRight } from "react-icons/bi";
+import { GrInstagram } from "@react-icons/all-files/gr/GrInstagram";
+import { GrYoutube } from "@react-icons/all-files/gr/GrYoutube";
+import { FaFacebook } from "@react-icons/all-files/fa/FaFacebook";
+import { FaLinkedinIn } from "@react-icons/all-files/fa/FaLinkedinIn";
+import { IoLogoTiktok } from "@react-icons/all-files/io5/IoLogoTiktok";
+// import { BsFillTelephoneFill } from "@react-icons/all-files/bs/telep";
+import { MdEmail } from "@react-icons/all-files/md/MdEmail";
+import { IoLocationOutline } from "@react-icons/all-files/io5/IoLocationOutline";
+import { BiChevronRight } from "@react-icons/all-files/bi/BiChevronRight";
 import NewsLetterSubscribe from "./NewsLetterSubscribe";
 import SocialMediaEmbed from "../SocialMediaEmbed";
 import { usePathname } from "next/navigation";
 import threadsLogo from "../../assets/threads.png";
-import { RiTwitterXLine } from "react-icons/ri";
+import twitterXLogo from "../../assets/twitterx.png";
+import { RiTwitterLine } from "@react-icons/all-files/ri/RiTwitterLine";
 
 const Footer = () => {
   const pathname = usePathname();
@@ -31,9 +35,9 @@ const Footer = () => {
             bounce: 0.4,
           },
         }}
-        className="flex relative flex-col mx-auto justify-between max-w-[1440px] py-5 items-center overflow-visible"
+        className="flex relative flex-col mx-auto justify-between max-w-[1560px] py-5 items-center overflow-visible"
       >
-        {pathname !== "/terms" && <SocialMediaEmbed />}
+        {/* {pathname !== "/terms" && <SocialMediaEmbed />} */}
         <div className="flex flex-wrap flex-row gap-y-[50px] px-[5%] w-full gap-[clamp(20px,5vw,30px)] mt-10 min-[524px]:justify-between">
           <div className="flex flex-col w-[80%] min-w-[240px] gap-6 min-[524px]:w-[21%]">
             <Link href={"/"}>
@@ -48,12 +52,17 @@ const Footer = () => {
                 <motion.p
                   initial={{ color: "#B7B7B7", scale: 1 }}
                   whileHover={{
-                    color: "white",
                     scale: 1.2,
                     transition: { duration: 0.3, type: "spring", bounce: 0.6 },
                   }}
                 >
-                  <RiTwitterXLine size={18} />
+                  <Image
+                    width={18}
+                    height={18}
+                    src={twitterXLogo}
+                    alt="twitter"
+                    className="invert-[0.8] brightness-50 hover:invert hover:brightness-200"
+                  />
                 </motion.p>
               </Link>
               <Link target="_blank" href="https://web.facebook.com/oaksintel">
@@ -112,7 +121,7 @@ const Footer = () => {
                     transition: { duration: 0.3, type: "spring", bounce: 0.6 },
                   }}
                 >
-                  <FaTiktok size={18} className="shadow-red-800" />
+                  <IoLogoTiktok size={18} className="shadow-red-800" />
                 </motion.p>
               </Link>
               <Link target="_blank" href="https://www.threads.net/@oaksintel">
@@ -130,6 +139,18 @@ const Footer = () => {
                     alt="threads"
                     className="invert-[0.8] brightness-50 hover:invert hover:brightness-200"
                   />
+                </motion.p>
+              </Link>
+              <Link target="_blank" href="https://www.youtube.com/@Oaks_TV">
+                <motion.p
+                  initial={{ color: "#B7B7B7", scale: 1 }}
+                  whileHover={{
+                    color: "red",
+                    scale: 1.2,
+                    transition: { duration: 0.3, type: "spring", bounce: 0.6 },
+                  }}
+                >
+                  <GrYoutube size={18} className="shadow-red-800" />
                 </motion.p>
               </Link>
             </div>

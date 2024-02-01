@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
-import dashboard from "../../assets/dashboardMockup/dashboard-light.svg";
+import dashboard from "../../assets/dashboardMockup/dashboard-light.webp";
 
 const DashboardMockup = () => {
   return (
@@ -22,7 +22,7 @@ const DashboardMockup = () => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: [1, 1, 1], translateY: [-10, 10, -10] }}
         transition={{ repeat: Infinity, duration: 5 }}
-        className="flex relative sm:min-h-screen mx-auto justify-center max-w-[1440px] py-10 sm:py-[5%] items-center"
+        className="flex relative sm:min-h-screen mx-auto justify-center max-w-[1560px] py-10 sm:py-[5%] items-center"
       >
         <Image alt="dashboard" src={dashboard} className="w-[90%] sm:w-[70%]" />
       </motion.div>
