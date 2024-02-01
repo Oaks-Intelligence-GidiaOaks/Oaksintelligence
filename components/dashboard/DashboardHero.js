@@ -6,10 +6,10 @@ import Phone from "../../assets/hero/phone.svg";
 import PhoneCircle from "../../assets/hero/phone-circle.svg";
 import topCircle from "../../assets/hero/top-circle.svg";
 import goldCircle from "../../assets/hero/gold-circle.svg";
-import dashboard from "../../assets/hero/dashboard.svg";
+import dashboard from "../../assets/hero/dashboard.webp";
 import Glow from "../../assets/solutions/glow.svg";
 import AppContext from "@/contexts/AppContext";
-import dashboardWide from "@/assets/dashboardMockup/dashboard.svg";
+import dashboardWide from "@/assets/dashboardMockup/dashboard.webp";
 import whiteLightBig from "@/assets/dark-home-light-big.png";
 import whiteLightSmall from "@/assets/dark-home-light-small.png";
 
@@ -96,7 +96,7 @@ const DashboardHero = () => {
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="flex flex-col sm:flex-row justify-start sm:justify-between mx-auto max-w-[1440px] sm:min-h-screen py-5 px-[5%] sm:px-[10%]"
+            className="flex flex-col sm:flex-row justify-start sm:justify-between mx-auto max-w-[1560px] sm:min-h-screen py-5 px-[5%] sm:px-[10%]"
           >
             <motion.div
               variants={containerReveal}
@@ -207,7 +207,7 @@ const DashboardHero = () => {
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="flex flex-col sm:flex-row justify-start sm:justify-between mx-auto max-w-[1440px] sm:min-h-screen py-5 px-[5%] sm:px-[10%]"
+            className="flex flex-col sm:flex-row justify-start sm:justify-between mx-auto max-w-[1560px] sm:min-h-screen py-5 px-[5%] sm:px-[10%]"
           >
             <motion.div
               variants={containerReveal}

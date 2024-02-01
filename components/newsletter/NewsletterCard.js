@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { FaNewspaper } from "react-icons/fa6";
+import { FaNewspaper } from "@react-icons/all-files/fa/FaNewspaper";
 import Timeago from "react-timeago";
 import ecoImage from "../../assets/eco-weather.svg";
 import { motion } from "framer-motion";

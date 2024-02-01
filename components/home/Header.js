@@ -12,9 +12,11 @@ import Image from "next/image";
 import Link from "next/link";
 import Logo from "../../assets/oaks-logo.svg";
 import LogoDark from "../../assets/oaks-logo-dark.svg";
-import { BsFillMoonStarsFill, BsFillSunFill } from "react-icons/bs";
-import { HiMenu } from "react-icons/hi";
-import { IoChevronDown, IoClose } from "react-icons/io5";
+import { BsFillMoonStarsFill } from "@react-icons/all-files/bs/BsMoon";
+import { BsFillSunFill } from "@react-icons/all-files/bs/BsSun";
+import { HiMenu } from "@react-icons/all-files/hi/HiMenu";
+import { IoChevronDown } from "@react-icons/all-files/io5/IoChevronDown";
+import { IoClose } from "@react-icons/all-files/io5/IoClose";
 import ThemeSwitch from "../ThemeSwitch";
 import AppContext from "@/contexts/AppContext";
 import { useRef } from "react";
@@ -55,21 +57,19 @@ const Header = ({ theme, setTheme }) => {
   return (
     !pathname.includes("/studio") && (
       <div className="w-full bg-white dark:bg-main sticky top-0 z-40 transition-[background] duration-500 ease-in-out">
-        <div className="relative flex mx-auto justify-between max-w-[1440px] z-50 py-3 sm:py-5 pl-[5%] sm:pl-[10%] pr-[5%] sm:pr-[10%] items-center">
-          <Link href={"/"} className="relative">
+        <div className="relative flex mx-auto justify-between max-w-[1560px] z-50 py-3 sm:py-5 pl-[5%] sm:pl-[10%] pr-[5%] sm:pr-[10%] items-center">
+          <Link href={"/"} className="relative w-[150px] h-10">
             <Image
               alt="company-logo"
               src={LogoDark}
-              className={`${
-                theme === "light" ? "block" : "hidden"
-              } absolute max-w-[150px]`}
+              className={`block dark:hidden absolute max-w-[150px] top-0`}
+              priority
             />
             <Image
               alt="company-logo"
               src={Logo}
-              className={`${
-                theme !== "light" ? "block" : "hidden"
-              }absolute max-w-[150px]`}
+              className={`hidden dark:block absolute max-w-[150px] top-0`}
+              priority
             />
           </Link>
           <div className="flex flex-1 justify-end gap-[5%] items-center ">
@@ -77,9 +77,7 @@ const Header = ({ theme, setTheme }) => {
               <Link
                 href="/"
                 className={`${
-                  theme !== "light" && pathname === "/"
-                    ? "glassmorphism-sec-link"
-                    : ""
+                  pathname === "/" ? "dark:glassmorphism-sec-link" : ""
                 } px-[15px] py-[5px]`}
               >
                 <li
@@ -93,9 +91,7 @@ const Header = ({ theme, setTheme }) => {
               <Link
                 href="/about"
                 className={`${
-                  theme !== "light" && pathname === "/about"
-                    ? "glassmorphism-sec-link"
-                    : ""
+                  pathname === "/about" ? "dark:glassmorphism-sec-link" : ""
                 } px-[15px] py-[5px]`}
               >
                 <li
@@ -109,9 +105,7 @@ const Header = ({ theme, setTheme }) => {
               <Link
                 href="/contact"
                 className={`${
-                  theme !== "light" && pathname === "/contact"
-                    ? "glassmorphism-sec-link"
-                    : ""
+                  pathname === "/contact" ? "dark:glassmorphism-sec-link" : ""
                 } px-[15px] py-[5px]`}
               >
                 <li
@@ -126,9 +120,7 @@ const Header = ({ theme, setTheme }) => {
                 href="/dashboard"
                 onClick={() => setShowMenu(false)}
                 className={`${
-                  theme !== "light" && pathname.includes("/dashboard")
-                    ? "glassmorphism-sec-link"
-                    : ""
+                  pathname === "/dashboard" ? "dark:glassmorphism-sec-link" : ""
                 } px-[15px] py-[5px]`}
               >
                 <li
@@ -145,8 +137,8 @@ const Header = ({ theme, setTheme }) => {
                 href="/blog"
                 onClick={() => setShowMenu(false)}
                 className={`${
-                  theme !== "light" && pathname.includes("/blog")
-                    ? "glassmorphism-sec-link"
+                  pathname.includes("/blog")
+                    ? "dark:glassmorphism-sec-link"
                     : ""
                 } px-[15px] py-[5px]`}
               >
@@ -167,9 +159,9 @@ const Header = ({ theme, setTheme }) => {
                     pathname.includes("/eco-tales") ||
                     pathname.includes("/market-intelligence-reports") ||
                     pathname.includes("/surveys"))
-                    ? "glassmorphism-sec-link"
+                    ? "dark:glassmorphism-sec-link"
                     : ""
-                } px-[15px] py-[5px] relative`}
+                } relative px-[15px] py-[5px]`}
               >
                 <li
                   className={`${
@@ -306,12 +298,14 @@ const Header = ({ theme, setTheme }) => {
               {showMenu ? (
                 <IoClose
                   size={28}
-                  color={theme === "light" ? "#060C18" : "#ffffff"}
+                  // color={theme === "light" ? "#060C18" : "#ffffff" }
+                  className="text-[#060C18] dark:text-[#ffffff]"
                 />
               ) : (
                 <HiMenu
                   size={28}
-                  color={theme !== "light" ? "#ffffff" : "#060C18"}
+                  // color={theme !== "light" ? "#ffffff" : "#060C18"}
+                  className="text-[#ffffff] dark:text-[#060C18]"
                 />
               )}
             </button>

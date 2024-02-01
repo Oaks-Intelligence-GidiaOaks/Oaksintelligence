@@ -63,7 +63,7 @@ const Newsletters = () => {
 
   return (
     <main className="min-h-screen bg-white dark:bg-main overflow-hidden transition-[background] duration-500 ease-in-out">
-      <div className="mx-auto max-w-[1440px] py-5">
+      <div className="mx-auto max-w-[1560px] py-5">
         {/* <NewsletterBanner /> */}
 
         {/* Content goes in here */}

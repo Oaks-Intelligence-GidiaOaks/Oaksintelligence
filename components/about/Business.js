@@ -67,7 +67,7 @@ const Business = () => {
 
   return (
     <div className="w-full" id="business">
-      <div className="flex relative flex-col mx-auto justify-between max-w-[1440px] py-5 px-[5%] sm:px-[10%] items-center overflow-visible">
+      <div className="flex relative flex-col mx-auto justify-between max-w-[1560px] py-5 px-[5%] sm:px-[10%] items-center overflow-visible">
         <motion.div
           initial={{ opacity: 0, x: -200 }}
           whileInView={{

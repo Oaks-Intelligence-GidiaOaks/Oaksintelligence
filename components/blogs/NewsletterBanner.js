@@ -1,10 +1,10 @@
 "use client";
 import AppContext from "@/contexts/AppContext";
 import React, { useContext, useState } from "react";
-import { GrClose } from "react-icons/gr";
+import { GrClose } from "@react-icons/all-files/gr/GrClose";
 import newsletterBg from "@/assets/newsletter-bg.jpg";
 import Image from "next/image";
-import { IoClose } from "react-icons/io5";
+import { IoClose } from "@react-icons/all-files/io5/IoClose";
 import { AnimatePresence, motion } from "framer-motion";
 import NewsLetterSubscribe from "../SecondaryNewsletter";
 import BlogNewsletterModal from "../BlogNewsletterModal";
@@ -14,7 +14,7 @@ function NewsletterBanner() {
 
   return (
     <div className="w-full">
-      <div className="flex mx-auto justify-between max-w-[1440px] py-5 px-[5%] sm:px-[10%] items-center">
+      <div className="flex mx-auto justify-between max-w-[1560px] py-5 px-[5%] sm:px-[10%] items-center">
         <div className="w-full min-h-[20vh] p-3 gold-gradient-bg rounded-md">
           <h1 className="poppins-7 text-white dark:text-main-light text-3xl transition-all duration-300 ease-in-out">
             Subscribe to our Newsletter

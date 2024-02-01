@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { IoClose } from "react-icons/io5";
 import NewsLetterSubscribe from "./home/NewsLetterSubscribe";
 // import Lottie from "lottie-react";
 import React, { useState } from "react";
@@ -20,11 +19,21 @@ const BlogNewsletterModal = ({ setShowModal }) => {
         // className="flex items-center justify-center fixed top-0 left-0 z-50 backdrop-blur-md w-full h-screen overflow-y-scroll"
       >
         <div className="absolute z-50 top-0 left-0 pt-3 pr-3  w-full flex justify-end">
-          <IoClose
-            onClick={() => setShowModal(false)}
-            size={28}
-            className="text-[#ffffff] hover:text-[#f7ab0a] transition-all duration-300 ease-in-out cursor-pointer"
-          />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width={28}
+            height={28}
+            fill="none"
+            className=""
+          >
+            <path
+              fill="currentColor"
+              fillRule="evenodd"
+              d="M11.782 4.032a.575.575 0 1 0-.813-.814L7.5 6.687 4.032 3.218a.575.575 0 0 0-.814.814L6.687 7.5l-3.469 3.468a.575.575 0 0 0 .814.814L7.5 8.313l3.469 3.469a.575.575 0 0 0 .813-.814L8.313 7.5l3.469-3.468Z"
+              clipRule="evenodd"
+              className="text-[#ffffff] hover:text-[#f7ab0a] transition-all duration-300 ease-in-out cursor-pointer"
+            />
+          </svg>
         </div>
         <motion.div
           initial={{ opacity: 0, y: 100 }}

@@ -9,8 +9,8 @@ import { AnimatePresence } from "framer-motion";
 import { Analytics } from "@vercel/analytics/react";
 import "react-loading-skeleton/dist/skeleton.css";
 import { SkeletonTheme } from "react-loading-skeleton";
-import posthog from "posthog-js";
-import { PHProvider, PostHogPageview } from "../providers";
+// import posthog from "posthog-js";
+// import { PHProvider, PostHogPageview } from "../providers";
 import GoogleAnalytics from "@bradgarropy/next-google-analytics";
 
 const Wrapper = ({ children }) => {
@@ -83,17 +83,17 @@ export default function RootLayout({ children }) {
         />
       </head>
       <GoogleAnalytics measurementId={process.env.NEXT_PUBLIC_GANALYTICS_ID} />
-      <Suspense>
+      {/* <Suspense>
         <PostHogPageview />
-      </Suspense>
-      <PHProvider>
-        <body>
-          <AppProvider>
-            <Wrapper>{children}</Wrapper>
-          </AppProvider>
-          <Analytics />
-        </body>
-      </PHProvider>
+      </Suspense> */}
+      {/* <PHProvider> */}
+      <body>
+        <AppProvider>
+          <Wrapper>{children}</Wrapper>
+        </AppProvider>
+        <Analytics />
+      </body>
+      {/* </PHProvider> */}
     </html>
   );
 }

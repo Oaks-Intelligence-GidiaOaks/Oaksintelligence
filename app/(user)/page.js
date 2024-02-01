@@ -9,7 +9,7 @@ import Excellence from "@/components/home/Excellence";
 import Feedback from "@/components/home/Feedback";
 import { useContext, useEffect, useLayoutEffect } from "react";
 import AppContext from "@/contexts/AppContext";
-import posthog from "posthog-js";
+// import posthog from "posthog-js";
 
 export default function Home() {
   const { setTheme } = useContext(AppContext);
@@ -21,7 +21,7 @@ export default function Home() {
     setTheme(cachedTheme);
   }, [setTheme]);
 
-  posthog.capture("home page visited", { property: "true" });
+  // posthog.capture("home page visited", { property: "true" });
 
   return (
     <main className="min-h-screen bg-white dark:bg-main overflow-hidden transition-[background] duration-500 ease-in-out">

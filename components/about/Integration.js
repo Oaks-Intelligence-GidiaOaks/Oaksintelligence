@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import AppContext from "@/contexts/AppContext";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { BsArrowRight } from "react-icons/bs";
+import { BsArrowRight } from "@react-icons/all-files/bs/BsArrowRight";
 
 import rocket from "../../assets/integration/rocket.svg";
 import saas from "../../assets/integration/cpu-setting.svg";
@@ -11,8 +11,8 @@ import presentation from "../../assets/integration/presentation-chart.svg";
 import presentationLight from "../../assets/integration/presentation-chart-light.svg";
 import monitorMobile from "../../assets/integration/monitor-mobile.svg";
 import monitorMobileLight from "../../assets/integration/monitor-mobile-light.svg";
-import phoneLight from "../../assets/integration/phone-light.svg";
-import phoneDark from "../../assets/integration/phone-dark.svg";
+import phoneLight from "../../assets/integration/phone-light.webp";
+import phoneDark from "../../assets/integration/phone-dark.webp";
 import glow from "../../assets/solutions/glow.svg";
 
 const containerReveal = {
@@ -66,7 +66,7 @@ const Integration = () => {
 
   return (
     <div className="w-full">
-      <div className="hidden sm:flex relative flex-col mx-auto justify-between max-w-[1440px] py-5 px-[10%] items-center overflow-visible mt-[10vmin] mb-[10vmin] min-[1200px]:mb-[20vmin] min-[1300px]:mb-[30vmin]">
+      <div className="hidden sm:flex relative flex-col mx-auto justify-between max-w-[1560px] py-5 px-[10%] items-center overflow-visible mt-[10vmin] mb-[10vmin] min-[1200px]:mb-[20vmin] min-[1300px]:mb-[30vmin]">
         <motion.div
           variants={containerReveal}
           initial="hidden"
@@ -183,7 +183,7 @@ const Integration = () => {
           </motion.div>
         </div>
       </div>
-      <div className="flex sm:hidden relative flex-col mx-auto justify-between max-w-[1440px] py-5 px-[5%] items-center overflow-visible mt-[10vmin] mb-[30vmin] min-[520px]:mb-[60vmin]">
+      <div className="flex sm:hidden relative flex-col mx-auto justify-between max-w-[1560px] py-5 px-[5%] items-center overflow-visible mt-[10vmin] mb-[30vmin] min-[520px]:mb-[60vmin]">
         <div className="flex flex-col">
           <motion.div
             variants={containerReveal}
@@ -280,7 +280,7 @@ const Integration = () => {
           </div>
         </div>
       </div>
-      <div className="sm:hidden relative flex-col mx-auto justify-between max-w-[1440px] py-5 px-[10%] items-center overflow-visible mt-[10vmin] min-[520px] mb-[10vmin]">
+      <div className="sm:hidden relative flex-col mx-auto justify-between max-w-[1560px] py-5 px-[10%] items-center overflow-visible mt-[10vmin] min-[520px] mb-[10vmin]">
         <div className="relative block min-[640px]:hidden max-[340px]:-mt-[5vh] min-[380px]:mt-[10vh] min-[480px]:mt-[15vh] min-[520px]:mt-[2vh] sm:my-[20vh] z-10 w-full h-auto glassmorphism bg-[#F1F1F9] shadow-none dark:glassmorphism-sec rounded-[25px] px-8 py-6">
           <div className="w-full flex justify-between">
             <div className="flex flex-col gap-1 items-center">

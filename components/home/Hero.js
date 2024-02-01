@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
@@ -6,10 +8,10 @@ import Phone from "../../assets/hero/phone.svg";
 import PhoneCircle from "../../assets/hero/phone-circle.svg";
 import topCircle from "../../assets/hero/top-circle.svg";
 import goldCircle from "../../assets/hero/gold-circle.svg";
-import dashboard from "../../assets/hero/dashboard.svg";
+import dashboard from "../../assets/hero/dashboard.webp";
 import Glow from "../../assets/solutions/glow.svg";
 import AppContext from "@/contexts/AppContext";
-import dashboardWide from "@/assets/dashboardMockup/dashboard.svg";
+import dashboardWide from "@/assets/dashboardMockup/dashboard.webp";
 import whiteLightBig from "@/assets/dark-home-light-big.png";
 import whiteLightSmall from "@/assets/dark-home-light-small.png";
 
@@ -96,7 +98,7 @@ const Hero = () => {
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="flex flex-col sm:flex-row justify-start sm:justify-between mx-auto max-w-[1440px] sm:min-h-screen py-5 px-[5%] sm:px-[10%]"
+            className="flex flex-col sm:flex-row justify-start sm:justify-between mx-auto max-w-[1560px] sm:min-h-screen py-5 px-[5%] sm:px-[10%]"
           >
             <motion.div
               variants={containerReveal}
@@ -192,7 +194,12 @@ const Hero = () => {
               className="absolute top-[50%] left-0 -translate-y-[30%] w-full z-10 hidden sm:block"
             /> */}
                 <div className="sm:absolute sm:top-[35%] sm:left-[45%] sm:-translate-x-[35%] sm:-translate-y-[30%] w-[100%] sm:w-[100%] z-20">
-                  <Image alt="dashboard" src={dashboard} className="w-[100%]" />
+                  <Image
+                    alt="dashboard"
+                    src={dashboard}
+                    className="w-[100%]"
+                    priority
+                  />
                 </div>
                 {/* <Image
               alt="gold-circle"
@@ -211,7 +218,7 @@ const Hero = () => {
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="relative flex flex-col justify-start sm:justify-between mx-auto max-w-[1440px] sm:min-h-screen py-5 px-[5%] sm:px-[10%]"
+            className="relative flex flex-col justify-start sm:justify-between mx-auto max-w-[1560px] sm:min-h-screen py-5 px-[5%] sm:px-[10%]"
           >
             <motion.div
               initial={{ opacity: 1 }}
@@ -345,6 +352,7 @@ const Hero = () => {
                     alt="dashboard"
                     src={dashboardWide}
                     className="w-[90%]"
+                    priority
                   />
                 </motion.div>
                 {/* <Image

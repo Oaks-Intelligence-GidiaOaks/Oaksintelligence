@@ -8,7 +8,6 @@ import PreviewBlogList from "@/components/admin/PreviewBlogList";
 import BlogList from "@/components/admin/BlogList";
 import { useParams, useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { BiSearch } from "react-icons/bi";
 import SearchBar from "@/components/blogs/SearchBar";
 import noResults from "@/assets/no-results.png";
 import Image from "next/image";
@@ -59,7 +58,7 @@ const About = async ({ searchParams }) => {
       <NewsletterBanner />
       {/* Search bar */}
       <div className="w-full">
-        <div className="flex mx-auto justify-end max-w-[1440px] py-5 px-[5%] sm:px-[10%] items-center">
+        <div className="flex mx-auto justify-end max-w-[1560px] py-5 px-[5%] sm:px-[10%] items-center">
           <SearchBar
             placeholder="Search Market Intelligence Reports"
             type={"market-intelligence-reports"}
@@ -69,7 +68,7 @@ const About = async ({ searchParams }) => {
 
       {/* Results title */}
       <div className="w-full">
-        <div className="flex flex-col mx-auto items-start max-w-[1440px] pb-5 px-[5%] sm:px-[10%]">
+        <div className="flex flex-col mx-auto items-start max-w-[1560px] pb-5 px-[5%] sm:px-[10%]">
           <p>
             <span className="text-base poppins-4 text-main-light dark:text-main">
               Search results for{" "}
@@ -88,7 +87,7 @@ const About = async ({ searchParams }) => {
 
       <ComicList comics={posts.posts} type={"surveys"} />
       <div className="w-full mb-10 md:mb-20">
-        <div className="flex mx-auto justify-center max-w-[1440px] py-5 px-[5%] sm:px-[10%] items-center">
+        <div className="flex mx-auto justify-center max-w-[1560px] py-5 px-[5%] sm:px-[10%] items-center">
           {posts.total >= 1 ? (
             <div className="flex w-[280px] md:w-[480px] justify-between">
               {/* Prev button */}

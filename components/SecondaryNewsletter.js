@@ -1,8 +1,8 @@
 "use client";
 import React, { useContext, useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { BiError } from "react-icons/bi";
-import { IoMdDoneAll } from "react-icons/io";
+import { BiError } from "@react-icons/all-files/bi/BiError";
+import { IoMdDoneAll } from "@react-icons/all-files/io/IoMdDoneAll";
 import { Rings } from "react-loader-spinner";
 import MailchimpSubscribe from "react-mailchimp-subscribe";
 import AppContext from "@/contexts/AppContext";

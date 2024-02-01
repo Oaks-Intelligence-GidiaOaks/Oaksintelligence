@@ -8,14 +8,14 @@ const Loading = () => {
       <NewsletterBanner />
       {/* Search bar */}
       <div className="w-full">
-        <div className="flex mx-auto justify-end max-w-[1440px] py-5 px-[5%] sm:px-[10%] items-center">
+        <div className="flex mx-auto justify-end max-w-[1560px] py-5 px-[5%] sm:px-[10%] items-center">
           <SearchBar />
         </div>
       </div>
 
       {/* Results title */}
       <div className="w-full">
-        <div className="flex flex-col mx-auto items-start max-w-[1440px] pb-5 px-[5%] sm:px-[10%]">
+        <div className="flex flex-col mx-auto items-start max-w-[1560px] pb-5 px-[5%] sm:px-[10%]">
           <p>
             <span className="text-base poppins-4 text-main-light dark:text-main">
               Searching for results

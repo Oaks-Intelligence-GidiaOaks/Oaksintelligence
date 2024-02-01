@@ -7,9 +7,9 @@ import Glow from "../../assets/solutions/glow.svg";
 import OaksWatermark from "../../assets/oaks-watermark.svg";
 import { missions } from "../../constants";
 import AppContext from "@/contexts/AppContext";
-import image1 from "../../assets/mission/1.jpg";
-import image2 from "../../assets/mission/2.jpg";
-import image3 from "../../assets/mission/3.jpg";
+import image1 from "../../assets/mission/1.webp";
+import image2 from "../../assets/mission/2.webp";
+import image3 from "../../assets/mission/3.webp";
 
 const containerReveal = {
   hidden: { opacity: 0, y: 200 },
@@ -74,7 +74,7 @@ const Mission = () => {
   const { theme } = useContext(AppContext);
   return (
     <div className="w-full relative pb-10 sm:pb-[20vh]">
-      <div className="flex z-10 relative flex-col mx-auto justify-between max-w-[1440px] py-5 px-[5%] sm:px-[10%] items-center overflow-visible">
+      <div className="flex z-10 relative flex-col mx-auto justify-between max-w-[1560px] py-5 px-[5%] sm:px-[10%] items-center overflow-visible">
         <motion.div
           variants={containerReveal}
           initial="hidden"

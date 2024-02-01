@@ -65,7 +65,7 @@ const rowReveal = {
 const DashboardInstructions = () => {
   return (
     <div className="w-full relative pb-10 sm:pb-[5vh]" id="instructions">
-      <div className="flex z-10 relative flex-col mx-auto justify-between max-w-[1440px] py-5 px-[5%] sm:px-[10%] items-center overflow-visible">
+      <div className="flex z-10 relative flex-col mx-auto justify-between max-w-[1560px] py-5 px-[5%] sm:px-[10%] items-center overflow-visible">
         <motion.div
           variants={containerReveal}
           initial="hidden"
