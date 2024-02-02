@@ -20,8 +20,8 @@ const containerReveal = {
   show: {
     opacity: 1,
     transition: {
-      duration: 1,
-      staggerChildren: 1,
+      duration: 0.25,
+      staggerChildren: 0.5,
     },
   },
 };
@@ -31,7 +31,7 @@ const itemReveal = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 2,
+      duration: 0.5,
       type: "spring",
     },
   },
@@ -52,7 +52,7 @@ const nestedItemLeft = {
     opacity: 1,
     x: 0,
     transition: {
-      duration: 1,
+      duration: 0.5,
     },
   },
 };
@@ -62,7 +62,7 @@ const nestedItemRight = {
     opacity: 1,
     x: 0,
     transition: {
-      duration: 1,
+      duration: 0.5,
     },
   },
 };
@@ -132,24 +132,24 @@ const Hero = () => {
               </motion.p>
               <motion.div
                 variants={nestedItemsReveal}
-                className="flex justify-between mt-[5vh] gap-4 sm:gap-0 sm:mt-0"
+                className="flex flex-wrap gap-4 justify-between mt-[5vh] gap-10 sm:gap-4 sm:mt-0"
               >
                 <Link
                   href={"/about"}
-                  className="flex justify-center gold-gradient-bg hue-rotate-60 brightness-[100%] hover:hue-rotate-0 hover:sepia-0 hover:brightness-100 hover:backdrop-brightness-50 sepia-[20%] flex-1 sm:flex-none sm:w-[45%] py-3 rounded-lg transition-all duration-300 ease"
+                  className="flex justify-center min-w-[160px] gold-gradient-bg hue-rotate-60 brightness-[100%] hover:hue-rotate-0 hover:sepia-0 hover:brightness-100 hover:backdrop-brightness-50 sepia-[20%] flex-1 sm:w-[45%] py-3 rounded-lg transition-all duration-300 ease"
                 >
                   <motion.button variants={nestedItemLeft}>
-                    <span className="poppins-4 text-white text-base">
-                      Learn More
+                    <span className="poppins-4 text-white text-base whitespace-nowrap">
+                      Discover more
                     </span>
                   </motion.button>
                 </Link>
                 <Link
                   href={"/contact"}
-                  className="flex justify-center sm:w-[45%] py-3 flex-1 sm:flex-none rounded-lg border border-solid border-secondary-green hover:-hue-rotate-[45deg] transition-all duration-300 ease"
+                  className="flex justify-center min-w-[160px] sm:w-[45%] py-3 flex-1 rounded-lg border border-solid border-secondary-green hover:-hue-rotate-[45deg] transition-all duration-300 ease"
                 >
                   <motion.button variants={nestedItemRight}>
-                    <span className="poppins-4 text-secondary-green text-base">
+                    <span className="poppins-4 text-secondary-green text-base whitespace-nowrap">
                       Start a project
                     </span>
                   </motion.button>
@@ -159,12 +159,12 @@ const Hero = () => {
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 3 }}
+              transition={{ duration: 1 }}
               className="mt-8 sm:mt-0 w-full sm:w-1/2 sm:h-[calc(100vh-100px)] flex justify-center items-center"
             >
               <motion.div
                 initial={{ opacity: 0 }}
-                animate={{ opacity: [1, 1, 1], translateY: [-10, 10, -10] }}
+                animate={{ opacity: [1, 1, 1], translateY: [10, -10, 10] }}
                 transition={{ repeat: Infinity, duration: 5 }}
                 className="relative w-full h-full"
               >
@@ -304,15 +304,15 @@ const Hero = () => {
                 >
                   <motion.button variants={nestedItemLeft} className="">
                     <span className="poppins-4 text-black text-base max-[460px]:text-sm">
-                      Learn More
+                      Discover more
                     </span>
                   </motion.button>
                 </Link>
                 <Link
                   href="/contact"
-                  className="flex justify-center w-full max-w-[200px] py-3 flex-1 sm:flex-none transition-all duration-300 ease rounded-lg hover:-hue-rotate-[45deg] border border-solid border-secondary-green"
+                  className="flex justify-center w-full sm:w-[45%] max-w-[200px] py-3 flex-1 sm:flex-none transition-all duration-300 ease rounded-lg hover:-hue-rotate-[45deg] border border-solid border-secondary-green"
                 >
-                  <motion.button variants={nestedItemRight} className="">
+                  <motion.button variants={nestedItemRight} className="px-2">
                     <span className="poppins-4 text-secondary-green text-base max-[460px]:text-sm">
                       Start a project
                     </span>
