@@ -18,8 +18,8 @@ const containerReveal = {
   show: {
     opacity: 1,
     transition: {
-      duration: 1,
-      staggerChildren: 1,
+      duration: 0.25,
+      staggerChildren: 0.25,
     },
   },
 };
@@ -29,7 +29,7 @@ const itemReveal = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 2,
+      duration: 0.5,
       type: "spring",
     },
   },
@@ -39,8 +39,8 @@ const nestedItemsReveal = {
   show: {
     opacity: 1,
     transition: {
-      duration: 1,
-      staggerChildren: 0.5,
+      duration: 0.25,
+      staggerChildren: 0.25,
     },
   },
 };
@@ -50,7 +50,7 @@ const nestedItemLeft = {
     opacity: 1,
     x: 0,
     transition: {
-      duration: 1,
+      duration: 0.4,
     },
   },
 };
@@ -60,7 +60,7 @@ const nestedItemRight = {
     opacity: 1,
     x: 0,
     transition: {
-      duration: 1,
+      duration: 0.4,
     },
   },
 };

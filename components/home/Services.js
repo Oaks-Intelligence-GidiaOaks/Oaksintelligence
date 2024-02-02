@@ -140,7 +140,7 @@ const Services = () => {
                 >
                   <button>
                     <span className="poppins-4 text-main text-base">
-                      Read More
+                      Read On
                     </span>
                   </button>
                 </Link>

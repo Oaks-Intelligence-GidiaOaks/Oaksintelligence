@@ -29,6 +29,7 @@ const SearchBar = ({ placeholder, type }) => {
       />
       <button
         onClick={handleSearch}
+        aria-label={placeholder ?? "Search blog"}
         className="flex-[0.2] flex justify-center items-center gold-gradient-bg rounded-3xl hover:shadow-lg hover:hue-rotate-60 transition-all duration-300"
       >
         <BiSearch size={24} className="text-main" />

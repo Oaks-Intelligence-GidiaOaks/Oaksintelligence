@@ -84,7 +84,9 @@ const Excellence = () => {
               className="flex items-center justify-center w-[45%] py-3 rounded-lg border border-solid border-secondary-green mt-6 hover:-hue-rotate-[45deg] transition-all duration-300 ease"
             >
               <motion.button variants={nestedItemLeft}>
-                <span className="poppins-4 text-main text-lg">Learn More</span>
+                <span className="poppins-4 text-main text-lg">
+                  Discover More
+                </span>
               </motion.button>
             </Link>
           </motion.div>
