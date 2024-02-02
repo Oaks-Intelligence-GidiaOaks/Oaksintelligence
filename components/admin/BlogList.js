@@ -21,7 +21,7 @@ const BlogList = ({ posts }) => {
                     alt={post.author.name}
                     src={urlFor(post.mainImage).url()}
                     fill
-                    sizes="360px"
+                    sizes="480px"
                     priority
                   />
                   <div className="absolute bottom-0 w-full bg-opacity-20 bg-black backdrop-blur-lg rounded drop-shadow-lg text-white p-5 flex justify-between">
