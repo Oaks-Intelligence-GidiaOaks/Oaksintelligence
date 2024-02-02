@@ -69,90 +69,102 @@ const Header = ({ theme, setTheme }) => {
               alt="company-logo"
               src={Logo}
               className={`hidden dark:block absolute max-w-[150px] top-0`}
-              priority
+              loading="lazy"
             />
           </Link>
           <div className="flex flex-1 justify-end gap-[5%] items-center ">
             <ul className="hidden flex-1 justify-end poppins-6 text-main-light dark:text-main gap-[2%] min-[1350px]:gap-[3%] items-center min-[1180px]:flex transition-[background] duration-500 ease-in-out">
-              <Link
-                href="/"
-                className={`${
-                  pathname === "/" ? "dark:glassmorphism-sec-link" : ""
-                } px-[15px] py-[5px]`}
-              >
-                <li
+              <li className="flex flex-nowrap">
+                <Link
+                  href="/"
                   className={`${
-                    pathname === "/" ? "text-secondary-green" : ""
-                  }`}
+                    pathname === "/" ? "dark:glassmorphism-sec-link" : ""
+                  } px-[15px] py-[5px]`}
                 >
-                  Home
-                </li>
-              </Link>
-              <Link
-                href="/about"
-                className={`${
-                  pathname === "/about" ? "dark:glassmorphism-sec-link" : ""
-                } px-[15px] py-[5px]`}
-              >
-                <li
+                  <div
+                    className={`${
+                      pathname === "/" ? "text-secondary-green" : ""
+                    }`}
+                  >
+                    Home
+                  </div>
+                </Link>
+              </li>
+              <li className="flex flex-nowrap">
+                <Link
+                  href="/about"
                   className={`${
-                    pathname === "/about" ? "text-secondary-green" : ""
-                  } whitespace-nowrap`}
+                    pathname === "/about" ? "dark:glassmorphism-sec-link" : ""
+                  } px-[15px] py-[5px]`}
                 >
-                  About Us
-                </li>
-              </Link>
-              <Link
-                href="/contact"
-                className={`${
-                  pathname === "/contact" ? "dark:glassmorphism-sec-link" : ""
-                } px-[15px] py-[5px]`}
-              >
-                <li
+                  <div
+                    className={`${
+                      pathname === "/about" ? "text-secondary-green" : ""
+                    } whitespace-nowrap`}
+                  >
+                    About Us
+                  </div>
+                </Link>
+              </li>
+              <li className="flex flex-nowrap">
+                <Link
+                  href="/contact"
                   className={`${
-                    pathname === "/contact" ? "text-secondary-green" : ""
-                  } whitespace-nowrap`}
+                    pathname === "/contact" ? "dark:glassmorphism-sec-link" : ""
+                  } px-[15px] py-[5px]`}
                 >
-                  Contact Us
-                </li>
-              </Link>
-              <Link
-                href="/dashboard"
-                onClick={() => setShowMenu(false)}
-                className={`${
-                  pathname === "/dashboard" ? "dark:glassmorphism-sec-link" : ""
-                } px-[15px] py-[5px]`}
-              >
-                <li
+                  <div
+                    className={`${
+                      pathname === "/contact" ? "text-secondary-green" : ""
+                    } whitespace-nowrap`}
+                  >
+                    Contact Us
+                  </div>
+                </Link>
+              </li>
+              <li className="flex flex-nowrap">
+                <Link
+                  href="/dashboard"
+                  onClick={() => setShowMenu(false)}
                   className={`${
-                    pathname.includes("/dashboard")
-                      ? "text-secondary-green"
-                      : "text-main-light dark:text-main"
-                  }`}
+                    pathname === "/dashboard"
+                      ? "dark:glassmorphism-sec-link"
+                      : ""
+                  } px-[15px] py-[5px]`}
                 >
-                  Dashboard
-                </li>
-              </Link>
-              <Link
-                href="/blog"
-                onClick={() => setShowMenu(false)}
-                className={`${
-                  pathname.includes("/blog")
-                    ? "dark:glassmorphism-sec-link"
-                    : ""
-                } px-[15px] py-[5px]`}
-              >
-                <li
+                  <div
+                    className={`${
+                      pathname.includes("/dashboard")
+                        ? "text-secondary-green"
+                        : "text-main-light dark:text-main"
+                    }`}
+                  >
+                    Dashboard
+                  </div>
+                </Link>
+              </li>
+              <li className="flex flex-nowrap">
+                <Link
+                  href="/blog"
+                  onClick={() => setShowMenu(false)}
                   className={`${
                     pathname.includes("/blog")
-                      ? "text-secondary-green"
-                      : "text-main-light dark:text-main"
-                  }`}
+                      ? "dark:glassmorphism-sec-link"
+                      : ""
+                  } px-[15px] py-[5px]`}
                 >
-                  Blog
-                </li>
-              </Link>
-              <div
+                  <div
+                    className={`${
+                      pathname.includes("/blog")
+                        ? "text-secondary-green"
+                        : "text-main-light dark:text-main"
+                    }`}
+                  >
+                    Blog
+                  </div>
+                </Link>
+              </li>
+              <li
                 className={`${
                   theme !== "light" &&
                   (pathname.includes("/eco-kiddies") ||
@@ -163,7 +175,7 @@ const Header = ({ theme, setTheme }) => {
                     : ""
                 } relative px-[15px] py-[5px]`}
               >
-                <li
+                <div
                   className={`${
                     pathname.includes("/eco-kiddies") ||
                     pathname.includes("/eco-tales") ||
@@ -180,7 +192,7 @@ const Header = ({ theme, setTheme }) => {
                       showProductsMenu ? "rotate-180" : "rotate-0"
                     } transition-all`}
                   />
-                </li>
+                </div>
                 {/* Products nav */}
                 <AnimatePresence>
                   {showProductsMenu && (
@@ -286,12 +298,13 @@ const Header = ({ theme, setTheme }) => {
                     </motion.div>
                   )}
                 </AnimatePresence>
-              </div>
+              </li>
             </ul>
             <div className="hidden p-2 cursor-pointer min-[1200px]:block">
               <ThemeSwitch theme={theme} setTheme={setTheme} />
             </div>
             <button
+              aria-label={`${!showMenu ? "Show Menu" : "Hide Menu"}`}
               className="block p-2 cursor-pointer min-[1180px]:hidden"
               onClick={() => setShowMenu(!showMenu)}
             >
@@ -305,7 +318,7 @@ const Header = ({ theme, setTheme }) => {
                 <HiMenu
                   size={28}
                   // color={theme !== "light" ? "#ffffff" : "#060C18"}
-                  className="text-[#ffffff] dark:text-[#060C18]"
+                  className="text-[#060C18] dark:text-[#ffffff]"
                 />
               )}
             </button>
@@ -330,83 +343,91 @@ const Header = ({ theme, setTheme }) => {
               >
                 <div className="flex justify-between h-full w-full flex-col gap-[5%] ">
                   <ul className="flex flex-[0.6] flex-col gap-[7vh] justify-center poppins-6 items-center mt-[10vh]">
-                    <Link
-                      href="/"
-                      onClick={() => setShowMenu(false)}
-                      className={`${
-                        theme !== "light" && pathname === "/"
-                          ? "glassmorphism-sec-link"
-                          : ""
-                      } px-[15px] py-[5px]`}
-                    >
-                      <li
+                    <li className="flex flex-nowrap">
+                      <Link
+                        href="/"
+                        onClick={() => setShowMenu(false)}
                         className={`${
-                          pathname === "/"
-                            ? "text-secondary-green"
-                            : "text-main-light dark:text-main"
-                        }`}
+                          theme !== "light" && pathname === "/"
+                            ? "glassmorphism-sec-link"
+                            : ""
+                        } px-[15px] py-[5px]`}
                       >
-                        Home
-                      </li>
-                    </Link>
-                    <Link
-                      href="/about"
-                      onClick={() => setShowMenu(false)}
-                      className={`${
-                        theme !== "light" && pathname === "/about"
-                          ? "glassmorphism-sec-link"
-                          : ""
-                      } px-[15px] py-[5px]`}
-                    >
-                      <li
+                        <div
+                          className={`${
+                            pathname === "/"
+                              ? "text-secondary-green"
+                              : "text-main-light dark:text-main"
+                          }`}
+                        >
+                          Home
+                        </div>
+                      </Link>
+                    </li>
+                    <li className="flex flex-nowrap">
+                      <Link
+                        href="/about"
+                        onClick={() => setShowMenu(false)}
                         className={`${
-                          pathname === "/about"
-                            ? "text-secondary-green"
-                            : "text-main-light dark:text-main"
-                        }`}
+                          theme !== "light" && pathname === "/about"
+                            ? "glassmorphism-sec-link"
+                            : ""
+                        } px-[15px] py-[5px]`}
                       >
-                        About Us
-                      </li>
-                    </Link>
-                    <Link
-                      href="/contact"
-                      onClick={() => setShowMenu(false)}
-                      className={`${
-                        theme !== "light" && pathname === "/contact"
-                          ? "glassmorphism-sec-link"
-                          : ""
-                      } px-[15px] py-[5px]`}
-                    >
-                      <li
+                        <div
+                          className={`${
+                            pathname === "/about"
+                              ? "text-secondary-green"
+                              : "text-main-light dark:text-main"
+                          }`}
+                        >
+                          About Us
+                        </div>
+                      </Link>
+                    </li>
+                    <li className="flex flex-nowrap">
+                      <Link
+                        href="/contact"
+                        onClick={() => setShowMenu(false)}
                         className={`${
-                          pathname === "/contact"
-                            ? "text-secondary-green"
-                            : "text-main-light dark:text-main"
-                        }`}
+                          theme !== "light" && pathname === "/contact"
+                            ? "glassmorphism-sec-link"
+                            : ""
+                        } px-[15px] py-[5px]`}
                       >
-                        Contact Us
-                      </li>
-                    </Link>
-                    <Link
-                      href="/dashboard"
-                      onClick={() => setShowMenu(false)}
-                      className={`${
-                        theme !== "light" && pathname === "/dashboard"
-                          ? "glassmorphism-sec-link"
-                          : ""
-                      } px-[15px] py-[5px]`}
-                    >
-                      <li
+                        <div
+                          className={`${
+                            pathname === "/contact"
+                              ? "text-secondary-green"
+                              : "text-main-light dark:text-main"
+                          }`}
+                        >
+                          Contact Us
+                        </div>
+                      </Link>
+                    </li>
+                    <li className="flex flex-nowrap">
+                      <Link
+                        href="/dashboard"
+                        onClick={() => setShowMenu(false)}
                         className={`${
-                          pathname === "/dashboard"
-                            ? "text-secondary-green"
-                            : "text-main-light dark:text-main"
-                        }`}
+                          theme !== "light" && pathname === "/dashboard"
+                            ? "glassmorphism-sec-link"
+                            : ""
+                        } px-[15px] py-[5px]`}
                       >
-                        Dashboard
-                      </li>
-                    </Link>
-                    <div
+                        <div
+                          className={`${
+                            pathname === "/dashboard"
+                              ? "text-secondary-green"
+                              : "text-main-light dark:text-main"
+                          }`}
+                        >
+                          Dashboard
+                        </div>
+                      </Link>
+                    </li>
+                    <li
                       className={`${
                         theme !== "light" &&
                         (pathname.includes("/eco-kiddies") ||
@@ -418,7 +439,7 @@ const Header = ({ theme, setTheme }) => {
                       } px-[15px] py-[5px] relative`}
                       ref={productsMenu}
                     >
-                      <li
+                      <div
                         className={`${
                           pathname.includes("/eco-kiddies") ||
                           pathname.includes("/eco-tales") ||
@@ -435,7 +456,7 @@ const Header = ({ theme, setTheme }) => {
                             showProductsMenu ? "rotate-180" : "rotate-0"
                           } transition-all`}
                         />
-                      </li>
+                      </div>
                       {/* Products nav */}
                       <AnimatePresence>
                         {showProductsMenu && (
@@ -543,26 +564,28 @@ const Header = ({ theme, setTheme }) => {
                           </motion.div>
                         )}
                       </AnimatePresence>
-                    </div>
-                    <Link
-                      href="/blog"
-                      onClick={() => setShowMenu(false)}
-                      className={`${
-                        theme !== "light" && pathname === "/blog"
-                          ? "glassmorphism-sec-link"
-                          : ""
-                      } px-[15px] py-[5px]`}
-                    >
-                      <li
+                    </li>
+                    <li className="flex flex-nowrap">
+                      <Link
+                        href="/blog"
+                        onClick={() => setShowMenu(false)}
                         className={`${
-                          pathname === "/blog"
-                            ? "text-secondary-green"
-                            : "text-main-light dark:text-main"
-                        }`}
+                          theme !== "light" && pathname === "/blog"
+                            ? "glassmorphism-sec-link"
+                            : ""
+                        } px-[15px] py-[5px]`}
                       >
-                        Blog
-                      </li>
-                    </Link>
+                        <div
+                          className={`${
+                            pathname === "/blog"
+                              ? "text-secondary-green"
+                              : "text-main-light dark:text-main"
+                          }`}
+                        >
+                          Blog
+                        </div>
+                      </Link>
+                    </li>
                   </ul>
                   <div className="block mx-auto p-10 cursor-pointer sm:block">
                     <ThemeSwitch theme={theme} setTheme={setTheme} />

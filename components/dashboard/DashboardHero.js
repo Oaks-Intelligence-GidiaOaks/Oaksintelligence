@@ -143,7 +143,7 @@ const DashboardHero = () => {
                 >
                   <motion.button variants={nestedItemRight} className="">
                     <span className="poppins-4 text-secondary-green text-base max-[460px]:text-sm">
-                      Learn More
+                      Discover more
                     </span>
                   </motion.button>
                 </Link>
@@ -236,25 +236,25 @@ const DashboardHero = () => {
               </motion.p>
               <motion.div
                 variants={nestedItemsReveal}
-                className="flex justify-between sm:justify-center mt-[5vh] gap-x-3 sm:gap-6 sm:mt-[5vmin]"
+                className="flex justify-between sm:justify-center mt-[5vh] gap-x-3 sm:gap-6 sm:mt-[5vmin] flex-wrap"
               >
                 <Link
                   href={"/dashboard#view"}
-                  className="flex justify-center gold-gradient-bg hue-rotate-60 brightness-[100%] hover:hue-rotate-0 hover:sepia-0 hover:brightness-100 hover:backdrop-brightness-50 sepia-[20%] flex-1 sm:flex-none sm:w-[45%] py-3 rounded-lg transition-all duration-300 ease"
+                  className="flex justify-center gold-gradient-bg hue-rotate-60  min-w-[160px] brightness-[100%] hover:hue-rotate-0 hover:sepia-0 hover:brightness-100 hover:backdrop-brightness-50 sepia-[20%] flex-1 sm:w-[45%] py-3 rounded-lg transition-all duration-300 ease"
                 >
                   <motion.button variants={nestedItemLeft}>
-                    <span className="poppins-4 text-white text-base">
+                    <span className="poppins-4 text-white text-base w-full flex px-2 whitespace-nowrap">
                       View Dashboard
                     </span>
                   </motion.button>
                 </Link>
                 <Link
                   href={"/dashboard#instructions"}
-                  className="flex justify-center w-full max-w-[200px] py-3 flex-1 sm:flex-none transition-all duration-300 ease rounded-lg hover:-hue-rotate-[45deg] border border-solid border-secondary-green"
+                  className="flex justify-center w-full min-w-[160px] py-3 flex-1 transition-all duration-300 ease rounded-lg hover:-hue-rotate-[45deg] border border-solid border-secondary-green"
                 >
                   <motion.button variants={nestedItemRight} className="">
-                    <span className="poppins-4 text-secondary-green text-base max-[460px]:text-sm">
-                      Learn More
+                    <span className="poppins-4 text-secondary-green text-base px-2 max-[460px]:text-sm whitespace-nowrap">
+                      Explore Further
                     </span>
                   </motion.button>
                 </Link>

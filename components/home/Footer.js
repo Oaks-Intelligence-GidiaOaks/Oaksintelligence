@@ -48,7 +48,11 @@ const Footer = () => {
               business needs.
             </p>
             <div className="flex flex-wrap gap-8">
-              <Link target="_blank" href="https://twitter.com/Oaksintel">
+              <Link
+                target="_blank"
+                aria-label="Visit our Twitter page"
+                href="https://twitter.com/Oaksintel"
+              >
                 <motion.p
                   initial={{ color: "#B7B7B7", scale: 1 }}
                   whileHover={{
@@ -65,7 +69,11 @@ const Footer = () => {
                   />
                 </motion.p>
               </Link>
-              <Link target="_blank" href="https://web.facebook.com/oaksintel">
+              <Link
+                target="_blank"
+                aria-label="Visit our Facebook page"
+                href="https://web.facebook.com/oaksintel"
+              >
                 <motion.p
                   initial={{ color: "#B7B7B7", scale: 1 }}
                   whileHover={{
@@ -77,7 +85,11 @@ const Footer = () => {
                   <FaFacebook size={18} />
                 </motion.p>
               </Link>
-              <Link target="_blank" href="https://www.instagram.com/oaksintel/">
+              <Link
+                target="_blank"
+                aria-label="Visit our Instagram page"
+                href="https://www.instagram.com/oaksintel/"
+              >
                 <motion.p
                   initial={{
                     color: "#B7B7B7",
@@ -99,6 +111,7 @@ const Footer = () => {
               </Link>
               <Link
                 target="_blank"
+                aria-label="Visit our Linkedin page"
                 href="https://www.linkedin.com/company/oaks-intelligence-limited/"
               >
                 <motion.p
@@ -112,7 +125,11 @@ const Footer = () => {
                   <FaLinkedinIn size={18} />
                 </motion.p>
               </Link>
-              <Link target="_blank" href="https://www.tiktok.com/@oaksintel">
+              <Link
+                target="_blank"
+                aria-label="Visit our TikTok page"
+                href="https://www.tiktok.com/@oaksintel"
+              >
                 <motion.p
                   initial={{ color: "#B7B7B7", scale: 1 }}
                   whileHover={{
@@ -124,7 +141,11 @@ const Footer = () => {
                   <IoLogoTiktok size={18} className="shadow-red-800" />
                 </motion.p>
               </Link>
-              <Link target="_blank" href="https://www.threads.net/@oaksintel">
+              <Link
+                target="_blank"
+                aria-label="Visit our Threads page"
+                href="https://www.threads.net/@oaksintel"
+              >
                 <motion.p
                   initial={{ color: "#B7B7B7", scale: 1 }}
                   whileHover={{
@@ -141,7 +162,11 @@ const Footer = () => {
                   />
                 </motion.p>
               </Link>
-              <Link target="_blank" href="https://www.youtube.com/@Oaks_TV">
+              <Link
+                target="_blank"
+                aria-label="Visit our Youtube page"
+                href="https://www.youtube.com/@Oaks_TV"
+              >
                 <motion.p
                   initial={{ color: "#B7B7B7", scale: 1 }}
                   whileHover={{
