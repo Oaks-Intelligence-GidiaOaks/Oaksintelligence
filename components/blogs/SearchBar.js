@@ -1,6 +1,4 @@
 "use client";
-
-import { redirect } from "next/navigation";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { BiSearch } from "@react-icons/all-files/bi/BiSearch";
