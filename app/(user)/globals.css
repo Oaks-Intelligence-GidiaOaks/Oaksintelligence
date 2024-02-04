@@ -266,6 +266,9 @@ body {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
   }
+  .flex-center {
+    @apply flex items-center;
+  }
 }
 
 /* .react-pdf__Page__canvas {
