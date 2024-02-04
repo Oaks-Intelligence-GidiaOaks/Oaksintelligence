@@ -6,7 +6,6 @@ import { client } from "@/sanity/lib/client";
 import { PreviewSuspense } from "next-sanity/preview";
 import PreviewBlogList from "@/components/admin/PreviewBlogList";
 import BlogList from "@/components/admin/BlogList";
-import { useParams, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import SearchBar from "@/components/blogs/SearchBar";
 import ComicList from "@/components/admin/ComicList";
@@ -49,7 +48,6 @@ const EcoKiddies = async ({ searchParams }) => {
   const posts = await client.fetch(query, { pageIndex });
   return (
     <main className="min-h-screen bg-white dark:bg-main transition-all duration-300 ease-in-out overflow-hidden">
-      {/* <NewsletterBanner /> */}
       {posts.posts.length ? (
         <>
           {/* Search bar */}
