@@ -45,8 +45,8 @@ const page = () => {
 
   return (
     <div className=" dark:bg-[#060C18] grid place-items-center py-8 lg:gap-6 pl-[5%] sm:pl-[10%] pr-[5%] sm:pr-[10%] text-sm poppins-4 dark:text-white">
-      <div className="rounded-full dark:border p-6 grid place-items-center w-[512px] h-[512px] relative">
-        <div className="w-[512px] h-[512px] rounded-full blur-sm backdrop-filter backdrop-blur-md absolute inset-0 z-10" />
+      <div className="rounded-full dark:md:border  md:p-6 grid place-items-center w-full md:w-[512px] md:h-[512px] relative">
+        <div className="w-full h-full border rounded-full blur-sm backdrop-filter backdrop-blur-md absolute inset-0 z-10" />
         <form
           onSubmit={handleSubmit(onSubmit)}
           className="space-y-5 w-full px-10 z-20"
