@@ -57,7 +57,7 @@ const ComicList = ({ comics, type }) => {
                   </div>
                 </div>
                 <div className="mt-5 flex-1 px-5">
-                  <p className="underline poppins-6 text-lg font-bold text-main-light dark:text-main">
+                  <p className="line-2 underline poppins-6 text-lg font-bold text-main-light dark:text-main">
                     {comic.title}
                   </p>
                   <p className="line-clamp-2 poppins-4 text-gray-500">
