@@ -1,7 +1,6 @@
 "use client";
 import React, {
   useCallback,
-  useContext,
   useEffect,
   useLayoutEffect,
   useState,
@@ -12,13 +11,10 @@ import Image from "next/image";
 import Link from "next/link";
 import Logo from "../../assets/oaks-logo.svg";
 import LogoDark from "../../assets/oaks-logo-dark.svg";
-import { BsFillMoonStarsFill } from "@react-icons/all-files/bs/BsMoon";
-import { BsFillSunFill } from "@react-icons/all-files/bs/BsSun";
 import { HiMenu } from "@react-icons/all-files/hi/HiMenu";
 import { IoChevronDown } from "@react-icons/all-files/io5/IoChevronDown";
 import { IoClose } from "@react-icons/all-files/io5/IoClose";
 import ThemeSwitch from "../ThemeSwitch";
-import AppContext from "@/contexts/AppContext";
 import { useRef } from "react";
 
 const Header = ({ theme, setTheme }) => {

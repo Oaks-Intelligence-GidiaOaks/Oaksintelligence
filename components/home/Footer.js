@@ -8,16 +8,12 @@ import { GrYoutube } from "@react-icons/all-files/gr/GrYoutube";
 import { FaFacebook } from "@react-icons/all-files/fa/FaFacebook";
 import { FaLinkedinIn } from "@react-icons/all-files/fa/FaLinkedinIn";
 import { IoLogoTiktok } from "@react-icons/all-files/io5/IoLogoTiktok";
-// import { BsFillTelephoneFill } from "@react-icons/all-files/bs/telep";
 import { MdEmail } from "@react-icons/all-files/md/MdEmail";
-import { IoLocationOutline } from "@react-icons/all-files/io5/IoLocationOutline";
 import { BiChevronRight } from "@react-icons/all-files/bi/BiChevronRight";
 import NewsLetterSubscribe from "./NewsLetterSubscribe";
-import SocialMediaEmbed from "../SocialMediaEmbed";
 import { usePathname } from "next/navigation";
 import threadsLogo from "../../assets/threads.png";
 import twitterXLogo from "../../assets/twitterx.png";
-import { RiTwitterLine } from "@react-icons/all-files/ri/RiTwitterLine";
 
 const Footer = () => {
   const pathname = usePathname();

@@ -2,7 +2,6 @@
 import React, { useRef } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import Glow from "../../assets/solutions/glow.svg";
 import { services } from "../../constants";
 import { BsArrowLeft } from "@react-icons/all-files/bs/BsArrowLeft";
 import { BsArrowRight } from "@react-icons/all-files/bs/BsArrowRight";
