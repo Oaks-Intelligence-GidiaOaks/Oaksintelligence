@@ -37,7 +37,7 @@ const RegisterPage = () => {
       });
 
       // save token localstorage
-      localStorage.setItem("token", res.data.data.accessToken);
+      // localStorage.setItem("token", res.data.data.accessToken);
       reset();
 
       toast.success(`${res.data.message}`);
