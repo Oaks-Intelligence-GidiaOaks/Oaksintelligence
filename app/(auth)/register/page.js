@@ -54,8 +54,15 @@ const RegisterPage = () => {
         <Image src="/oaksRR.png" height={500} width={600} className="" />
       </div>
 
-      {/* login main */}
-      <div className="flex-1 lg:w-1/2 ">
+      {/* register main */}
+      <div
+        style={{
+          background: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.6)), url(/oaks-banner-bg.png)`,
+          backgroundSize: `cover`,
+          backgroundPosition: `center center`,
+        }}
+        className="flex-1 lg:w-1/2"
+      >
         <form
           onSubmit={handleSubmit(onSubmit)}
           action=""
