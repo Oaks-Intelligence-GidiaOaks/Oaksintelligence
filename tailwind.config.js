@@ -9,7 +9,8 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        // fold: { min: "279px", max: "300px" },
+        fold: "279px",
+        xr: "414px",
       },
       boxShadow: {
         "3xl": "0 35px 35px rgba(255, 255, 255, 0.25)",

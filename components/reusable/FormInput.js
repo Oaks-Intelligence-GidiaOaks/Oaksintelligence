@@ -25,7 +25,10 @@ const FormInput = ({
 
   return (
     <div className="space-y-3">
-      <label htmlFor="" className="text-white">
+      <label
+        htmlFor=""
+        className="text-secondary-main-light dark:text-secondary-main"
+      >
         {label}
       </label>
 

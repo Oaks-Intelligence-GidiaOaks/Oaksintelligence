@@ -31,7 +31,7 @@ const page = () => {
       });
 
       // save to localstorage or cookie
-      Cookies.set("token", res.data.data.accessToken, { expires: 7 });
+      Cookies.set("token", res.data.data.accessToken, { expires: 30 });
       localStorage.setItem("token", res.data.data.accessToken);
       reset();
 

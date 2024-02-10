@@ -14,6 +14,7 @@ import axios from "axios";
 import { baseUrl } from "../../../config/axiosConfig";
 import { toast } from "react-toastify";
 import { mediaSpaceKey } from "../../../sanity/env";
+import Cookies from "js-cookie";
 
 const RegisterPage = () => {
   const {
@@ -37,7 +38,7 @@ const RegisterPage = () => {
       });
 
       // save token localstorage
-      // localStorage.setItem("token", res.data.data.accessToken);
+      Cookies.set("token", res.data.data.accessToken, { expires: 30 });
       reset();
 
       toast.success(`${res.data.message}`);
@@ -55,20 +56,13 @@ const RegisterPage = () => {
       </div>
 
       {/* register main */}
-      <div
-        style={{
-          background: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.6)), url(/oaks-banner-bg.png)`,
-          backgroundSize: `cover`,
-          backgroundPosition: `center center`,
-        }}
-        className="flex-1 lg:w-1/2"
-      >
+      <div className="flex-1 lg:w-1/2 relative ">
         <form
           onSubmit={handleSubmit(onSubmit)}
           action=""
-          className="poppins-4 bg-[#F1F1F9] rounded-[30px] px-6 lg:px-8 shadow-lg py-10 flex flex-col gap-4 justify-center dark:glassmorphism-sec"
+          className="poppins-4 bg-transparent border rounded-[30px] px-6  lg:px-8 shadow-lg py-10 flex flex-col gap-4 justify-center z-30"
         >
-          <h3 className="font-semibold text-center text-3xl text-main-light dark:text-secondary-green tracking-wide">
+          <h3 className="font-semibold text-center text-3xl tracking-wide text-[#91af48]">
             Register
           </h3>
 
@@ -166,7 +160,11 @@ const RegisterPage = () => {
             error={errors.confirmPassword}
           />
 
-          <button className="w-full mt-6 p-2 rounded-md  text-center bg-secondary-green text-white">
+          <button
+            className={` ${
+              isSubmitting && `bg-gray-200`
+            } w-full mt-6 p-2 rounded-md  text-center bg-[#91af48] font-medium text-white`}
+          >
             {isSubmitting ? (
               <BeatLoader
                 color="#FFF"
