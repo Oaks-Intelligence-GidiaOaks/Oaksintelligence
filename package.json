@@ -20,12 +20,12 @@
     "autoprefixer": "10.4.14",
     "axios": "^1.6.1",
     "eslint": "8.41.0",
-    "eslint-config-next": "^14.0.3",
+    "eslint-config-next": "^14.1.4",
     "form-fields-checker": "^1.0.4",
     "framer-motion": "^10.12.17",
     "js-cookie": "^3.0.5",
     "moment": "^2.29.4",
-    "next": "^13.5.6",
+    "next": "^14.1.4",
     "next-sanity": "^4.3.3",
     "nodemailer": "^6.9.3",
     "phone": "^3.1.37",
@@ -49,9 +49,10 @@
     "react-toastify": "^10.0.4",
     "react-twitter-embed": "^4.0.4",
     "react-twitter-widgets": "^1.11.0",
-    "sanity": "^3.12.1",
-    "sanity-plugin-iframe-pane": "^2.3.1",
+    "sanity": "^3.35.2",
+    "sanity-plugin-iframe-pane": "^2.6.1",
     "sharp": "^0.32.6",
+    "styled-components": "^6.1.8",
     "tailwindcss": "3.3.2"
   }
 }

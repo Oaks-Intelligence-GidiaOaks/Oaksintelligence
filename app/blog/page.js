@@ -15,16 +15,16 @@ import ComingSoon from "@/components/ComingSoon";
 
 const ITEMS_PER_PAGE = 6;
 const query = groq`
- {
-  "posts": *[_type=='post'] {
-    ...,
-  author->,
-  categories[]->
-  } | order(_createdAt desc) 
-  // === SLICING THE COLLECTION ===
-  [($pageIndex * ${ITEMS_PER_PAGE})...($pageIndex + 1) * ${ITEMS_PER_PAGE}]
-  ,
-  "total": count(*[_type == "post"]) 
+{
+"posts": *[_type=='post'] {
+  ...,
+author->,
+categories[]->
+} | order(_createdAt desc) 
+// === SLICING THE COLLECTION ===
+[($pageIndex * $ITEMS_PER_PAGE)...($pageIndex + 1) * $ITEMS_PER_PAGE]
+,
+"total": count(*[_type == "post"]) 
 }
 `;
 
@@ -32,11 +32,6 @@ const query = groq`
 export const revalidate = 30;
 
 const Blog = async ({ searchParams }) => {
-  // const posthogClient = PostHogClient();
-  // posthogClient.capture({
-  //   distinctId: posthog
-  // })
-
   const { isEnabled } = draftMode();
 
   const pageIndex = searchParams.page ? Number(searchParams.page) - 1 : 0;
@@ -47,12 +42,12 @@ const Blog = async ({ searchParams }) => {
     return (
       <main className="min-h-screen bg-white dark:bg-main overflow-hidden">
         <NewsletterBanner />
-        <PreviewBlogList query={query} />
+        <PreviewBlogList query={query} searchParams={searchParams} />
       </main>
     );
   }
 
-  const posts = await client.fetch(query, { pageIndex });
+  const posts = await client.fetch(query, { pageIndex, ITEMS_PER_PAGE });
 
   return (
     <main className="min-h-screen bg-white dark:bg-main transition-all duration-300 ease-in-out overflow-hidden">
