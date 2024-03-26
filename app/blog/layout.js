@@ -3,7 +3,8 @@ import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 // import { PHProvider, PostHogPageview } from "../providers";
 import { Suspense } from "react";
-import { GoogleAnalytics } from "@next/third-parties/google";
+// import { GoogleAnalytics } from "@next/third-parties/google";
+import GoogleAnalytics from "@bradgarropy/next-google-analytics";
 
 export const metadata = {
   title: "Oaks Intelligence",
@@ -53,7 +54,7 @@ export default function RootLayout({ children }) {
           content="Revolutionizing the tech landscape with cutting-edge solutions. Our startup combines innovation and expertise to deliver transformative products that empower businesses and individuals. Discover how our advanced technologies are reshaping industries and driving digital transformation. Join us on this journey towards a smarter, more connected future."
         />
       </head>
-      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GANALYTICS_ID} />
+      <GoogleAnalytics measurementId={process.env.NEXT_PUBLIC_GANALYTICS_ID} />
       {/* <Suspense>
         <PostHogPageview />
       </Suspense> */}
