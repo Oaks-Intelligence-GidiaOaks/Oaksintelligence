@@ -8,6 +8,7 @@ import AboutLeaderboard from "@/components/dashboard/AboutLeaderboard";
 import { Leaderboard } from "@/components/dashboard/Leaderboard";
 import Overview from "@/components/dashboard/Overview";
 import Disclaimer from "@/components/dashboard/Disclaimer";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const About = () => {
   const { setTheme } = useContext(AppContext);
@@ -46,6 +47,7 @@ const About = () => {
       {/* <AboutLeaderboard /> */}
       <Leaderboard />
       <Disclaimer />
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GANALYTICS_ID} />
     </main>
   );
 };

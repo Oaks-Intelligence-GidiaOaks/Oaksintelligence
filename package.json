@@ -11,6 +11,7 @@
   "dependencies": {
     "@bradgarropy/next-google-analytics": "^1.0.2",
     "@mailchimp/mailchimp_marketing": "^3.0.80",
+    "@next/third-parties": "^14.1.4",
     "@portabletext/react": "^3.0.2",
     "@react-icons/all-files": "^4.1.0",
     "@sanity/image-url": "^1.0.2",

@@ -3,6 +3,7 @@ import { Wrapper } from "../../components/admin/Wrapper";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Analytics } from "@vercel/analytics/react";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata = {
   title: "Oaks Intelligence",
@@ -59,6 +60,7 @@ export default function RootLayout({ children }) {
             {children}
           </Wrapper>
         </AppProvider>
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GANALYTICS_ID} />
         <Analytics />
       </body>
     </html>
