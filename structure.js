@@ -3,7 +3,8 @@ import Iframe from "sanity-plugin-iframe-pane";
 // Customize this function to show the correct URL based on the current document
 function getPreviewUrl(doc) {
   // Vercel base URL config
-  const host = process.env.NEXT_PUBLIC_VERCEL_URL || "http://localhost:3000";
+  const host =
+    process.env.NEXT_PUBLIC_VERCEL_URL || "https://oaksintelligence.co";
 
   // Netlify base URL config
   // const host = process.env.URL || "http://localhost:3000";
