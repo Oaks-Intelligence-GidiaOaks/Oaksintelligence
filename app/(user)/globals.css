@@ -9,7 +9,7 @@ html {
   scroll-behavior: smooth !important;
 }
 body {
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 @layer components {

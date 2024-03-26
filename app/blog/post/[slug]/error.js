@@ -11,7 +11,7 @@ export default function Error({ error, reset }) {
   }, [error]);
 
   return (
-    <main className="min-h-screen bg-white dark:bg-main overflow-hidden">
+    <main className="min-h-screen bg-white dark:bg-main">
       {/* error title */}
       <div className="mx-auto flex flex-col w-[clamp(240px,40%,600px)] items-center justify-center gap-4">
         <h2 className="text-4xl py-10 font-bold poppins-7 text-main-light dark:gradient-text transition-all duration-300 ease-in-out">

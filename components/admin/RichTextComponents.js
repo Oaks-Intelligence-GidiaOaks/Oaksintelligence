@@ -7,12 +7,13 @@ const RichTextComponents = {
   types: {
     image: ({ value }) => {
       return (
-        <div className="relative w-full h-40 sm:h-96 sm:m-10 mx-auto">
+        <div className="relative w-full mx-auto my-10">
           <Image
             className=" object-contain"
             src={urlFor(value).url()}
             alt="Blog Post Image"
-            fill
+            width="1240"
+            height="1080"
           />
         </div>
       );
@@ -53,7 +54,7 @@ const RichTextComponents = {
       </h4>
     ),
     normal: ({ children }) => (
-      <p className="text-main-light dark:text-main poppins-4 leading-[34px] mt-4 transition-all duration-300 ease-in-out">
+      <p className="text-main-light-2 dark:text-main-2 poppins-4 leading-[34px] mt-4 transition-all duration-300 ease-in-out">
         {children}
       </p>
     ),

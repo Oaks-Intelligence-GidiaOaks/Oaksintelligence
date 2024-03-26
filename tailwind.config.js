@@ -38,7 +38,9 @@ module.exports = {
       },
       textColor: {
         main: "#F1F1F1",
+        "main-2": "#F1F1F1c9",
         "main-light": "#202046",
+        "main-light-2": "#202046c9",
         "primary-green": "#80B24F",
         "secondary-green": "#6FBF21",
         "secondary-main": "#B7B7B7",

@@ -18,7 +18,7 @@ const BlogList = ({ posts }) => {
                 <div className="relative w-full h-80 drop-shadow-xl group-hover:scale-105 transition-transform duration-200 ease-out">
                   <Image
                     className="object-cover object-left lg:object-center"
-                    alt={post.author.name}
+                    alt={post?.author?.name}
                     src={urlFor(post.mainImage).url()}
                     fill
                     sizes="480px"
@@ -36,7 +36,7 @@ const BlogList = ({ posts }) => {
                       </p>
                     </div>
                     <div className="flex flex-col md:flex-row gap-y-2 md:gap-x-2 items-center">
-                      {post.categories.map((category, i) => (
+                      {post?.categories?.map((category, i) => (
                         <div
                           key={i}
                           className="bg-[#f7ab0a] text-center text-black px-3 pv-1 rounded-full text-sm font-semibold"
@@ -49,10 +49,10 @@ const BlogList = ({ posts }) => {
                 </div>
                 <div className="mt-5 flex-1 px-5">
                   <p className="underline poppins-6 text-lg font-bold text-main-light dark:text-main line-clamp-1">
-                    {post.title}
+                    {post?.title}
                   </p>
                   <p className="line-clamp-2 poppins-4 text-gray-500">
-                    {post.description}
+                    {post?.description}
                   </p>
                 </div>
                 <p className="my-5 px-5 font-bold poppins-6 flex items-center group-hover:underline text-main-light dark:text-main">
