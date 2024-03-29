@@ -54,9 +54,9 @@ const RichTextComponents = {
       </h4>
     ),
     normal: ({ children }) => (
-      <p className="text-main-light-2 dark:text-main-2 poppins-4 leading-[34px] mt-4 transition-all duration-300 ease-in-out">
+      <span className="block text-main-light-2 dark:text-main-2 poppins-4 leading-[34px] mt-6 transition-all duration-300 ease-in-out">
         {children}
-      </p>
+      </span>
     ),
     blockquote: ({ children }) => (
       <blockquote className="border-1-[#F7AB0A] border-1-4 pl-5 py-5 my-5 poppins-4 text-main-light dark:text-main poppins-4 leading-[34px] mt-4 transition-all duration-300 ease-in-out">
@@ -66,19 +66,22 @@ const RichTextComponents = {
   },
   marks: {
     link: ({ children, value }) => {
-      const rel = !value.href.startsWith("/")
+      const rel = !value?.href?.startsWith("/")
         ? "noreferrer noopener"
         : undefined;
 
       return (
         <Link
-          href={value.href}
+          href={value?.href ?? ""}
           rel={rel}
           className="underline decoration-[#F7a80a] hover:decoration-black"
         >
           {children}
         </Link>
       );
+    },
+    strong: ({ children }) => {
+      return <span className="dark:text-white font-bold">{children}</span>;
     },
   },
 };
