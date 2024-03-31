@@ -61,6 +61,11 @@ export default function RootLayout({ children }) {
       {/* <PHProvider> */}
       <body>
         <Wrapper>{children}</Wrapper>
+
+        <script
+          type="module"
+          src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"
+        ></script>
         <Analytics />
       </body>
       {/* </PHProvider> */}
