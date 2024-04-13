@@ -33,7 +33,6 @@ categories[]->
 const PostComponent = async ({ post, slug }) => {
   const posts = await client.fetch(query, { pageIndex, ITEMS_PER_PAGE, slug });
 
-  console.log(posts);
   return (
     <div>
       <article className="pb-28 mx-auto justify-between max-w-[1560px] py-5 px-[5%] sm:px-[10%] items-center bg-white dark:bg-main transition-all duration-300 ease-in-out">
@@ -88,13 +87,18 @@ const PostComponent = async ({ post, slug }) => {
             </section>
           </div>
         </section>
-        <Image
-          className="w-full mx-auto"
-          width="1240"
-          height="1080"
-          src={urlFor(post.mainImage).url()}
-          alt={post.author.name}
-        />
+        <div className="relative">
+          <Image
+            className="w-full mx-auto"
+            width="1240"
+            height="1080"
+            src={urlFor(post.mainImage).url()}
+            alt={post.author.name}
+          />
+          <p className="absolute text-sm bottom-0 left-0 w-fit dark:text-white dark:bg-dark-blue bg-white px-3 py-1">
+            {post.mainImage?.alt ?? ""}
+          </p>
+        </div>
         <div className="flex w-full gap-x-10 flex-col lg:flex-row">
           <div className="min-w-[240px]">
             <PortableText value={post.body} components={RichTextComponents} />
