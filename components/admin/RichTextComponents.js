@@ -15,6 +15,9 @@ const RichTextComponents = {
             width="1240"
             height="1080"
           />
+          <p className="absolute text-sm bottom-0 left-0 w-fit dark:text-white dark:bg-dark-blue bg-white px-3 py-1">
+            {value?.alt ?? ""}
+          </p>
         </div>
       );
     },

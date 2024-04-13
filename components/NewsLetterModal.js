@@ -25,9 +25,13 @@ const NewsLetterModal = () => {
     <AnimatePresence>
       {showNewsletter && (
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1, transition: { duration: 1, delay: 10 } }}
-          exit={{ opacity: 0 }}
+          initial={{ opacity: 0, display: "none" }}
+          animate={{
+            opacity: 1,
+            display: "flex",
+            transition: { duration: 1, delay: 10 },
+          }}
+          exit={{ opacity: 0, display: "none" }}
           className="fixed z-40 top-0 left-0 w-screen h-screen overflow-y-scroll px-3 pt-10 bg-[#0000005b] backdrop-blur-md flex justify-center items-center"
         >
           <div className="absolute z-50 top-0 left-0 pt-3 pr-3  w-full flex justify-end">
