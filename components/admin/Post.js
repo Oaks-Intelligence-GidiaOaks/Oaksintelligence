@@ -95,7 +95,7 @@ const PostComponent = async ({ post, slug }) => {
             src={urlFor(post.mainImage).url()}
             alt={post.author.name}
           />
-          <p className="absolute text-sm bottom-0 left-0 w-fit dark:text-white dark:bg-dark-blue bg-white px-3 py-1">
+          <p className="text-xs w-fit dark:text-white/70 text-main-light/70 py-1 manrope-4">
             {post.mainImage?.alt ?? ""}
           </p>
         </div>
