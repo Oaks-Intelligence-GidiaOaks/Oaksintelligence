@@ -7,15 +7,15 @@ const RichTextComponents = {
   types: {
     image: ({ value }) => {
       return (
-        <div className="relative w-full mx-auto my-10">
+        <div className="w-full mx-auto my-10">
           <Image
-            className=" object-contain"
+            className="object-contain"
             src={urlFor(value).url()}
             alt="Blog Post Image"
             width="1240"
             height="1080"
           />
-          <p className="absolute text-sm bottom-0 left-0 w-fit dark:text-white dark:bg-dark-blue bg-white px-3 py-1">
+          <p className="text-xs w-fit dark:text-white/70 text-main-light/70 py-1 manrope-4">
             {value?.alt ?? ""}
           </p>
         </div>
