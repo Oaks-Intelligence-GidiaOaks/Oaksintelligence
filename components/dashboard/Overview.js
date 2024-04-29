@@ -68,7 +68,7 @@ const Overview = () => {
             comprehensive overview of real-time data while enabling you track
             the cost of essential food items, accommodation costs, rental
             prices, transportation fares, and other commodities like petrol,
-            diesel, e.t.c. This dashboard contains 7 pages:
+            diesel, e.t.c This dashboard contains 7 pages:
           </motion.p>
           <motion.ul
             variants={itemRevealRight}
