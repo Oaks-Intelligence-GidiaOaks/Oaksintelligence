@@ -57,7 +57,10 @@ export const DataDashboard = () => {
       <tableau-viz
         toolbar="hidden"
         id="tableauViz"
-        src="https://public.tableau.com/shared/CMMTRC6XH?:display_count=n&:origin=viz_share_link"
+        width="800"
+        height="600"
+        // src="https://public.tableau.com/shared/CMMTRC6XH?:display_count=n&:origin=viz_share_link"
+        src="https://public.tableau.com/views/OaksIntelligencePriceOverviewDashboardTest/OVERVIEW?:language=en-US&publish=yes&:sid=&:display_count=n&:origin=viz_share_link"
       ></tableau-viz>
     </main>
   );
