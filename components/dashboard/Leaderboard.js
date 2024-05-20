@@ -56,6 +56,8 @@ export const Leaderboard = () => {
       <tableau-viz
         toolbar="hidden"
         id="tableauViz"
+        width="800"
+        height="600"
         src="https://public.tableau.com/views/Leaderboard_Kehinde/Top?:language=en-GB&:sid=&:display_count=n&:origin=viz_share_link"
       ></tableau-viz>
     </main>
