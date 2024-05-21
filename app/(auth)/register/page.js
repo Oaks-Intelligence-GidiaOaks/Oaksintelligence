@@ -31,11 +31,15 @@ const RegisterPage = () => {
 
   const onSubmit = async (data) => {
     try {
-      const res = await axios.post(`${baseUrl}user/register`, data, {
-        headers: {
-          Authorization: `Bearer ${mediaSpaceKey}`,
-        },
-      });
+      const res = await axios.post(
+        `${baseUrl}user/register`,
+        { ...data, organization_id: "65b4042cbb6663cb6caf8734" },
+        {
+          headers: {
+            Authorization: `Bearer ${mediaSpaceKey}`,
+          },
+        }
+      );
 
       // save token localstorage
       Cookies.set("token", res.data.data.accessToken, { expires: 30 });
