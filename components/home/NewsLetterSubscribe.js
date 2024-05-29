@@ -29,6 +29,7 @@ export const NewsLetter = ({
     if (!message) {
       return null;
     }
+    console.log(message);
     const result = message?.split("-") ?? null;
 
     if (result?.[0]?.trim() !== "0") {
@@ -279,7 +280,9 @@ export const NewsLetter = ({
 };
 
 const NewsLetterSubscribe = () => {
-  const url = process.env.NEXT_PUBLIC_MAILCHIMP_URL;
+  const oaksMCURL =
+    "https://oaksintelligence.us21.list-manage.com/subscribe/post?u=a5912a723f99098c49a84c86e&amp;id=7bfa4858ed&amp;f_id=00ac5ce1f0";
+  const url = process.env.NEXT_PUBLIC_MAILCHIMP_URL ?? oaksMCURL;
 
   return (
     <MailchimpSubscribe
