@@ -282,7 +282,8 @@ export const NewsLetter = ({
 const NewsLetterSubscribe = () => {
   const oaksMCURL =
     "https://oaksintelligence.us21.list-manage.com/subscribe/post?u=a5912a723f99098c49a84c86e&amp;id=7bfa4858ed&amp;f_id=00ac5ce1f0";
-  const url = process.env.NEXT_PUBLIC_MAILCHIMP_URL ?? oaksMCURL;
+  // const url = process.env.NEXT_PUBLIC_MAILCHIMP_URL ?? oaksMCURL;
+  const url = oaksMCURL;
 
   return (
     <MailchimpSubscribe
