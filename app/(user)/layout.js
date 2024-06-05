@@ -47,6 +47,10 @@ export default function RootLayout({ children }) {
         <title>
           Oaks Intelligence | Cutting-Edge Solutions for Digital Transformation
         </title>
+        <meta
+          name="google-site-verification"
+          content="MbEr2EHyNRuL1zq4kIIA50_yfv-xj-YpC3_FDcgxTFk"
+        />
         <link rel="icon" type="image/png" href="/oaks-icon.png" />
         <link rel="canonical" href="https://www.oaksintelligence.co" />
         <meta
