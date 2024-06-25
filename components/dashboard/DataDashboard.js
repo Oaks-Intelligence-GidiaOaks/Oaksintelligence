@@ -52,13 +52,13 @@ export const DataDashboard = () => {
   return (
     <main
       id="view"
-      className="w-full bg-[#155F60] dark:bg-[#032929] mt-[30px] flex justify-center p-[5vmax] "
+      className="w-full overflow-x-scroll py-10 bg-[#155F60] dark:bg-[#032929] mt-[30px] flex justify-center"
     >
       <tableau-viz
         toolbar="hidden"
         id="tableauViz"
-        width="800"
-        height="600"
+        width="1024"
+        height="800"
         // src="https://public.tableau.com/shared/CMMTRC6XH?:display_count=n&:origin=viz_share_link"
         src="https://public.tableau.com/views/OaksIntelligencePriceOverviewDashboardTest/OVERVIEW?:language=en-US&publish=yes&:sid=&:display_count=n&:origin=viz_share_link"
       ></tableau-viz>

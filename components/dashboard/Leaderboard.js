@@ -51,13 +51,13 @@ export const Leaderboard = () => {
   return (
     <main
       id="view"
-      className="w-full bg-[#155F60] dark:bg-[#032929] mt-[30px] p-[5vmax] flex justify-center"
+      className="w-full overflow-x-scroll bg-[#155F60] dark:bg-[#032929] mt-[30px] p-[5vmax] flex justify-center"
     >
       <tableau-viz
         toolbar="hidden"
         id="tableauViz"
-        width="800"
-        height="600"
+        width="1024"
+        height="800"
         src="https://public.tableau.com/views/Leaderboard_Kehinde/Top?:language=en-GB&:sid=&:display_count=n&:origin=viz_share_link"
       ></tableau-viz>
     </main>
