@@ -53,13 +53,15 @@ export const Leaderboard = () => {
       id="view"
       className="w-full bg-[#155F60] dark:bg-[#032929] mt-[30px] p-[5vmax] flex justify-center"
     >
-      <tableau-viz
-        toolbar="hidden"
-        id="tableauViz"
-        width="800"
-        height="600"
-        src="https://public.tableau.com/views/Leaderboard_Kehinde/Top?:language=en-GB&:sid=&:display_count=n&:origin=viz_share_link"
-      ></tableau-viz>
+      <div className="w-fit overflow-x-scroll">
+        <tableau-viz
+          toolbar="hidden"
+          id="tableauViz"
+          width="1024"
+          height="800"
+          src="https://public.tableau.com/views/Leaderboard_Kehinde/Top?:language=en-GB&:sid=&:display_count=n&:origin=viz_share_link"
+        ></tableau-viz>
+      </div>
     </main>
   );
 };
