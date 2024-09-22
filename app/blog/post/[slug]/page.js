@@ -5,6 +5,7 @@ import React from "react";
 import PreviewPost from "../../../../components/admin/PreviewPost";
 import DraftSwitch from "../../../../components/DraftSwitch";
 import PostComponent from "../../../../components/admin/Post";
+import EventWrapper from "@/components/reusable/EventWrapper";
 
 // revalidate this page every 30 seconds
 export const revalidate = 30;
@@ -26,7 +27,6 @@ export async function generateStaticParams() {
 }
 
 const Post = async ({ params: { slug } }) => {
-  // console.log(data);
   const { isEnabled } = draftMode();
 
   const query = groq`
@@ -48,12 +48,11 @@ const Post = async ({ params: { slug } }) => {
     );
   }
 
-  console.log(slug);
-
   const post = await client.fetch(query, { slug });
 
   return (
     <>
+      <EventWrapper page_name={slug} />
       <PostComponent post={post} slug={slug} />
       {isEnabled ? <DraftSwitch /> : null}
     </>

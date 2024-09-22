@@ -10,6 +10,8 @@ import { useParams, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import SearchBar from "@/components/blogs/SearchBar";
 import ComingSoon from "@/components/ComingSoon";
+import EventWrapper from "../../components/reusable/EventWrapper";
+import { PageEvent } from "../../modules/socket/constants";
 // import PostHogClient from "../posthog";
 // import posthog from "posthog-js";
 
@@ -51,6 +53,7 @@ const Blog = async ({ searchParams }) => {
 
   return (
     <main className="min-h-screen bg-white dark:bg-main transition-all duration-300 ease-in-out overflow-hidden">
+      <EventWrapper page_name={PageEvent.BLOG} />
       {/* <NewsletterBanner /> */}
       {posts.posts.length ? (
         <>

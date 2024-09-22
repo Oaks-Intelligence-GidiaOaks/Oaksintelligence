@@ -11,6 +11,8 @@ import NewsletterBanner from "@/components/blogs/NewsletterBanner";
 import NewsletterCard from "@/components/newsletter/NewsletterCard";
 import Skeleton from "react-loading-skeleton";
 import { AnimatePresence, motion } from "framer-motion";
+import { PageEvent } from "../../../modules/socket/constants";
+import useSubmitPageView from "../../../contexts/hooks/useSubmitPageView";
 
 const Newsletters = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -18,6 +20,8 @@ const Newsletters = () => {
   const [count, setCount] = useState(10);
   const [offset, setOffset] = useState(0);
   const { setTheme } = useContext(AppContext);
+
+  useSubmitPageView(PageEvent.NEWSLETTER);
 
   useEffect(() => {
     async function fetchData() {
@@ -65,7 +69,6 @@ const Newsletters = () => {
     <main className="min-h-screen bg-white dark:bg-main overflow-hidden transition-[background] duration-500 ease-in-out">
       <div className="mx-auto max-w-[1560px] py-5">
         {/* <NewsletterBanner /> */}
-
         {/* Content goes in here */}
 
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 mt-10 px-[5%] sm:px-[10%]">
