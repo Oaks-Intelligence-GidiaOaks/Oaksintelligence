@@ -4,16 +4,18 @@ import AppContext from "@/contexts/AppContext";
 import DashboardHero from "@/components/dashboard/DashboardHero";
 import { DataDashboard } from "@/components/dashboard/DataDashboard";
 import DashboardInstructions from "@/components/dashboard/DashboardInstructions";
-import AboutLeaderboard from "@/components/dashboard/AboutLeaderboard";
 import { Leaderboard } from "@/components/dashboard/Leaderboard";
 import Overview from "@/components/dashboard/Overview";
 import Disclaimer from "@/components/dashboard/Disclaimer";
 // import { GoogleAnalytics } from "@next/third-parties/google";
 import GoogleAnalytics from "@bradgarropy/next-google-analytics";
+import { PageEvent } from "../../../modules/socket/constants";
+import useSubmitPageView from "../../../contexts/hooks/useSubmitPageView";
 
 const About = () => {
   const { setTheme } = useContext(AppContext);
   const scriptRef = useRef();
+  useSubmitPageView(PageEvent.DASHBOARD);
 
   useLayoutEffect(() => {
     const cachedTheme = localStorage.getItem("oi-theme")

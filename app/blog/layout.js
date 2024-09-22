@@ -5,6 +5,8 @@ import { Analytics } from "@vercel/analytics/react";
 import { Suspense } from "react";
 // import { GoogleAnalytics } from "@next/third-parties/google";
 import GoogleAnalytics from "@bradgarropy/next-google-analytics";
+import GlobalWrapper from "@/components/admin/GlobalWrapper.js";
+import { AppProvider } from "../../contexts/AppContext";
 
 export const metadata = {
   title: "Oaks Intelligence",
@@ -60,7 +62,11 @@ export default function RootLayout({ children }) {
       </Suspense> */}
       {/* <PHProvider> */}
       <body>
-        <Wrapper>{children}</Wrapper>
+        <AppProvider>
+          <GlobalWrapper>
+            <Wrapper>{children}</Wrapper>
+          </GlobalWrapper>
+        </AppProvider>
 
         <script
           type="module"

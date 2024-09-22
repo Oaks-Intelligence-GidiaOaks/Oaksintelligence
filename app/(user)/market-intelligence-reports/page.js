@@ -12,6 +12,8 @@ import SearchBar from "@/components/blogs/SearchBar";
 import ComicList from "@/components/admin/ComicList";
 import { post } from "@/sanity/schemas/post";
 import ComingSoon from "@/components/ComingSoon";
+import EventWrapper from "../../../components/reusable/EventWrapper";
+import { PageEvent } from "../../../modules/socket/constants";
 
 const ITEMS_PER_PAGE = 6;
 const query = groq`
@@ -43,6 +45,7 @@ const MarketIntelligenceReports = async ({ searchParams }) => {
       <main className="min-h-screen bg-white dark:bg-main overflow-hidden">
         <NewsletterBanner />
         <PreviewBlogList query={query} />
+        <EventWrapper page_name={PageEvent.MIR} />
       </main>
     );
   }
@@ -50,6 +53,7 @@ const MarketIntelligenceReports = async ({ searchParams }) => {
   const posts = await client.fetch(query, { pageIndex });
   return (
     <main className="min-h-screen bg-white dark:bg-main transition-all duration-300 ease-in-out overflow-hidden">
+      <EventWrapper page_name={PageEvent.MIR} />
       {/* <NewsletterBanner /> */}
       {posts.posts.length ? (
         <>

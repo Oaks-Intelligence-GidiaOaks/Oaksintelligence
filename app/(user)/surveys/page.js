@@ -11,6 +11,8 @@ import Link from "next/link";
 import SearchBar from "@/components/blogs/SearchBar";
 import ComicList from "@/components/admin/ComicList";
 import ComingSoon from "@/components/ComingSoon";
+import EventWrapper from "../../../components/reusable/EventWrapper";
+import { PageEvent } from "../../../modules/socket/constants";
 
 const ITEMS_PER_PAGE = 6;
 const query = groq`
@@ -49,6 +51,7 @@ const Surveys = async ({ searchParams }) => {
   const posts = await client.fetch(query, { pageIndex });
   return (
     <main className="min-h-screen bg-white dark:bg-main transition-all duration-300 ease-in-out overflow-hidden">
+      <EventWrapper page_name={PageEvent.SURVEY} />
       {/* <NewsletterBanner /> */}
       {posts.posts.length ? (
         <>

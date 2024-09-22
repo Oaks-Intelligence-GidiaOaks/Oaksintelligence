@@ -1,5 +1,5 @@
 "use client";
-import { Suspense, useContext, useEffect } from "react";
+import { Suspense, useContext, useEffect, useState } from "react";
 import Header from "../../components/home/Header";
 import "./globals.css";
 import AppContext, { AppProvider } from "@/contexts/AppContext";
@@ -13,10 +13,10 @@ import { SkeletonTheme } from "react-loading-skeleton";
 // import { PHProvider, PostHogPageview } from "../providers";
 import GoogleAnalytics from "@bradgarropy/next-google-analytics";
 // import { GoogleAnalytics } from "@next/third-parties/google";
+import GlobalWrapper from "@/components/admin/GlobalWrapper.js";
 
 const Wrapper = ({ children }) => {
-  const { theme, setTheme, showNewsletter, setShowNewsletter } =
-    useContext(AppContext);
+  const { theme, setTheme } = useContext(AppContext);
 
   useEffect(() => {
     theme === "dark"
@@ -25,6 +25,7 @@ const Wrapper = ({ children }) => {
 
     setTheme((prev) => prev);
   }, [theme]);
+
   return (
     <>
       <Header theme={theme} setTheme={setTheme} />
@@ -94,7 +95,9 @@ export default function RootLayout({ children }) {
       {/* <PHProvider> */}
       <body>
         <AppProvider>
-          <Wrapper>{children}</Wrapper>
+          <GlobalWrapper>
+            <Wrapper>{children}</Wrapper>
+          </GlobalWrapper>
         </AppProvider>
         <Analytics />
       </body>

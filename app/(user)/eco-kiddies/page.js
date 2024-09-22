@@ -11,6 +11,8 @@ import Link from "next/link";
 import SearchBar from "@/components/blogs/SearchBar";
 import ComicList from "@/components/admin/ComicList";
 import ComingSoon from "@/components/ComingSoon";
+import { PageEvent } from "../../../modules/socket/constants";
+import EventWrapper from "../../../components/reusable/EventWrapper";
 
 const ITEMS_PER_PAGE = 6;
 const query = groq`
@@ -42,6 +44,7 @@ const EcoKiddies = async ({ searchParams }) => {
       <main className="min-h-screen bg-white dark:bg-main overflow-hidden">
         <NewsletterBanner />
         <PreviewBlogList query={query} />
+        <EventWrapper page_name={PageEvent.ECO_KIDDIES} />
       </main>
     );
   }
@@ -49,6 +52,8 @@ const EcoKiddies = async ({ searchParams }) => {
   const posts = await client.fetch(query, { pageIndex });
   return (
     <main className="min-h-screen bg-white dark:bg-main transition-all duration-300 ease-in-out overflow-hidden">
+      <EventWrapper page_name={PageEvent.ECO_KIDDIES} />
+
       {/* <NewsletterBanner /> */}
       {posts.posts.length ? (
         <>

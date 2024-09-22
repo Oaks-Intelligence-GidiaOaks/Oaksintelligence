@@ -8,9 +8,12 @@ import Services from "@/components/home/Services";
 import Solutions from "@/components/about/Solutions";
 import React, { useContext, useLayoutEffect } from "react";
 import AppContext from "@/contexts/AppContext";
+import { PageEvent } from "../../../modules/socket/constants";
+import useSubmitPageView from "../../../contexts/hooks/useSubmitPageView";
 
 const About = () => {
   const { setTheme } = useContext(AppContext);
+  useSubmitPageView(PageEvent.ABOUT);
 
   useLayoutEffect(() => {
     const cachedTheme = localStorage.getItem("oi-theme")
