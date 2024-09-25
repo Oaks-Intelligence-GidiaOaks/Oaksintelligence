@@ -15,7 +15,7 @@ import useSubmitPageView from "../../../contexts/hooks/useSubmitPageView";
 const About = () => {
   const { setTheme } = useContext(AppContext);
   const scriptRef = useRef();
-  useSubmitPageView(PageEvent.DASHBOARD);
+  // useSubmitPageView(PageEvent.DASHBOARD);
 
   useLayoutEffect(() => {
     const cachedTheme = localStorage.getItem("oi-theme")
