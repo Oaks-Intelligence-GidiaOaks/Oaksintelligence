@@ -5,7 +5,7 @@ import React from "react";
 import PreviewPost from "../../../../components/admin/PreviewPost";
 import DraftSwitch from "../../../../components/DraftSwitch";
 import PostComponent from "../../../../components/admin/Post";
-// import EventWrapper from "@/components/reusable/EventWrapper";
+import BlogEventWrapper from "../../../../components/reusable/BlogEventWrapper";
 
 // revalidate this page every 30 seconds
 export const revalidate = 30;
@@ -52,7 +52,7 @@ const Post = async ({ params: { slug } }) => {
 
   return (
     <>
-      {/* <EventWrapper page_name={slug} /> */}
+      <BlogEventWrapper page_name={slug} />
       <PostComponent post={post} slug={slug} />
       {isEnabled ? <DraftSwitch /> : null}
     </>
