@@ -1,5 +1,6 @@
 export const MonitoringEvent = {
   NEW_PAGE_VIEW: "new-page-view",
+  NEW_BLOG_VIEW: "new-blog-view",
   NEW_SUBLEVEL_EVENT: "new-sublevel-event",
   ERROR: "error",
   SUCCESS: "success",
