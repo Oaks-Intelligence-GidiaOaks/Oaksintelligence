@@ -38,6 +38,14 @@ class SocketService {
       this.socket.on(SubLevelEvent.LOGIN_USER_EVENT, () => {
         console.log("Login Event emitted");
       });
+
+      this.socket.on("success", () => {
+        console.log("event emitted successfully");
+      });
+
+      this.socket.on("error", (err) => {
+        console.log("Error causing socket disconnect", err);
+      });
     }
   }
 

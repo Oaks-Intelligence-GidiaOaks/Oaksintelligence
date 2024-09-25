@@ -7,16 +7,16 @@ export const MonitoringEvent = {
 };
 
 export const PageEvent = {
-  HOME: "HOME Page",
-  ABOUT: "ABOUT Page",
-  CONTACT_US: "CONTACT_US Page",
-  BLOG: "BLOG Page",
-  ECO_KIDDIES: "ECO_KIDDIES Page",
-  ECO_TALES: "ECO_TALES Page",
-  MIR: "MIR Page",
-  SURVEY: "SURVEY Page",
-  NEWSLETTER: "NEWSLETTER Page",
-  DASHBOARD: "DASHBOARD Page",
+  HOME: "Home Page",
+  ABOUT: "About Page",
+  CONTACT_US: "Contact Us",
+  BLOG: "Blog",
+  ECO_KIDDIES: "Eco Kiddies",
+  ECO_TALES: "Eco Tales",
+  MIR: "MIR",
+  SURVEY: "Survey",
+  NEWSLETTER: "News Letter",
+  DASHBOARD: "Dashboard Page",
 };
 
 export const SubLevelEvent = {
