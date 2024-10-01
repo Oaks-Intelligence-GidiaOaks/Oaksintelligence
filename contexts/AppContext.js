@@ -15,20 +15,18 @@ export function AppProvider({ children }) {
   // }, []);
 
   useEffect(() => {
-    const cachedIP = localStorage.getItem("ip");
+    const fetchIP = async () => {
+      try {
+        const res = await fetch(`/api/get-ip`);
+        const data = await res.json();
+        setIp(data.ipAddress);
+        console.log(data.ip, "IP Address");
+      } catch (error) {
+        throw new Error("Error fetching IP:", error);
+      }
+    };
 
-    if (cachedIP) {
-      console.log("ip", cachedIP);
-      setIp(cachedIP);
-    } else {
-      fetch(`/api/get-ip`)
-        .then((response) => response.json())
-        .then((data) => {
-          setIp(data.ipAddress);
-          localStorage.setItem("ip", data.ipAddress);
-        })
-        .catch((error) => console.error("Error fetching IP:", error));
-    }
+    fetchIP();
   }, []);
 
   return (
